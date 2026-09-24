@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { CONTACT_EMAIL } from '../data/site';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const aboutSchema = {
@@ -90,7 +91,6 @@ const relatedLinks = [
         MetaMuseFAQ is maintained by Athena Wang, an independent developer who builds
         informational websites and follows consumer AI products.
       </p>
-      <!-- TODO: contact email -->
     </section>
 
     <section aria-labelledby="research-heading">
@@ -153,10 +153,10 @@ const relatedLinks = [
     <section aria-labelledby="corrections-heading">
       <h2 id="corrections-heading">Corrections and Contact</h2>
       <p>
-        Corrections, source suggestions, and questions about the site are welcome. Verified
-        information is reviewed and the relevant page is updated when a correction is needed.
+        Corrections, source suggestions, and questions about the site can be sent to
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Verified information is reviewed
+        and the relevant page is updated when a correction is needed.
       </p>
-      <!-- TODO: contact email -->
     </section>
 
     <script type="application/ld+json" set:html={JSON.stringify(aboutSchema).replace(/</g, '\\u003c')} />

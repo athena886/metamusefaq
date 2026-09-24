@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { CONTACT_EMAIL } from '../data/site';
 
 const pageSchema = {
   '@context': 'https://schema.org',
@@ -115,10 +116,9 @@ const pageSchema = {
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <p>
-        Questions about these terms can be sent to the site's contact address once it is added
-        below.
+        Questions about these terms can be sent to
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
-      <!-- TODO: contact email -->
     </section>
 
     <script type="application/ld+json" set:html={JSON.stringify(pageSchema).replace(/</g, '\\u003c')} />

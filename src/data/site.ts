@@ -1,6 +1,7 @@
 export const SITE_NAME = 'MetaMuseFAQ';
 export const SITE_URL = 'https://metamusefaq.com';
 export const SITE_TAGLINE = 'Independent answers about Meta Muse';
+export const CONTACT_EMAIL = 'contact@metamusefaq.com';
 export const SITE_DESCRIPTION =
   'Independent guides and clear answers about Meta Muse, its features, pricing, setup, and privacy questions.';
 
