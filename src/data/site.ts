@@ -9,8 +9,8 @@ export const DISCLAIMER =
 
 export const nav = [
   { label: 'Home', href: '/' },
-  { label: 'What Is Meta Muse?', href: '/what-is-meta-muse' },
-  { label: 'How to Use Meta Muse', href: '/how-to-use-meta-muse' },
-  { label: 'Pricing', href: '/meta-muse-pricing' },
-  { label: 'Review', href: '/meta-muse-review' },
+  { label: 'What Is Meta Muse?', href: '/what-is-meta-muse/' },
+  { label: 'How to Use Meta Muse', href: '/how-to-use-meta-muse/' },
+  { label: 'Pricing', href: '/meta-muse-pricing/' },
+  { label: 'Review', href: '/meta-muse-review/' },
 ];
