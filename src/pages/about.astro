@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: 'https://metamusefaq.com/about/',
+  name: 'About MetaMuseFAQ',
+  isPartOf: {
+    '@id': 'https://metamusefaq.com/#website',
+  },
+  inLanguage: 'en-US',
+};
+
+const relatedLinks = [
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'A plain-language explanation of the product and its cloud environment.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'Setup steps, connected services, and practical first tasks.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'The listed free, $20, and $100 options.',
+  },
+  {
+    label: 'Meta Muse review',
+    href: '/meta-muse-review/',
+    description: 'An early assessment focused on execution, privacy, and limitations.',
+  },
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'The main overview of capabilities, cost, setup, and trust questions.',
+  },
+];
+---
+
+<Base
+  title="About MetaMuseFAQ: How We Research Meta Muse"
+  description="MetaMuseFAQ is an independent site about Meta Muse. Here's who publishes it, how the site researches and sources each claim, and what it refuses to publish."
+  canonicalPath="/about/"
+  pageType="website"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'About MetaMuseFAQ' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Editorial and trust</p>
+    <h1>About MetaMuseFAQ</h1>
+    <p class="lede">
+      MetaMuseFAQ organizes public information about Meta Muse into practical answers for
+      readers who want to understand the product before using it.
+    </p>
+
+    <section aria-labelledby="site-is-heading">
+      <h2 id="site-is-heading">What This Site Is</h2>
+      <p>
+        MetaMuseFAQ is an independent informational site about Meta Muse. It collects publicly
+        available information about what the product is, what it costs, how setup works, and the
+        privacy questions around it.
+      </p>
+      <p>
+        This site does not provide Meta Muse itself and cannot activate an account, issue a
+        refund, or resolve an account or billing problem. Those actions belong to Meta and the
+        product's own support channels.
+      </p>
+    </section>
+
+    <section aria-labelledby="site-not-heading">
+      <h2 id="site-not-heading">What This Site Is Not</h2>
+      <ul>
+        <li>It is not a Meta site or a Meta customer-support channel.</li>
+        <li>It is not a paid product-review organization.</li>
+        <li>It does not sell Meta Muse subscriptions or access.</li>
+        <li>It has no commercial relationship with Meta for this site.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="publisher-heading">
+      <h2 id="publisher-heading">Who Publishes This Site</h2>
+      <p>MetaMuseFAQ is maintained by an independent publisher.</p>
+      <!-- TODO: author or editor name / handle -->
+      <!-- TODO: one-sentence background, only if you can substantiate it -->
+      <!-- TODO: contact email -->
+    </section>
+
+    <section aria-labelledby="research-heading">
+      <h2 id="research-heading">How We Research and Source Claims</h2>
+      <ul>
+        <li>
+          Product facts are checked against Meta documentation and Meta Help Center material
+          first.
+        </li>
+        <li>
+          When Meta does not cover a point, credible media reporting may be used and is labeled
+          as a media report rather than presented as a company statement.
+        </li>
+        <li>
+          Claims supported by only one source and not confirmed by Meta are left out of the
+          main text and marked for verification.
+        </li>
+        <li>
+          Prices and features are checked against current product pages. When sources conflict,
+          the Meta product page takes priority and this site is updated.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="standards-heading">
+      <h2 id="standards-heading">Our Editorial Standards</h2>
+      <ul>
+        <li>
+          The site does not invent first-person testing. It does not claim that a writer used
+          the product when no such test took place.
+        </li>
+        <li>
+          It does not assign star ratings or numerical scores without independent hands-on
+          evidence.
+        </li>
+        <li>
+          It distinguishes product documentation from media reporting instead of blending the
+          two into one claim.
+        </li>
+        <li>When an error is found, the relevant page is corrected directly.</li>
+        <li>
+          For high-risk areas such as privacy and payments, the site gives conditional guidance
+          rather than absolute conclusions.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="built-heading">
+      <h2 id="built-heading">How This Site Is Built</h2>
+      <p>
+        MetaMuseFAQ is a static informational site with no accounts, forms, comments, or
+        newsletter signup. It does not load third-party scripts or display advertising.
+      </p>
+      <p>
+        The site's own data practices are described in the
+        <a href="/privacy-policy/">privacy policy</a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="corrections-heading">
+      <h2 id="corrections-heading">Corrections and Contact</h2>
+      <p>
+        Corrections, source suggestions, and questions about the site are welcome. Verified
+        information is reviewed and the relevant page is updated when a correction is needed.
+      </p>
+      <!-- TODO: contact email -->
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(aboutSchema).replace(/</g, '\\u003c')} />
+
+    <RelatedLinks links={relatedLinks} />
+
+    <p class="todo-note">
+      See also <a href="/terms-of-use/">Terms of Use</a>.
+    </p>
+  </article>
+</Base>

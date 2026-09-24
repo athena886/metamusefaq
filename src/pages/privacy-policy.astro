@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+import { DISCLAIMER } from '../data/site';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: 'https://metamusefaq.com/privacy-policy/',
+  name: 'Privacy Policy',
+  isPartOf: {
+    '@id': 'https://metamusefaq.com/#website',
+  },
+  inLanguage: 'en-US',
+};
+---
+
+<Base
+  title="Privacy Policy | MetaMuseFAQ"
+  description="How MetaMuseFAQ handles data: no accounts, no cookies set by this site, no third-party scripts, and what changes if analytics or advertising are added later."
+  canonicalPath="/privacy-policy/"
+  pageType="website"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Privacy Policy' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Site policy</p>
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective date:</strong> September 24, 2026</p>
+
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <ul>
+        <li>This site has no accounts and no forms, and it does not collect your name or email.</li>
+        <li>This site does not set its own cookies or use local storage.</li>
+        <li>It currently loads no third-party scripts, analytics, or advertising.</li>
+        <li>The hosting provider processes routine request logs for security and performance.</li>
+        <li>If analytics or advertising are added later, this page will be updated and the effective date will change.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="scope-heading">
+      <h2 id="scope-heading">Scope of This Policy</h2>
+      <p>
+        This policy applies only to pages served on metamusefaq.com. It describes the data
+        practices of this site and not the practices of Meta or any third-party service.
+      </p>
+      <p>
+        When a link takes you to Meta's products or services, those services handle data under
+        their own policies. MetaMuseFAQ does not control that processing and is not responsible
+        for it.
+        <!-- TODO: verify and add a link to Meta's applicable privacy policy if desired. -->
+      </p>
+    </section>
+
+    <section aria-labelledby="not-collect-heading">
+      <h2 id="not-collect-heading">Information We Do Not Collect</h2>
+      <p>
+        The site does not provide any of the following ways to submit personal information:
+      </p>
+      <ul>
+        <li>User accounts or sign-in.</li>
+        <li>Contact forms.</li>
+        <li>Comments or public submissions.</li>
+        <li>Guest-post or story submissions.</li>
+        <li>Email newsletters or marketing subscriptions.</li>
+      </ul>
+      <p>
+        The site does not actively request names, email addresses, phone numbers, mailing
+        addresses, or payment information.
+      </p>
+    </section>
+
+    <section aria-labelledby="cookies-heading">
+      <h2 id="cookies-heading">Cookies and Local Storage</h2>
+      <p>
+        This site does not write its own cookies and does not use localStorage or sessionStorage.
+        It does not maintain a first-party cookie list because it does not set those cookies.
+      </p>
+      <p>
+        For the site's own behavior, there are therefore no first-party tracking cookies that a
+        reader needs to opt out of.
+      </p>
+    </section>
+
+    <section aria-labelledby="logs-heading">
+      <h2 id="logs-heading">Server Logs and Hosting</h2>
+      <p>
+        MetaMuseFAQ is hosted on Cloudflare Pages. As the hosting provider, Cloudflare processes
+        routine request information such as IP address, user agent, request path, and time.
+        This information supports content delivery, security, and abuse prevention.
+      </p>
+      <p>
+        The site does not combine those hosting logs with profiles, accounts, or contact
+        information because it does not operate an account or contact system.
+      </p>
+      <!-- TODO: verify Cloudflare privacy policy URL -->
+    </section>
+
+    <section aria-labelledby="scripts-heading">
+      <h2 id="scripts-heading">Third-Party Scripts and Embeds</h2>
+      <p>
+        The site currently loads no third-party scripts, analytics tools, advertising networks,
+        external fonts, or embedded content. The visual design and page styles are provided by
+        the site's own files.
+      </p>
+      <p>
+        As a result, browsing these pages does not send requests to third-party analytics or
+        advertising services.
+      </p>
+    </section>
+
+    <section aria-labelledby="future-heading">
+      <h2 id="future-heading">If We Add Analytics or Advertising Later</h2>
+      <p>
+        If analytics are introduced in the future, this page will identify the tool, the data it
+        receives, and the purpose for which it is used.
+      </p>
+      <p>
+        If third-party advertising such as Google AdSense is introduced, third parties,
+        including Google, may use cookies to serve ads based on a visitor's prior visits to this
+        or other websites.
+      </p>
+      <p>
+        If personalized advertising is introduced, this page will provide a way to opt out and
+        will update the effective date.
+        <!-- TODO: verify Google Ads Settings URL before adding an opt-out link. -->
+      </p>
+    </section>
+
+    <section aria-labelledby="choices-heading">
+      <h2 id="choices-heading">Your Choices</h2>
+      <ul>
+        <li>You can manage or block cookies through your browser settings.</li>
+        <li>You can use a private browsing mode.</li>
+        <li>You can ask about this site's data practices using the contact method described below.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="children-heading">
+      <h2 id="children-heading">Children's Privacy</h2>
+      <p>
+        This site is intended for a general audience and is not directed to children under 13.
+        The site does not collect personal information from its readers.
+      </p>
+    </section>
+
+    <section aria-labelledby="changes-heading">
+      <h2 id="changes-heading">Changes to This Policy</h2>
+      <p>
+        Changes are made directly on this page, and the effective date at the top is updated
+        when the policy changes.
+      </p>
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>
+        Questions or correction requests about this policy can be sent to the site's contact
+        address once it is added below.
+      </p>
+      <!-- TODO: contact email -->
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema).replace(/</g, '\\u003c')} />
+
+    <p>{DISCLAIMER}</p>
+    <p class="todo-note">
+      See <a href="/about/">About MetaMuseFAQ</a> or
+      <a href="/terms-of-use/">Terms of Use</a>.
+    </p>
+  </article>
+</Base>

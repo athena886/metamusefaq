@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: 'https://metamusefaq.com/terms-of-use/',
+  name: 'Terms of Use',
+  isPartOf: {
+    '@id': 'https://metamusefaq.com/#website',
+  },
+  inLanguage: 'en-US',
+};
+---
+
+<Base
+  title="Terms of Use | MetaMuseFAQ"
+  description="The terms for using MetaMuseFAQ, an independent site: informational purpose only, no accuracy warranty, and trademarks owned by their respective owners."
+  canonicalPath="/terms-of-use/"
+  pageType="website"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Terms of Use' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Site policy</p>
+    <h1>Terms of Use</h1>
+    <p><strong>Effective date:</strong> September 24, 2026</p>
+
+    <section aria-labelledby="acceptance-heading">
+      <h2 id="acceptance-heading">Acceptance of These Terms</h2>
+      <p>
+        By using MetaMuseFAQ, you agree to these terms. If you do not agree, please stop using
+        the site.
+      </p>
+    </section>
+
+    <section aria-labelledby="purpose-heading">
+      <h2 id="purpose-heading">Informational Purpose Only</h2>
+      <p>
+        MetaMuseFAQ publishes information about Meta Muse and related public reporting. The
+        content is not professional, legal, financial, or technical advice.
+      </p>
+      <p>
+        The site does not provide Meta Muse itself and cannot activate an account, issue a
+        refund, or resolve an account or billing problem.
+      </p>
+    </section>
+
+    <section aria-labelledby="warranty-heading">
+      <h2 id="warranty-heading">No Warranty of Accuracy</h2>
+      <p>
+        Content is researched with care using Meta documentation and public reporting, but
+        products change and details can become outdated. The site does not guarantee that every
+        page is complete, current, or suitable for a particular situation.
+      </p>
+      <p>
+        Before making a purchase or other important decision, confirm current prices, features,
+        availability, and terms on the applicable product page.
+      </p>
+    </section>
+
+    <section aria-labelledby="links-heading">
+      <h2 id="links-heading">Third-Party Links</h2>
+      <p>
+        The site may link to websites operated by others. Those sites have their own content,
+        availability, and data practices.
+      </p>
+      <p>
+        MetaMuseFAQ does not control third-party sites and is not responsible for their
+        content, operation, or handling of information.
+      </p>
+    </section>
+
+    <section aria-labelledby="trademarks-heading">
+      <h2 id="trademarks-heading">Trademarks and Intellectual Property</h2>
+      <p>
+        Meta, Muse, and related marks belong to their respective owners. MetaMuseFAQ is an
+        independent, non-affiliated informational site, and these names are used only to
+        identify and describe the products discussed.
+      </p>
+      <p>
+        Original text on this site may not be republished in full without permission. Brief
+        quotations with a link to the source page are allowed.
+      </p>
+    </section>
+
+    <section aria-labelledby="acceptable-heading">
+      <h2 id="acceptable-heading">Acceptable Use</h2>
+      <ul>
+        <li>Do not impersonate MetaMuseFAQ or Meta in a misleading way.</li>
+        <li>Do not run automated scraping that interferes with site availability.</li>
+        <li>Do not use the site or its content for unlawful purposes.</li>
+        <li>Do not remove the site's disclaimer and then redistribute its content.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="changes-heading">
+      <h2 id="changes-heading">Changes to These Terms</h2>
+      <p>
+        Updates take effect when this page is revised, and the effective date at the top will be
+        changed at the same time.
+      </p>
+    </section>
+
+    <section aria-labelledby="liability-heading">
+      <h2 id="liability-heading">Limitation of Liability</h2>
+      <p>
+        To the maximum extent allowed by applicable law, MetaMuseFAQ is not liable for losses
+        arising from use of this content.
+      </p>
+      <!-- TODO: jurisdiction, if you want a governing-law clause -->
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>
+        Questions about these terms can be sent to the site's contact address once it is added
+        below.
+      </p>
+      <!-- TODO: contact email -->
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema).replace(/</g, '\\u003c')} />
+
+    <p class="todo-note">
+      See <a href="/about/">About MetaMuseFAQ</a> or
+      <a href="/privacy-policy/">Privacy Policy</a>.
+    </p>
+  </article>
+</Base>
