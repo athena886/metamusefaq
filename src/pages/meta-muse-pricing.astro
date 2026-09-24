@@ -1,0 +1,244 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Is Meta Muse free?',
+    answer:
+      'Yes. Meta Muse has a free tier with a usage limit. Paid plans are available at $20 per month and $100 per month.',
+  },
+  {
+    question: 'How much does Meta Muse cost?',
+    answer:
+      'The listed prices are $0 for the free tier, $20 per month for the lower paid plan, and $100 per month for the higher paid plan.',
+  },
+  {
+    question: 'What is the difference between the $20 and the $100 plan?',
+    answer:
+      'The verified details for this page list the prices but do not establish the feature or usage differences between the two paid plans. Confirm those differences in the current plan details for your account before upgrading.',
+  },
+  {
+    question: 'Do I need to pay to try Meta Muse?',
+    answer:
+      'No. The free tier provides a limited way to evaluate the agent before choosing a paid plan. Meta says users who reach the free limit can upgrade or wait for it to refresh.',
+  },
+  {
+    question: 'Can I cancel or change my plan?',
+    answer:
+      'Cancellation and plan-change terms are not established in the verified details for this page. Review the current payment and subscription terms before you subscribe.',
+  },
+];
+
+const relatedLinks = [
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'The main guide to the agent, its capabilities, cost, setup, and privacy questions.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'A setup walkthrough covering the app, plans, Google services, and first tasks.',
+  },
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'How the personal AI agent works and why it differs from a chatbot.',
+  },
+  {
+    label: 'Meta Muse review',
+    href: '/meta-muse-review/',
+    description: 'An early assessment of execution value, limitations, and trust concerns.',
+  },
+];
+---
+
+<Base
+  title="Meta Muse Pricing: Is It Free? What $20 and $100 Get You"
+  description="Meta Muse has a free tier plus $20/month and $100/month plans. Here's what each tier includes, and how to judge whether it is worth paying for right now."
+  canonicalPath="/meta-muse-pricing/"
+  pageType="article"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Meta Muse Pricing' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Pricing guide</p>
+    <h1>Meta Muse Pricing</h1>
+    <p class="lede">
+      Meta Muse offers a free tier and two monthly paid plans. The main question for most buyers
+      is whether the work it takes off your plate is worth a recurring charge.
+    </p>
+
+    <section aria-labelledby="free-heading">
+      <h2 id="free-heading">Is Meta Muse Free?</h2>
+      <p>
+        Yes. Meta Muse has a free tier with a usage limit, so a paid subscription is not required
+        to get started. The paid options are $20 per month and $100 per month. Meta says users who
+        reach the free limit can upgrade or wait for it to refresh.
+      </p>
+      <p>
+        The price alone does not show what each tier can do. The verified details used for this
+        page establish the three price points but do not establish task allowances, feature
+        differences, or the conditions attached to each plan.
+        <!-- TODO: verify paid-plan allowances, feature differences, and plan conditions. -->
+      </p>
+    </section>
+
+    <section aria-labelledby="plans-heading">
+      <h2 id="plans-heading">Meta Muse Plans Compared</h2>
+      <p>
+        The table below separates what is known from what still needs confirmation. Use the final
+        column as a checklist for questions to resolve before paying.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <caption>Listed Meta Muse plans and buyer considerations</caption>
+          <thead>
+            <tr>
+              <th scope="col">Plan</th>
+              <th scope="col">Price</th>
+              <th scope="col">Best for</th>
+              <th scope="col">Watch out for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Free</th>
+              <td>$0 listed</td>
+              <td>Trying the agent and handling occasional tasks.</td>
+              <td>
+                Usage is capped, and Meta says the free limit can refresh, freeing you to continue.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Paid tier</th>
+              <td>$20 per month</td>
+              <td>Regular use that fits the lower priced paid plan.</td>
+              <td>
+                Differences from the other plans need confirmation.
+                <!-- TODO: verify $20 plan benefits and limits. -->
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Higher paid tier</th>
+              <td>$100 per month</td>
+              <td>Frequent use as an ongoing task tool.</td>
+              <td>
+                Differences from the lower plans need confirmation.
+                <!-- TODO: verify $100 plan benefits and limits. -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        A plan can be a poor fit even when the monthly price looks reasonable. The value depends
+        on how often you hand off tasks, which websites and services the agent can use, and
+        whether you are comfortable with the access those tasks require.
+      </p>
+    </section>
+
+    <section aria-labelledby="fits-heading">
+      <h2 id="fits-heading">Who Each Plan Fits</h2>
+      <p>
+        Without verified plan allowances, the right choice comes down to expected frequency and
+        the cost of the work you want to avoid. These profiles are based on the listed prices and
+        capabilities rather than undisclosed limits.
+      </p>
+
+      <h3>Free</h3>
+      <p>
+        The free tier fits someone who wants to find out whether Meta Muse can handle their kind
+        of task. It is also suited to occasional use, such as sending an email or checking an
+        online order. Usage is capped, but Meta says the free limit can refresh. Because there is
+        no monthly charge, it is the safer starting point when the value is still uncertain.
+      </p>
+
+      <h3>$20 per month</h3>
+      <p>
+        The $20 plan is a reasonable candidate for someone who expects regular use throughout the
+        month. It may fit a person who assigns several web-based tasks and wants a paid option
+        without moving to the highest listed price. The verified details do not show which
+        features or allowances change at this tier. Compare the current plan terms for your
+        account before assuming that it covers every task handled by the $100 option.
+      </p>
+
+      <h3>$100 per month</h3>
+      <p>
+        The $100 plan is aimed at people who expect Meta Muse to become an ongoing task tool. Its
+        higher monthly cost makes more sense when the agent handles repeated work that would
+        otherwise take meaningful time. It does not make sense merely because it is the more
+        expensive option. The feature and usage differences between this plan and the lower tiers
+        still need verification.
+      </p>
+    </section>
+
+    <section aria-labelledby="check-heading">
+      <h2 id="check-heading">What to Check Before You Pay</h2>
+      <p>
+        A subscription decision should start with availability and account terms. Work through
+        these checks before entering payment information.
+      </p>
+      <ul>
+        <li>
+          <strong>Regional availability:</strong> the initial release is in the United States.
+          Availability in other countries is not established here.
+          <!-- TODO: verify supported countries and regional restrictions. -->
+        </li>
+        <li>
+          <strong>Payment method:</strong> confirm which payment methods your account accepts and
+          how the recurring charge will appear.
+          <!-- TODO: verify payment methods and billing details. -->
+        </li>
+        <li>
+          <strong>Cancellation and plan changes:</strong> review the current terms before
+          subscribing so you understand how to stop or change the plan.
+          <!-- TODO: verify cancellation, downgrade, and upgrade terms. -->
+        </li>
+        <li>
+          <strong>Free versus paid features:</strong> identify the exact feature and usage
+          differences for your account instead of assuming a paid tier includes every capability.
+          <!-- TODO: verify feature and allowance differences across tiers. -->
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="worth-heading">
+      <h2 id="worth-heading">How to Decide If It's Worth It</h2>
+      <p>
+        There is no universal break-even point because the value depends on the work you assign
+        and the access it requires. Use these three questions to make the decision concrete.
+      </p>
+
+      <h3>How often would you use it each week?</h3>
+      <p>
+        Occasional use may fit within the free tier's usage limit. Regular use makes a paid plan
+        easier to justify, although the available details do not specify a task threshold.
+        Estimate your use before choosing between $20 and $100.
+      </p>
+
+      <h3>Does it save minutes or hours?</h3>
+      <p>
+        A task that consumes a few minutes has less value than one that repeatedly takes an hour.
+        List the work you would hand off, then compare the monthly price with the time and effort
+        you expect to recover.
+      </p>
+
+      <h3>How sensitive are the services you would connect?</h3>
+      <p>
+        Gmail and Google Calendar can contain personal or business information. The more sensitive
+        the account, the more carefully you should judge whether the convenience is acceptable.
+        Our <a href="/meta-muse-review/">Meta Muse review</a> covers the privacy reporting and
+        trust questions in more detail.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} title="Frequently Asked Questions" />
+
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqItems = [
+  {
+    question: 'What do I need before setting up Meta Muse?',
+    answer:
+      'You need a Meta account, an iOS or Android phone or the web version, and a Google account if you plan to connect Gmail or Google Calendar. The initial release is in the United States.',
+  },
+  {
+    question: 'Do I have to pay to use Meta Muse?',
+    answer:
+      'No. Meta Muse has a free tier with a usage limit. Paid plans are priced at $20 per month and $100 per month if you need a paid option.',
+  },
+  {
+    question: 'Can Meta Muse access my email and calendar?',
+    answer:
+      'Meta Muse can connect to Gmail and Google Calendar. When connected, it can use email and calendar information to carry out tasks you assign. Connections are optional, so grant access only when a task requires it.',
+  },
+  {
+    question: 'What can Meta Muse not do?',
+    answer:
+      'Meta Muse runs in a separate cloud virtual machine, so it does not operate local apps on your phone or computer. Its available actions also depend on the websites and services you connect and allow it to use, and the initial release is limited to the United States.',
+  },
+  {
+    question: 'Where does Meta Muse run my tasks?',
+    answer:
+      'Tasks run in Muse Secure VM, an independent cloud virtual machine with enough storage, CPU, and memory for real work. It includes its own browser and is isolated from your local computer.',
+  },
+];
+
+const relatedLinks = [
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'A concise overview of the agent, its cost, setup, and main privacy questions.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'The free tier and the $20 and $100 monthly plan options.',
+  },
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'How the cloud-based agent differs from an ordinary chatbot.',
+  },
+  {
+    label: 'Meta Muse review',
+    href: '/meta-muse-review/',
+    description: 'An early assessment of execution, limitations, and trust concerns.',
+  },
+];
+---
+
+<Base
+  title="How to Use Meta Muse: Step-by-Step Setup Guide"
+  description="A step-by-step guide to setting up Meta Muse for U.S. users: install the app, pick a plan, connect Gmail and Calendar, and the first five tasks worth trying."
+  canonicalPath="/how-to-use-meta-muse/"
+  pageType="article"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'How to Use Meta Muse' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Setup guide</p>
+    <h1>How to Use Meta Muse</h1>
+    <p class="lede">
+      Meta Muse is designed to work through online tasks in a separate cloud environment. This
+      guide covers the account, device, and service access needed before you begin.
+    </p>
+
+    <section aria-labelledby="requirements-heading">
+      <h2 id="requirements-heading">What You Need Before You Start</h2>
+      <p>
+        Setup is built around a Meta account and a way to reach the product. Meta Muse has its own
+        iOS and Android apps and a web version, separate from Meta AI. If your tasks involve email
+        or scheduling, you can also connect Google services.
+      </p>
+      <ul>
+        <li>A Meta account for signing in.</li>
+        <li>An iOS or Android phone, or access to the web version.</li>
+        <li>A Google account if you want to connect Gmail or Google Calendar.</li>
+      </ul>
+      <p>
+        The initial release is in the United States. Information about availability in other
+        countries has not been established in the verified product details for this page.
+      </p>
+    </section>
+
+    <section aria-labelledby="steps-heading">
+      <h2 id="steps-heading">Five Setup Steps</h2>
+      <p>
+        The setup sequence starts with access and ends with a clear understanding of where tasks
+        run. You can connect services later, so the first session does not need every possible
+        permission.
+      </p>
+
+      <ol class="page-steps">
+        <li>
+          <h3>Install the App and Sign In</h3>
+          <p>
+            Download the separate Meta Muse app for iOS or Android, or open the web version. Sign
+            in with your Meta account after the app or page loads.
+          </p>
+          <ol>
+            <li>Install the app or open the web product.</li>
+            <li>Sign in with your existing Meta account.</li>
+            <li>Complete any account prompts shown during the first session.</li>
+          </ol>
+          <p>
+            Meta Muse is not the same product as Meta AI. Confirm that you are opening the correct
+            app or web address before you continue.
+          </p>
+        </li>
+
+        <li>
+          <h3>Decide Between the Free Tier and a Paid Plan</h3>
+          <p>
+            Meta Muse has a free tier with a usage limit and paid plans at $20 per month and
+            $100 per month. Meta says users who reach the free limit can upgrade or wait for it to
+            refresh. Start with the free tier when you are still deciding whether the agent can
+            complete the kinds of tasks you have in mind.
+          </p>
+          <p>
+            The available facts do not specify plan-by-plan limits or feature differences.
+            <!-- TODO: verify paid-plan feature and allowance differences. -->
+            Compare the current terms on our <a href="/meta-muse-pricing/">Meta Muse pricing</a>
+            page before you choose a paid option.
+          </p>
+        </li>
+
+        <li>
+          <h3>Connect Gmail and Google Calendar</h3>
+          <p>
+            Meta Muse can connect to Gmail and Google Calendar. A connection lets the agent use
+            email and calendar information when that access is necessary for an assigned task.
+          </p>
+          <p>
+            This is also the step with the widest data access. Review the permissions requested
+            and connect only the account you are willing to expose. Our
+            <a href="/meta-muse-review/">Meta Muse review</a> explains why privacy is the main
+            concern raised in current reporting.
+          </p>
+        </li>
+
+        <li>
+          <h3>Understand Where It Runs</h3>
+          <p>
+            Meta Muse runs in Muse Secure VM, a separate cloud virtual machine with enough
+            storage, CPU, and memory for real work. It includes its own browser, and the environment
+            is isolated from your local computer.
+          </p>
+          <p>
+            That isolation means web tasks run away from your own device. It does not remove the
+            need to review which data the agent can access through connected services.
+          </p>
+        </li>
+
+        <li>
+          <h3>Try a Small Set of First Tasks</h3>
+          <p>
+            Begin with tasks that have a clear result and a limited scope. Give Meta Muse enough
+            detail to understand the target, any constraints, and what a finished task should look
+            like.
+          </p>
+          <ol>
+            <li>
+              <strong>Research a webpage:</strong> Ask it to open a specific page and collect the
+              details you need, then check the result against the source.
+            </li>
+            <li>
+              <strong>Fill out a form:</strong> Supply the exact information for each field and ask
+              it to complete the form on a specified website.
+            </li>
+            <li>
+              <strong>Place a food order:</strong> Point it to a restaurant page with the items,
+              quantities, and order details you want, then inspect the final order.
+            </li>
+            <li>
+              <strong>Send an email:</strong> Connect Gmail and give it the recipient, subject, and
+              message requirements for the email you want sent.
+            </li>
+            <li>
+              <strong>Align upcoming commitments:</strong> Ask it to check calendar events and
+              relevant email, then create a message that summarizes the schedule.
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="limits-heading">
+      <h2 id="limits-heading">What Meta Muse Cannot Do</h2>
+      <p>
+        The product's operating model sets several practical boundaries. These limits shape which
+        tasks are a good fit for the cloud-based agent.
+      </p>
+      <ul>
+        <li>
+          <strong>It does not operate local apps on your device.</strong> Tasks run in a remote
+          virtual machine rather than on your phone or computer.
+        </li>
+        <li>
+          <strong>It cannot work with services you have not connected.</strong> The listed
+          integrations are Gmail and Google Calendar, and access to a website still depends on
+          that site's own requirements.
+        </li>
+        <li>
+          <strong>It is not a replacement for review.</strong> A completed action still needs to
+          be checked, especially when a purchase, email, or form submission has consequences.
+        </li>
+        <li>
+          <strong>It is initially limited to the United States.</strong> The verified details do
+          not establish availability in any other region.
+        </li>
+      </ul>
+      <!-- TODO: verify supported task limits, exclusions, and platform restrictions. -->
+    </section>
+
+    <section aria-labelledby="troubleshooting-heading">
+      <h2 id="troubleshooting-heading">Troubleshooting</h2>
+      <p>
+        The questions below cover the setup points that affect the largest number of first-time
+        users: account access, payment, connected services, task limits, and the execution
+        environment.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

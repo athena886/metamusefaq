@@ -1,0 +1,222 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqItems = [
+  {
+    question: 'What is Meta Muse in one sentence?',
+    answer:
+      'Meta Muse is a personal AI agent from Meta, released on September 8, 2026, that carries out online tasks for a user instead of only returning a written answer.',
+  },
+  {
+    question: 'How is Meta Muse different from a chatbot?',
+    answer:
+      'A chatbot primarily returns text that the user must act on. Meta Muse is designed to perform tasks such as browsing pages, filling forms, placing orders, or sending email, and it runs in a separate cloud virtual machine.',
+  },
+  {
+    question: 'Does Meta Muse run on my phone or in the cloud?',
+    answer:
+      "Meta Muse runs in Muse Secure VM, an independent cloud virtual machine with enough storage, CPU, and memory for real work. It includes its own browser and is isolated from the user's local computer, although the iOS and Android apps provide access to it.",
+  },
+  {
+    question: 'Is Meta Muse part of Meta AI?',
+    answer:
+      'No. Meta Muse is available through separate iOS and Android apps and a separate web product. It is not the same client as Meta AI.',
+  },
+  {
+    question: 'When did Meta Muse launch?',
+    answer:
+      'Meta released Meta Muse on September 8, 2026. The initial release is in the United States.',
+  },
+];
+
+const relatedLinks = [
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'A practical overview of capabilities, pricing, setup, and privacy questions.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'Setup steps for the app, plan selection, connected services, and first tasks.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'How the free tier and the $20 and $100 monthly options compare.',
+  },
+  {
+    label: 'Meta Muse review',
+    href: '/meta-muse-review/',
+    description: 'An early assessment of where the agent works well and where it is limited.',
+  },
+];
+---
+
+<Base
+  title="What Is Meta Muse? Meta's Personal AI Agent Explained"
+  description="Meta Muse is a personal AI agent released on September 8, 2026. It runs on its own cloud computer and does tasks for you instead of just answering questions."
+  canonicalPath="/what-is-meta-muse/"
+  pageType="article"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'What Is Meta Muse?' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Product guide</p>
+    <h1>What Is Meta Muse?</h1>
+    <p class="lede">
+      Meta Muse is a personal AI agent built for ordinary online tasks. Its defining idea is
+      action: the product is meant to complete work, not only describe how to do it.
+    </p>
+
+    <section aria-labelledby="definition-heading">
+      <h2 id="definition-heading">Meta Muse in One Sentence</h2>
+      <p>
+        Meta Muse is a personal AI agent from Meta, released on September 8, 2026, that carries
+        out online tasks for a user instead of only answering questions. It can browse webpages,
+        fill forms, place orders, send email, and connect to Gmail and Google Calendar. The initial
+        release is in the United States.
+      </p>
+    </section>
+
+    <section aria-labelledby="difference-heading">
+      <h2 id="difference-heading">How It Differs From a Chatbot</h2>
+      <p>
+        The simplest distinction is the final output. A chatbot usually gives the user words to
+        work with, while Meta Muse is designed to produce an action or a finished result. The
+        table below separates that difference from the environment where each kind of tool works.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <caption>Chatbot compared with Meta Muse</caption>
+          <thead>
+            <tr>
+              <th scope="col">Question</th>
+              <th scope="col">Chatbot</th>
+              <th scope="col">Meta Muse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">What it returns</th>
+              <td>A written answer or explanation.</td>
+              <td>The result of a task it performed.</td>
+            </tr>
+            <tr>
+              <th scope="row">Where it runs</th>
+              <td>Inside a conversation interface.</td>
+              <td>In an independent cloud virtual machine.</td>
+            </tr>
+            <tr>
+              <th scope="row">What you do after</th>
+              <td>Read the response and carry out the next step yourself.</td>
+              <td>Review the action, order, email, or other result.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        In this context, an agent is software that can take a goal and perform steps toward it.
+        That does not make it independent in the human sense: it still needs instructions,
+        access, and a website or service that permits the action. The practical shift is that
+        more of the work moves from the user's hands to the agent's browser.
+      </p>
+    </section>
+
+    <section aria-labelledby="runs-heading">
+      <h2 id="runs-heading">Where Meta Muse Runs</h2>
+      <p>
+        Meta Muse runs in a separate cloud virtual machine called Muse Secure VM. Meta says the
+        environment provides enough storage, CPU, and memory for real work, along with its own
+        browser. It is isolated from the user's local computer.
+      </p>
+      <p>
+        That setup means the agent is not operating inside your phone or personal desktop. The
+        remote browser is where webpages load and actions occur, while the iOS app, Android app,
+        or web client gives you a way to assign tasks and review the outcome. Isolation reduces
+        direct exposure of the local device, but it does not resolve every privacy issue.
+      </p>
+      <p>
+        Data access remains part of the picture. Meta Muse can connect to Gmail and Google
+        Calendar, and media reporting says it has read user private messages. That is why the
+        <a href="/meta-muse-review/">Meta Muse privacy discussion</a> matters even though tasks do
+        not run locally.
+      </p>
+    </section>
+
+    <section aria-labelledby="meta-ai-heading">
+      <h2 id="meta-ai-heading">How Meta Muse Relates to Meta AI</h2>
+      <p>
+        Meta Muse and Meta AI have separate entry points. Meta Muse is available as an independent
+        iOS app, Android app, and web product rather than as a mode inside Meta AI. Its model is
+        Muse Spark 1.3, and the related Muse product line also includes Muse Image and Muse Video.
+      </p>
+      <p>
+        The distinction is practical for anyone comparing tools: opening Meta AI does not mean
+        you are using Meta Muse, and the two products should be evaluated separately. This site
+        covers the Muse agent, its pricing, setup process, cloud environment, and current trust
+        concerns.
+      </p>
+    </section>
+
+    <section aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">Timeline</h2>
+      <p>
+        The verified timeline currently contains the product launch. Later milestones should not
+        be inferred until they are documented.
+        <!-- TODO: verify later release dates, version milestones, and regional expansion. -->
+      </p>
+      <div class="table-scroll">
+        <table>
+          <caption>Verified Meta Muse timeline</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Event</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><time datetime="2026-09-08">September 8, 2026</time></th>
+              <td>Meta releases Meta Muse, with the initial release in the United States.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="fit-heading">
+      <h2 id="fit-heading">Who Should Try It, Who Should Wait</h2>
+      <p>
+        Meta Muse is most relevant to people who want an online task carried out rather than
+        another conversational answer. The decision also depends on location and how much
+        personal data you are prepared to connect.
+      </p>
+
+      <h3>Who Should Try It</h3>
+      <p>
+        It may be a good fit if you are in the United States and regularly deal with web-based
+        tasks. You may also be a reasonable early user if you are willing to connect Gmail or
+        Google Calendar for work that requires email and schedule access. Starting with the free
+        tier can show whether the workflow matches your needs before you pay.
+      </p>
+
+      <h3>Who Should Wait</h3>
+      <p>
+        Waiting is sensible if you are outside the initial United States release, need only
+        text-based answers, or are uncomfortable connecting email and calendar data. The reported
+        use of private messages makes privacy a central question rather than a minor setting.
+        Anyone with a sensitive account should review the access requirements before handing over
+        a task.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} title="Frequently Asked Questions" />
+
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

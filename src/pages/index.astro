@@ -1,0 +1,215 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqItems = [
+  {
+    question: 'What is Meta Muse?',
+    answer:
+      'Meta Muse is a personal AI agent from Meta, released on September 8, 2026. It is designed to carry out tasks on web pages instead of only answering questions.',
+  },
+  {
+    question: 'Is Meta Muse free?',
+    answer:
+      'Yes. Meta Muse has a free tier with a usage limit, along with paid plans priced at $20 per month and $100 per month. Our Meta Muse pricing guide covers the available tier information.',
+  },
+  {
+    question: 'How do I use Meta Muse?',
+    answer:
+      'Install the Meta Muse app and sign in, choose the free tier or a paid plan, and connect Gmail or Google Calendar if your tasks require them. Our how to use Meta Muse guide walks through the setup steps.',
+  },
+  {
+    question: 'Is Meta Muse the same as Meta AI?',
+    answer:
+      'No. Meta Muse is available as an app for iOS and Android and as a web product, separate from Meta AI.',
+  },
+  {
+    question: 'Is Meta Muse available in my country?',
+    answer:
+      'The initial release is in the United States. Availability outside the United States is not covered by the verified details on this page.',
+  },
+];
+
+const relatedLinks = [
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'A plain-language explanation of the product, its cloud computer, and how it differs from a chatbot.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'Setup steps for the app, plan selection, and Google service connections.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'What the free tier, the $20 plan, and the $100 plan mean for buyers.',
+  },
+  {
+    label: 'Meta Muse review',
+    href: '/meta-muse-review/',
+    description: 'An early assessment focused on execution, privacy, and who should wait.',
+  },
+];
+---
+
+<Base
+  title="Meta Muse: What It Is, What It Costs, How to Use It"
+  description="Meta Muse is Meta's personal AI agent that browses, books, and buys for you. Here's what it does, what the $20 and $100 plans include, and how to get started."
+  canonicalPath="/"
+  pageType="website"
+  breadcrumbs={[{ label: 'Home', href: '/' }]}
+>
+  <article class="content">
+    <p class="eyebrow">Independent guide</p>
+    <h1>Meta Muse Explained</h1>
+
+    <section aria-labelledby="definition-heading">
+      <h2 id="definition-heading">What Meta Muse Is</h2>
+      <p>
+        Meta Muse is a personal AI agent from Meta, released on September 8, 2026. It is built
+        for everyday consumers and works on web-based tasks rather than stopping at a written
+        answer. The practical goal is to hand over an outcome, then review the action it took or
+        the result it produced.
+      </p>
+      <p>
+        That distinction matters because a conversational tool usually returns instructions you
+        carry out yourself. Meta Muse is positioned as an agent that can act on your behalf in a
+        separate cloud environment. It can connect to some services and use a browser to work
+        through a task, while keeping that work away from your own computer.
+      </p>
+    </section>
+
+    <section aria-labelledby="capabilities-heading">
+      <h2 id="capabilities-heading">What Meta Muse Can Do</h2>
+      <p>
+        The currently listed capabilities center on routine online work. Each task still depends
+        on access to the relevant website or service and on the details you provide.
+      </p>
+      <ul>
+        <li>
+          <strong>Browse webpages:</strong> Open pages, gather information, and move through a
+          site while working toward a requested result.
+        </li>
+        <li>
+          <strong>Fill in forms:</strong> Enter details into fields on a website when a form is
+          part of the task.
+        </li>
+        <li>
+          <strong>Buy products:</strong> Complete a purchase on a shopping website when given the
+          product and purchasing details.
+        </li>
+        <li>
+          <strong>Order food:</strong> Place an order through a restaurant page rather than only
+          returning dining recommendations.
+        </li>
+        <li>
+          <strong>Send email:</strong> Write and send messages through a connected Gmail account.
+        </li>
+        <li>
+          <strong>Use Gmail and Google Calendar:</strong> Read email and check calendar
+          information that is needed to complete a task.
+        </li>
+      </ul>
+      <p>
+        These abilities describe the kinds of actions Meta says the product can take. They do not
+        mean that every site or task will work without limits. A task can still fail when a page
+        changes, a service restricts access, or the agent does not have enough information.
+      </p>
+    </section>
+
+    <section aria-labelledby="cost-heading">
+      <h2 id="cost-heading">How Much Meta Muse Costs</h2>
+      <p>
+        Meta Muse has a free tier with a usage limit and two paid options. Meta says users who
+        reach the free limit can upgrade or wait for the limit to refresh. The available details do
+        not identify feature or allowance differences among the paid tiers.
+        <!-- TODO: verify paid-plan feature and allowance differences. -->
+      </p>
+      <div class="table-scroll">
+        <table>
+          <caption>Meta Muse plans and their general fit</caption>
+          <thead>
+            <tr>
+              <th scope="col">Plan</th>
+              <th scope="col">Price</th>
+              <th scope="col">Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Free</th>
+              <td>$0 listed</td>
+              <td>Testing the agent and handling occasional tasks.</td>
+            </tr>
+            <tr>
+              <th scope="row">Paid tier</th>
+              <td>$20 per month</td>
+              <td>Regular use that fits the lower paid tier.</td>
+            </tr>
+            <tr>
+              <th scope="row">Higher paid tier</th>
+              <td>$100 per month</td>
+              <td>Frequent use as an ongoing task tool.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        See the full breakdown on our <a href="/meta-muse-pricing/">meta muse pricing</a> page.
+        Before paying, confirm the current plan details and service terms for your account.
+      </p>
+    </section>
+
+    <section aria-labelledby="start-heading">
+      <h2 id="start-heading">How to Get Started</h2>
+      <p>
+        Setup begins with an account and a device. Meta Muse is available through separate iOS
+        and Android apps and a web product, outside the Meta AI app experience.
+      </p>
+      <ol>
+        <li>
+          <strong>Download the app and sign in.</strong> Choose the iOS or Android app, or use the
+          web version, then sign in with your account.
+        </li>
+        <li>
+          <strong>Choose the free tier or a paid plan.</strong> Start with the option that matches
+          how often you expect to hand off online tasks.
+        </li>
+        <li>
+          <strong>Connect Gmail or Google Calendar.</strong> Add only the services a task needs,
+          because those connections determine what information the agent can use.
+        </li>
+      </ol>
+      <p>
+        For a fuller walkthrough, read our <a href="/how-to-use-meta-muse/">how to use Meta Muse</a> guide.
+        The initial release is in the United States.
+      </p>
+    </section>
+
+    <section aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Privacy and Trust</h2>
+      <p>
+        Media reports say Meta Muse has read user private messages, and privacy is the largest
+        issue in the current discussion. That reported behavior deserves attention because an
+        agent may need access to personal communications and connected services to complete a
+        task. The concern is not limited to where the work happens; it also includes what data the
+        system can see, use, or retain.
+      </p>
+      <p>
+        Meta Muse runs in a separate cloud virtual machine called Muse Secure VM. The listed
+        environment provides the storage, CPU, and memory needed for real work, and it includes
+        its own browser with isolation from the user's local computer. That isolation can reduce direct exposure
+        of your device, but it does not settle the privacy questions raised by the product's data
+        access. Read our <a href="/meta-muse-review/">Meta Muse review</a> for a closer look at
+        those tradeoffs.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

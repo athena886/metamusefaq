@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Is Meta Muse good?',
+    answer:
+      'Meta Muse is a strong fit for people who want routine web tasks carried out, not another tool that only supplies text. It is less suitable for anyone outside the initial United States release or anyone who is uncomfortable connecting sensitive services.',
+  },
+  {
+    question: 'Is Meta Muse worth $20 a month?',
+    answer:
+      'It can be worth $20 per month when the agent handles repeated web-based work throughout the month. The free tier is the better starting point for occasional use or when you are still evaluating whether the workflow fits.',
+  },
+  {
+    question: 'What are the main problems with Meta Muse?',
+    answer:
+      'Privacy is the largest concern because media reports say Meta Muse has read user private messages. Other practical limits include the initial United States release, dependence on connected services and accessible websites, and unverified plan differences.',
+  },
+  {
+    question: 'Is Meta Muse safe to use?',
+    answer:
+      'There is no blanket yes or no. Meta Muse runs in an independent cloud virtual machine that is isolated from the local computer, but connected services can still expose data, and the reported access to private messages remains a serious concern. Start with the free tier and limit access to accounts that carry low risk.',
+  },
+  {
+    question: 'Should I wait before signing up?',
+    answer:
+      'Waiting makes sense if you are outside the United States, have sensitive email or calendar accounts, or only need written answers. If you are in the initial release region and have a repetitive web task that is safe to test, the free tier provides a limited way to evaluate the fit.',
+  },
+];
+
+const relatedLinks = [
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'The main overview of capabilities, pricing, setup, and privacy questions.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'A setup guide for the app, plan choice, Google connections, and initial tasks.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'The free tier and the listed $20 and $100 monthly options.',
+  },
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'A plain-language explanation of the agent and its cloud environment.',
+  },
+];
+---
+
+<Base
+  title="Meta Muse Review: An Early Assessment (September 2026)"
+  description="An early assessment of Meta Muse based on public reporting and Meta's documentation: where it's strong, where it's limited, and who should wait for now."
+  canonicalPath="/meta-muse-review/"
+  pageType="article"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Meta Muse Review' },
+  ]}
+>
+  <article class="content">
+    <p class="eyebrow">Early assessment</p>
+    <h1>Meta Muse Review</h1>
+    <p class="lede">
+      Meta Muse is an early consumer AI agent that moves part of online work into a separate
+      cloud browser. This assessment focuses on what that shift makes possible and what it asks
+      users to trust.
+    </p>
+
+    <section aria-labelledby="short-version-heading">
+      <h2 id="short-version-heading">The Short Version</h2>
+      <p>
+        Meta Muse is built for repetitive execution rather than knowledge answers. It can browse
+        webpages, fill forms, make purchases, place food orders, send email, and connect to Gmail
+        and Google Calendar. Those abilities could remove meaningful routine work for a frequent
+        user, but they also increase the amount of personal data involved. The free tier is enough
+        to test whether the workflow fits, and the two paid options cost $20 and $100 per month.
+        Privacy should be settled before cost: start with a less sensitive account and connect
+        only the services a task requires.
+      </p>
+    </section>
+
+    <section aria-labelledby="works-heading">
+      <h2 id="works-heading">What Works Well</h2>
+      <ul>
+        <li>
+          <strong>It aims at execution.</strong> Meta Muse is designed to complete actions such as
+          filling a form or sending email rather than stopping at instructions.
+        </li>
+        <li>
+          <strong>Task work happens off the local device.</strong> Muse Secure VM is an
+          independent cloud virtual machine with its own browser, so web tasks do not run inside
+          the user's phone or computer.
+        </li>
+        <li>
+          <strong>Gmail and Google Calendar can supply practical context.</strong> Those
+          connections allow the agent to use email and schedule information when a task requires
+          them.
+        </li>
+        <li>
+          <strong>The task list covers common online chores.</strong> Browsing, forms, purchases,
+          food orders, and email are concrete use cases rather than abstract promises.
+        </li>
+        <li>
+          <strong>There is a free tier and two paid choices.</strong> A buyer can evaluate the
+          product before deciding between $20 per month and $100 per month.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="shortfalls-heading">
+      <h2 id="shortfalls-heading">Where It Falls Short</h2>
+      <ul>
+        <li>
+          <strong>Privacy is unresolved.</strong> Media reports say the product has read user
+          private messages, and that is the largest issue in the current discussion.
+        </li>
+        <li>
+          <strong>The initial release is limited to the United States.</strong> Availability in
+          other countries is not established in the verified details.
+          <!-- TODO: verify regional expansion and supported countries. -->
+        </li>
+        <li>
+          <strong>Its usefulness depends on access.</strong> The available integrations are Gmail
+          and Google Calendar, and each task also depends on the website or service involved.
+        </li>
+        <li>
+          <strong>The paid tiers are not fully differentiated.</strong> The listed prices do not
+          establish the feature or usage differences between $20 and $100.
+          <!-- TODO: verify plan allowances and feature differences. -->
+        </li>
+        <li>
+          <strong>The public track record is short.</strong> The product was released on September
+          8, 2026, so buyers have limited evidence about long-term performance.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading">How It Compares to the Assistants You Already Use</h2>
+      <p>
+        The main difference is the kind of help returned. Familiar AI assistants are usually
+        conversation-first: they explain, draft, summarize, or suggest, and the user performs the
+        next action. Meta Muse is positioned as execution-first: it can enter information on a
+        site, complete an order, send a message, or use connected email and calendar data. That
+        makes it complementary to a knowledge assistant rather than a direct replacement. The
+        useful question is not which one writes a better answer, but whether you want an answer or
+        an action.
+      </p>
+    </section>
+
+    <section aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Privacy and Trust: What the Reporting Says</h2>
+      <p>
+        Media reports say Meta Muse has read user private messages, making privacy the central
+        controversy around the product. For an agent, access is not an abstract concern: email and
+        calendar content can contain personal, financial, medical, or workplace information. A
+        completed task may therefore require more data exposure than a request for an answer.
+      </p>
+      <p>
+        The Muse Secure VM architecture separates the agent's browser from the user's local
+        machine. It runs in a cloud virtual machine with enough storage, CPU, and memory for real
+        work, and it uses its own browser. That separation reduces direct risk to the local device,
+        but it does not change what connected services can reveal or remove the questions raised
+        by the reporting about private messages.
+      </p>
+      <p>
+        A cautious test is more informative than a broad commitment. Start with the free tier,
+        use a lower-risk Google account, and connect Gmail or Calendar only when the assigned task
+        needs that access. Review the result after each task instead of assuming that every step
+        matched your intent.
+      </p>
+    </section>
+
+    <section aria-labelledby="worth-heading">
+      <h2 id="worth-heading">Is It Worth $20 a Month Right Now?</h2>
+      <p>
+        The $20 plan can be worth paying for when Meta Muse would handle repeated web-based work
+        several times during the month. If the agent saves a meaningful amount of time on tasks
+        that are safe to delegate, the monthly price has a clearer basis. If you are mainly
+        curious, the free tier is enough to test the experience. Compare the listed tiers on our
+        <a href="/meta-muse-pricing/">Meta Muse pricing</a> page before choosing a paid plan.
+      </p>
+    </section>
+
+    <section aria-labelledby="method-heading">
+      <h2 id="method-heading">How We Assessed This</h2>
+      <p>
+        This assessment is based on public reporting and Meta's product documentation. It is not
+        an independent hands-on test, and it does not use a star rating or a numerical score. The
+        product was released in September 2026 and may change quickly. Confirm current prices,
+        features, regional availability, and account terms before making a purchase decision.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} title="Frequently Asked Questions" />
+
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

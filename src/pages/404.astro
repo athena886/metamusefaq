@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const relatedLinks = [
+  {
+    label: 'Meta Muse explained',
+    href: '/',
+    description: 'Start with the main guide to Meta Muse.',
+  },
+  {
+    label: 'what is Meta Muse',
+    href: '/what-is-meta-muse/',
+    description: 'Understand the product and its cloud environment.',
+  },
+  {
+    label: 'how to use Meta Muse',
+    href: '/how-to-use-meta-muse/',
+    description: 'Review the setup steps and first tasks.',
+  },
+  {
+    label: 'Meta Muse pricing',
+    href: '/meta-muse-pricing/',
+    description: 'Compare the free tier and paid plan prices.',
+  },
+];
+---
+
+<Base
+  title="Page Not Found | MetaMuseFAQ"
+  description="The requested page could not be found. Use the links below to continue reading the Meta Muse guides."
+  canonicalPath="/404/"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Page Not Found' },
+  ]}
+  noindex={true}
+>
+  <article class="content">
+    <p class="eyebrow">404 error</p>
+    <h1>Page Not Found</h1>
+    <p class="lede">
+      The address does not match a page on this site. The Meta Muse guides below can point you to
+      the right topic.
+    </p>
+    <RelatedLinks links={relatedLinks} title="Continue reading" />
+  </article>
+</Base>
