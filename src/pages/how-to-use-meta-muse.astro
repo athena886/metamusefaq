@@ -7,22 +7,22 @@ const faqItems = [
   {
     question: 'What do I need before setting up Meta Muse?',
     answer:
-      'You need a Meta account, an iOS or Android phone or the web version, and a Google account if you plan to connect Gmail or Google Calendar. The initial release is in the United States.',
+      'You need a Meta account, an iOS or Android phone or the web version, and a Google account if you plan to connect Gmail or Google Calendar. Muse is in limited testing and is not available in all locations.',
   },
   {
     question: 'Do I have to pay to use Meta Muse?',
     answer:
-      'No. Meta Muse has a free tier with a usage limit. Paid plans are priced at $20 per month and $100 per month if you need a paid option.',
+      'No. Meta Muse has a free tier with a usage limit. Power costs $20/month with 500M Muse tokens/week; Maximum costs $100/month with 3B/week. Additional tokens can also be purchased.',
   },
   {
     question: 'Can Meta Muse access my email and calendar?',
     answer:
-      'Meta Muse can connect to Gmail and Google Calendar. When connected, it can use email and calendar information to carry out tasks you assign. Connections are optional, so grant access only when a task requires it.',
+      'Connectors such as Gmail and Google Calendar are optional. Grant access only when a task needs it, review permission settings, and approve sensitive actions. You can disconnect a service later.',
   },
   {
     question: 'What can Meta Muse not do?',
     answer:
-      'Meta Muse runs in a separate cloud virtual machine, so it does not operate local apps on your phone or computer. Its available actions also depend on the websites and services you connect and allow it to use, and the initial release is limited to the United States.',
+      'The cloud browser runs in a separate virtual machine. Tasks depend on available websites, Connectors, permissions, and account access. Muse is in limited testing and is not globally available; desktop capabilities depend on the client you use.',
   },
   {
     question: 'Where does Meta Muse run my tasks?',
@@ -40,7 +40,7 @@ const relatedLinks = [
   {
     label: 'Meta Muse pricing',
     href: '/meta-muse-pricing/',
-    description: 'The free tier and the $20 and $100 monthly plan options.',
+    description: 'Free, Power ($20/month), and Maximum ($100/month), with weekly allowances.',
   },
   {
     label: 'what is Meta Muse',
@@ -57,7 +57,7 @@ const relatedLinks = [
 
 <Base
   title="How to Use Meta Muse: Step-by-Step Setup Guide"
-  description="A step-by-step guide to setting up Meta Muse for U.S. users: install the app, pick a plan, connect Gmail and Calendar, and the first five tasks worth trying."
+  description="Set up Meta Muse at muse.ai or in the standalone app. Compare Free, Power and Maximum, add Connectors, and approve sensitive actions during limited testing."
   canonicalPath="/how-to-use-meta-muse/"
   pageType="article"
   breadcrumbs={[
@@ -86,8 +86,8 @@ const relatedLinks = [
         <li>A Google account if you want to connect Gmail or Google Calendar.</li>
       </ul>
       <p>
-        The initial release is in the United States. Information about availability in other
-        countries has not been established in the verified product details for this page.
+        Muse and Muse subscriptions are in limited testing and are not available in all locations.
+        Check access for your country and account at <a href="https://muse.ai/">muse.ai</a>.
       </p>
     </section>
 
@@ -103,7 +103,7 @@ const relatedLinks = [
         <li>
           <h3>Install the App and Sign In</h3>
           <p>
-            Download the separate Meta Muse app for iOS or Android, or open the web version. Sign
+            Download the separate Meta Muse app for iOS or Android, or open <a href="https://muse.ai/">muse.ai</a>. Sign
             in with your Meta account after the app or page loads.
           </p>
           <ol>
@@ -120,28 +120,28 @@ const relatedLinks = [
         <li>
           <h3>Decide Between the Free Tier and a Paid Plan</h3>
           <p>
-            Meta Muse has a free tier with a usage limit and paid plans at $20 per month and
-            $100 per month. Meta says users who reach the free limit can upgrade or wait for it to
-            refresh. Start with the free tier when you are still deciding whether the agent can
+            Meta Muse has limited free weekly usage, Power ($20/month, 500M Muse tokens/week),
+            and Maximum ($100/month, 3B/week). If you reach a limit, additional tokens are available;
+            free users can also upgrade or wait for the limit to refresh. Start with the free tier when you are still deciding whether the agent can
             complete the kinds of tasks you have in mind.
           </p>
           <p>
-            The available facts do not specify plan-by-plan limits or feature differences.
-            <!-- TODO: verify paid-plan feature and allowance differences. -->
-            Compare the current terms on our <a href="/meta-muse-pricing/">Meta Muse pricing</a>
-            page before you choose a paid option.
+            Compare the <a href="/meta-muse-pricing/#plans-heading">official plan and weekly-token table</a>
+            before choosing Power or Maximum. Benefits may vary by region and account.
           </p>
         </li>
 
         <li>
-          <h3>Connect Gmail and Google Calendar</h3>
+          <h3>Add Connectors Only When Needed</h3>
           <p>
-            Meta Muse can connect to Gmail and Google Calendar. A connection lets the agent use
-            email and calendar information when that access is necessary for an assigned task.
+            Use Connectors for services such as Gmail and Google Calendar when a task needs them.
+            Review the requested scope; connecting an account does not approve every action.
+            You can change permissions or disconnect a service later.
           </p>
           <p>
-            This is also the step with the widest data access. Review the permissions requested
-            and connect only the account you are willing to expose. Our
+            Review and approve sensitive actions before they happen. Under Meta’s Connector guidelines,
+            sensitive writes require approval each time; other tool permissions can depend on your settings.
+            Grant only the access needed for the task. Our
             <a href="/meta-muse-review/">Meta Muse review</a> explains why privacy is the main
             concern raised in current reporting.
           </p>
@@ -178,11 +178,11 @@ const relatedLinks = [
             </li>
             <li>
               <strong>Place a food order:</strong> Point it to a restaurant page with the items,
-              quantities, and order details you want, then inspect the final order.
+              quantities, and order details you want, then review and approve the purchase before it is placed.
             </li>
             <li>
               <strong>Send an email:</strong> Connect Gmail and give it the recipient, subject, and
-              message requirements for the email you want sent.
+              message requirements, then review the draft and approve sending when prompted.
             </li>
             <li>
               <strong>Align upcoming commitments:</strong> Ask it to check calendar events and
@@ -205,17 +205,16 @@ const relatedLinks = [
           virtual machine rather than on your phone or computer.
         </li>
         <li>
-          <strong>It cannot work with services you have not connected.</strong> The listed
-          integrations are Gmail and Google Calendar, and access to a website still depends on
-          that site's own requirements.
+          <strong>Connected tasks need permission.</strong> Connectors such as Gmail and Google Calendar
+          require account access. Browser tasks also depend on each website’s requirements.
         </li>
         <li>
           <strong>It is not a replacement for review.</strong> A completed action still needs to
           be checked, especially when a purchase, email, or form submission has consequences.
         </li>
         <li>
-          <strong>It is initially limited to the United States.</strong> The verified details do
-          not establish availability in any other region.
+          <strong>It is in limited testing.</strong> Muse and subscriptions are not available everywhere;
+          confirm access in your own account.
         </li>
       </ul>
       <!-- TODO: verify supported task limits, exclusions, and platform restrictions. -->
@@ -228,6 +227,15 @@ const relatedLinks = [
         users: account access, payment, connected services, task limits, and the execution
         environment.
       </p>
+    </section>
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Official Sources</h2>
+      <ul>
+        <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
+        <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
+      </ul>
     </section>
 
     <FAQ items={faqItems} />

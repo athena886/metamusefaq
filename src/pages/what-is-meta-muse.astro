@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'When did Meta Muse launch?',
     answer:
-      'Meta released Meta Muse on September 8, 2026. The initial release is in the United States.',
+      'Meta released Meta Muse on September 8, 2026. Muse and its subscriptions remain in limited testing and are not available everywhere.',
   },
 ];
 
@@ -45,7 +45,7 @@ const relatedLinks = [
   {
     label: 'Meta Muse pricing',
     href: '/meta-muse-pricing/',
-    description: 'How the free tier and the $20 and $100 monthly options compare.',
+    description: 'Compare Free, Power, and Maximum with official weekly token allowances.',
   },
   {
     label: 'Meta Muse review',
@@ -78,8 +78,9 @@ const relatedLinks = [
       <p>
         Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026, that carries
         out online tasks for a user instead of only answering questions. It can browse webpages,
-        fill forms, place orders, send email, and connect to Gmail and Google Calendar. The initial
-        release is in the United States.
+        fill forms, place orders, send email, and use Connectors such as Gmail and Google Calendar.
+        Muse and its subscriptions are in limited testing and are not globally available.
+        Access starts at <a href="https://muse.ai/">muse.ai</a> or the standalone Muse app.
       </p>
     </section>
 
@@ -141,10 +142,11 @@ const relatedLinks = [
         direct exposure of the local device, but it does not resolve every privacy issue.
       </p>
       <p>
-        Data access remains part of the picture. Meta Muse can connect to Gmail and Google
-        Calendar, and media reporting says it has read user private messages. That is why the
-        <a href="/meta-muse-review/">Meta Muse privacy discussion</a> matters even though tasks do
-        not run locally.
+        Connectors are optional and should be authorized only as needed. Meta says you can change
+        access, disconnect services, and opt out of interactions being used for model training.
+        Sensitive Connector writes need approval each time. Media allegations about message access
+        are discussed separately from these official controls in the
+        <a href="/meta-muse-review/#privacy-heading">Meta Muse privacy discussion</a>.
       </p>
     </section>
 
@@ -199,7 +201,7 @@ const relatedLinks = [
 
       <h3>Who Should Try It</h3>
       <p>
-        It may be a good fit if you are in the United States and regularly deal with web-based
+        It may be a good fit if Muse is available to your account and you regularly deal with web-based
         tasks. You may also be a reasonable early user if you are willing to connect Gmail or
         Google Calendar for work that requires email and schedule access. Starting with the free
         tier can show whether the workflow matches your needs before you pay.
@@ -207,12 +209,21 @@ const relatedLinks = [
 
       <h3>Who Should Wait</h3>
       <p>
-        Waiting is sensible if you are outside the initial United States release, need only
-        text-based answers, or are uncomfortable connecting email and calendar data. The reported
-        use of private messages makes privacy a central question rather than a minor setting.
+        Waiting is sensible if Muse is unavailable in your location, you need only text-based answers,
+        or you are uncomfortable connecting email and calendar data. Review both the reported
+        privacy allegations and Meta’s published explanation of user controls.
         Anyone with a sensitive account should review the access requirements before handing over
         a task.
       </p>
+    </section>
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Official Sources</h2>
+      <ul>
+        <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
+        <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
+      </ul>
     </section>
 
     <FAQ items={faqItems} title="Frequently Asked Questions" />

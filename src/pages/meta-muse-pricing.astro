@@ -2,247 +2,70 @@
 import Base from '../layouts/Base.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-
-// Verified against the Meta Muse FAQ: the free tier has a usage limit, and users can upgrade or wait for the limit to refresh.
 const faqItems = [
-  {
-    question: 'Is Meta Muse free?',
-    answer:
-      'Yes. Meta Muse has a free tier with a usage limit. Paid plans are available at $20 per month and $100 per month.',
-  },
-  {
-    question: 'How much does Meta Muse cost?',
-    answer:
-      'The listed prices are $0 for the free tier, $20 per month for the lower paid plan, and $100 per month for the higher paid plan.',
-  },
-  {
-    question: 'What is the difference between the $20 and the $100 plan?',
-    answer:
-      'The verified details for this page list the prices but do not establish the feature or usage differences between the two paid plans. Confirm those differences in the current plan details for your account before upgrading.',
-  },
-  {
-    question: 'Do I need to pay to try Meta Muse?',
-    answer:
-      'No. The free tier provides a limited way to evaluate the agent before choosing a paid plan. Meta says users who reach the free limit can upgrade or wait for it to refresh.',
-  },
-  {
-    question: 'Can I cancel or change my plan?',
-    answer:
-      'Cancellation and plan-change terms are not established in the verified details for this page. Review the current payment and subscription terms before you subscribe.',
-  },
+  { question: 'Is Meta Muse free?', answer: 'Yes, with a weekly usage limit. Paid plans are Power ($20/month) and Maximum ($100/month).' },
+  { question: 'What is the difference between $20 and $100?', answer: 'Power includes 500M Muse tokens per week. Maximum includes 3B Muse tokens per week.' },
+  { question: 'Where do I subscribe?', answer: 'In the Muse mobile app or at muse.ai, signed in with a Meta account. Muse and its subscriptions are in limited testing and are not available everywhere.' },
+  { question: 'Can I buy more tokens without upgrading?', answer: 'Yes. Meta documents one-time purchases of additional Muse tokens after you reach a free limit. Subscribers can also buy tokens on top of their weekly allowance.' },
+  { question: 'Do Muse tokens expire?', answer: 'Extra purchased tokens do not expire, including after cancellation. Unused weekly subscription allowance does not roll over from a previous billing cycle.' },
+  { question: 'Can I cancel my subscription?', answer: 'Yes. Manage your subscription in Settings using the platform and account you subscribed with. Benefits continue until the current billing cycle ends; refunds are not generally provided unless required by law.' },
 ];
-
 const relatedLinks = [
-  {
-    label: 'Meta Muse explained',
-    href: '/',
-    description: 'The main guide to the agent, its capabilities, cost, setup, and privacy questions.',
-  },
-  {
-    label: 'how to use Meta Muse',
-    href: '/how-to-use-meta-muse/',
-    description: 'A setup walkthrough covering the app, plans, Google services, and first tasks.',
-  },
-  {
-    label: 'what is Meta Muse',
-    href: '/what-is-meta-muse/',
-    description: 'How the personal AI agent works and why it differs from a chatbot.',
-  },
-  {
-    label: 'Meta Muse review',
-    href: '/meta-muse-review/',
-    description: 'An early assessment of execution value, limitations, and trust concerns.',
-  },
+  { label: 'Buy additional Muse tokens', href: '/buy-additional-muse-tokens/', description: 'One-time top-ups, expiry, and purchase steps.' },
+  { label: 'Cancel or manage a Muse subscription', href: '/cancel-manage-muse-subscription/', description: 'Settings, app-store billing, and what happens after cancellation.' },
+  { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Access, Connectors, and permissions.' },
+  { label: 'Meta Muse review', href: '/meta-muse-review/', description: 'Capabilities, limitations, and privacy.' },
 ];
 ---
-
-<Base
-  title="Meta Muse Pricing: Is It Free? What $20 and $100 Get You"
-  description="Meta Muse has a free tier plus $20/month and $100/month plans. Here's what each tier includes, and how to judge whether it is worth paying for right now."
-  canonicalPath="/meta-muse-pricing/"
-  pageType="article"
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'Meta Muse Pricing' },
-  ]}
->
+<Base title="Meta Muse Pricing: Free, Power $20 & Maximum $100" description="Compare Meta Muse Free, Power ($20/month, 500M tokens/week), and Maximum ($100/month, 3B/week). Subscription access, extra tokens, and cancellation." canonicalPath="/meta-muse-pricing/" pageType="article" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Meta Muse Pricing' }]}>
   <article class="content">
     <p class="eyebrow">Pricing guide</p>
     <h1>Meta Muse Pricing</h1>
-    <p class="lede">
-      Meta Muse offers a free tier and two monthly paid plans. The main question for most buyers
-      is whether the work it takes off your plate is worth a recurring charge.
-    </p>
-
+    <p class="lede">Meta Muse has a free tier with a usage limit, plus two paid plans: Power and Maximum. You can subscribe in the Muse mobile app or at <a href="https://muse.ai/">muse.ai</a>. Muse and Muse subscriptions are in limited testing and are not available in every location.</p>
     <section aria-labelledby="free-heading">
       <h2 id="free-heading">Is Meta Muse Free?</h2>
-      <p>
-        Yes. Meta Muse has a free tier with a usage limit, so a paid subscription is not required
-        to get started. The paid options are $20 per month and $100 per month. Meta says users who
-        reach the free limit can upgrade or wait for it to refresh. Media reports of Mark
-        Zuckerberg's launch comments cite a free weekly allowance of up to 100 million tokens.
-        Treat that figure as a reported usage allowance rather than a permanent plan term.
-        <!-- Reported by Gizmodo from Zuckerberg's public Threads post, September 2026. -->
-      </p>
-      <p>
-        The price alone does not show what each tier can do. The verified details used for this
-        page establish the three price points but do not establish task allowances, feature
-        differences, or the conditions attached to each plan.
-        <!-- TODO: verify paid-plan allowances, feature differences, and plan conditions. Meta Help Center uses the names Meta One Core and Meta One Premium, but their mapping to $20/$100 is not yet verified. -->
-      </p>
+      <p>Yes. Muse is available for free with a weekly usage limit. If you reach that limit, Meta says you can upgrade, wait for the free limit to refresh, or buy additional Muse tokens.</p>
+      <p>Media reports around launch cited a free weekly allowance of up to 100 million tokens. Treat that figure as reported commentary unless Meta shows the same number in your account; it is not the official free allowance in the table below.</p>
     </section>
-
     <section aria-labelledby="plans-heading">
       <h2 id="plans-heading">Meta Muse Plans Compared</h2>
-      <p>
-        The table below separates what is known from what still needs confirmation. Use the final
-        column as a checklist for questions to resolve before paying.
-      </p>
-      <div class="table-scroll">
-        <table>
-          <caption>Listed Meta Muse plans and buyer considerations</caption>
-          <thead>
-            <tr>
-              <th scope="col">Plan</th>
-              <th scope="col">Price</th>
-              <th scope="col">Best for</th>
-              <th scope="col">Watch out for</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Free</th>
-              <td>$0 listed</td>
-              <td>Trying the agent and handling occasional tasks.</td>
-              <td>
-                Usage is capped, and Meta says the free limit can refresh, freeing you to continue.
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Paid tier</th>
-              <td>$20 per month</td>
-              <td>Regular use that fits the lower priced paid plan.</td>
-              <td>
-                Differences from the other plans need confirmation.
-                <!-- TODO: verify $20 plan benefits and limits. -->
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Higher paid tier</th>
-              <td>$100 per month</td>
-              <td>Frequent use as an ongoing task tool.</td>
-              <td>
-                Differences from the lower plans need confirmation.
-                <!-- TODO: verify $100 plan benefits and limits. -->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p>
-        A plan can be a poor fit even when the monthly price looks reasonable. The value depends
-        on how often you hand off tasks, which websites and services the agent can use, and
-        whether you are comfortable with the access those tasks require.
-      </p>
+      <div class="table-scroll"><table>
+        <caption>Meta Muse prices and official weekly usage allowances</caption>
+        <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Weekly usage (official)</th><th scope="col">Best for</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Free</th><td>$0</td><td>Limited free weekly usage</td><td>Trying Muse and occasional tasks</td></tr>
+          <tr><th scope="row">Power</th><td>$20 / month</td><td>500M Muse tokens per week</td><td>Regular weekly use</td></tr>
+          <tr><th scope="row">Maximum</th><td>$100 / month</td><td>3B Muse tokens per week</td><td>Heavy, ongoing task use</td></tr>
+        </tbody>
+      </table></div>
+      <p>Weekly usage allowance increases as you upgrade. Exact benefits can vary by region and account; confirm what your account shows during onboarding. Source: <a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: About Muse subscriptions</a>.</p>
     </section>
-
+    <section aria-labelledby="tokens-heading">
+      <h2 id="tokens-heading">Additional Muse Tokens</h2>
+      <p>After you hit a free or plan limit, you can buy additional Muse tokens in the Muse app or on muse.ai. Meta says:</p>
+      <ul>
+        <li>Extra purchased tokens do not expire, including after you cancel a subscription.</li>
+        <li>Unused weekly allowance from a subscription does not roll over from a previous billing cycle.</li>
+        <li>Additional tokens have no cash value and cannot be transferred or refunded except where required by law.</li>
+      </ul>
+      <p>See <a href="/buy-additional-muse-tokens/">how to buy additional Muse tokens</a> and <a href="https://www.meta.com/help/subscriptions/28153473374286914/">Meta’s additional-token documentation</a>.</p>
+    </section>
     <section aria-labelledby="fits-heading">
       <h2 id="fits-heading">Who Each Plan Fits</h2>
-      <p>
-        Without verified plan allowances, the right choice comes down to expected frequency and
-        the cost of the work you want to avoid. These profiles are based on the listed prices and
-        capabilities rather than undisclosed limits.
-      </p>
-
-      <h3>Free</h3>
-      <p>
-        The free tier fits someone who wants to find out whether Meta Muse can handle their kind
-        of task. It is also suited to occasional use, such as sending an email or checking an
-        online order. Usage is capped, but Meta says the free limit can refresh. Because there is
-        no monthly charge, it is the safer starting point when the value is still uncertain.
-      </p>
-
-      <h3>$20 per month</h3>
-      <p>
-        The $20 plan is a reasonable candidate for someone who expects regular use throughout the
-        month. It may fit a person who assigns several web-based tasks and wants a paid option
-        without moving to the highest listed price. The verified details do not show which
-        features or allowances change at this tier. Compare the current plan terms for your
-        account before assuming that it covers every task handled by the $100 option.
-      </p>
-
-      <h3>$100 per month</h3>
-      <p>
-        The $100 plan is aimed at people who expect Meta Muse to become an ongoing task tool. Its
-        higher monthly cost makes more sense when the agent handles repeated work that would
-        otherwise take meaningful time. It does not make sense merely because it is the more
-        expensive option. The feature and usage differences between this plan and the lower tiers
-        still need verification.
-      </p>
+      <h3>Free</h3><p>Best when you want to test whether Muse can finish your kind of web task before paying.</p>
+      <h3>Power ($20/month)</h3><p>A fit if you expect steady weekly use and the 500M-token allowance covers your workflow.</p>
+      <h3>Maximum ($100/month)</h3><p>Makes sense when Muse is a frequent work tool and you need the larger 3B weekly allowance.</p>
     </section>
-
     <section aria-labelledby="check-heading">
       <h2 id="check-heading">What to Check Before You Pay</h2>
-      <p>
-        A subscription decision should start with availability and account terms. Work through
-        these checks before entering payment information.
-      </p>
       <ul>
-        <li>
-          <strong>Regional availability:</strong> the initial release is in the United States.
-          Availability in other countries is not established here.
-          <!-- TODO: verify supported countries and regional restrictions. -->
-        </li>
-        <li>
-          <strong>Payment method:</strong> confirm which payment methods your account accepts and
-          how the recurring charge will appear.
-          <!-- TODO: verify payment methods and billing details. -->
-        </li>
-        <li>
-          <strong>Cancellation and plan changes:</strong> review the current terms before
-          subscribing so you understand how to stop or change the plan.
-          <!-- TODO: verify cancellation, downgrade, and upgrade terms. -->
-        </li>
-        <li>
-          <strong>Free versus paid features:</strong> identify the exact feature and usage
-          differences for your account instead of assuming a paid tier includes every capability.
-          <!-- TODO: verify feature and allowance differences across tiers. -->
-        </li>
+        <li>Availability in your country: limited testing means Muse is not everywhere yet.</li>
+        <li>The plan details shown in your own Muse account.</li>
+        <li><a href="/cancel-manage-muse-subscription/">How to manage or cancel the subscription</a> in Settings.</li>
+        <li>Whether you need Connectors, such as Gmail or Calendar, for the tasks you care about.</li>
       </ul>
     </section>
-
-    <section aria-labelledby="worth-heading">
-      <h2 id="worth-heading">How to Decide If It's Worth It</h2>
-      <p>
-        There is no universal break-even point because the value depends on the work you assign
-        and the access it requires. Use these three questions to make the decision concrete.
-      </p>
-
-      <h3>How often would you use it each week?</h3>
-      <p>
-        Occasional use may fit within the free tier's usage limit. Regular use makes a paid plan
-        easier to justify, although the available details do not specify a task threshold.
-        Estimate your use before choosing between $20 and $100.
-      </p>
-
-      <h3>Does it save minutes or hours?</h3>
-      <p>
-        A task that consumes a few minutes has less value than one that repeatedly takes an hour.
-        List the work you would hand off, then compare the monthly price with the time and effort
-        you expect to recover.
-      </p>
-
-      <h3>How sensitive are the services you would connect?</h3>
-      <p>
-        Gmail and Google Calendar can contain personal or business information. The more sensitive
-        the account, the more carefully you should judge whether the convenience is acceptable.
-        Our <a href="/meta-muse-review/">Meta Muse review</a> covers the privacy reporting and
-        trust questions in more detail.
-      </p>
-    </section>
-
-    <FAQ items={faqItems} title="Frequently Asked Questions" />
-
+    <FAQ items={faqItems} />
     <RelatedLinks links={relatedLinks} />
   </article>
 </Base>

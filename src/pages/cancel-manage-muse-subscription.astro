@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+const faqItems = [{"question": "Does deleting the Muse app cancel my subscription?", "answer": "No. Complete cancellation using the purchase platform and account; signing out also does not cancel billing."}, {"question": "When do benefits end after I cancel?", "answer": "At the end of the current billing cycle. Confirm cancellation before the next renewal."}, {"question": "Will I lose purchased extra tokens?", "answer": "No. Additional tokens purchased separately do not expire after subscription cancellation."}];
+const relatedLinks = [{"label": "Meta Muse pricing", "href": "/meta-muse-pricing/", "description": "Power and Maximum prices and weekly usage."}, {"label": "Buy additional tokens", "href": "/buy-additional-muse-tokens/", "description": "One-time purchases and expiry."}];
+---
+<Base title="Cancel or Manage a Muse Subscription" description="Manage or cancel Meta Muse on muse.ai, the mobile app, Apple App Store, or Google Play. Learn when benefits end and what happens to extra tokens." canonicalPath="/cancel-manage-muse-subscription/" pageType="article" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Cancel or Manage a Muse Subscription' }]}>
+  <article class="content">
+    <p class="eyebrow">Subscription FAQ</p>
+    <h1>Cancel or Manage a Muse Subscription</h1>
+    <p class="lede">Muse subscriptions can be canceled at any time. Use the original purchase platform and account; deleting the app or signing out does not stop billing.</p>
+    <section aria-labelledby="manage-heading">
+      <h2 id="manage-heading">Manage or Cancel on Muse Web</h2>
+      <p>Sign in at <a href="https://muse.ai/">muse.ai</a>. Open Menu → Settings → Manage subscription under Usage. Choose Cancel, then confirm with Yes, cancel.</p>
+      <h2>Mobile and App-Store Subscriptions</h2>
+      <p>In the Muse app, open your profile, then Menu → Settings → Manage subscription. Use Cancel and confirm. If you purchased through Apple or Google, use that store’s cancellation process and the Apple or Google account used for the purchase.</p>
+    </section>
+    <section aria-labelledby="after-heading">
+      <h2 id="after-heading">What Happens After Cancellation?</h2>
+      <p>Cancel before the current billing period ends to avoid renewal. You keep plan benefits through that period and should receive a cancellation confirmation. Meta generally provides no credit or partial refund unless required by law.</p>
+      <p>Separately purchased additional tokens remain available until used. Source: <a href="https://www.meta.com/help/subscriptions/1348439670603568/">Meta Help: Cancel your Muse subscription</a> and <a href="https://www.meta.com/help/subscriptions/28153473374286914/">additional-token terms</a>.</p>
+    </section>
+    <FAQ items={faqItems} />
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>

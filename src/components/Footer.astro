@@ -3,6 +3,8 @@ import { DISCLAIMER, SITE_NAME, nav } from '../data/site';
 
 const footerNav = [
   ...nav,
+  { label: 'Buy additional tokens', href: '/buy-additional-muse-tokens/' },
+  { label: 'Manage subscription', href: '/cancel-manage-muse-subscription/' },
   { label: 'About', href: '/about/' },
   { label: 'Privacy Policy', href: '/privacy-policy/' },
   { label: 'Terms of Use', href: '/terms-of-use/' },
@@ -20,5 +22,6 @@ const footerNav = [
       </nav>
     </div>
     <p class="disclaimer">{DISCLAIMER}</p>
+    <p class="disclaimer">Product information based on <a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help</a> and linked official sources. Last checked: <time datetime="2026-10-28">2026-10-28</time>. Benefits and availability may vary by region and account.</p>
   </div>
 </footer>

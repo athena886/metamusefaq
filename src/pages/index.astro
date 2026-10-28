@@ -12,12 +12,12 @@ const faqItems = [
   {
     question: 'Is Meta Muse free?',
     answer:
-      'Yes. Meta Muse has a free tier with a usage limit, along with paid plans priced at $20 per month and $100 per month. Our Meta Muse pricing guide covers the available tier information.',
+      'Yes. Meta Muse has a free tier with a usage limit, along with Power ($20/month, 500M tokens/week) and Maximum ($100/month, 3B tokens/week). Our Meta Muse pricing guide covers the available tier information.',
   },
   {
     question: 'How do I use Meta Muse?',
     answer:
-      'Install the Meta Muse app and sign in, choose the free tier or a paid plan, and connect Gmail or Google Calendar if your tasks require them. Our how to use Meta Muse guide walks through the setup steps.',
+      'Open muse.ai or the standalone Muse app and sign in, choose Free, Power, or Maximum, and use Connectors such as Gmail or Google Calendar only when a task needs them. Review permissions and approve sensitive actions. Our how to use Meta Muse guide walks through the setup steps.',
   },
   {
     question: 'Is Meta Muse the same as Meta AI?',
@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse available in my country?',
     answer:
-      'The initial release is in the United States. Availability outside the United States is not covered by the verified details on this page.',
+      'Muse and Muse subscriptions are in limited testing and are not available in all locations. Check access for your own country and account at muse.ai.',
   },
 ];
 
@@ -45,7 +45,7 @@ const relatedLinks = [
   {
     label: 'Meta Muse pricing',
     href: '/meta-muse-pricing/',
-    description: 'What the free tier, the $20 plan, and the $100 plan mean for buyers.',
+    description: 'Free, Power, and Maximum: official prices and weekly token allowances.',
   },
   {
     label: 'Meta Muse review',
@@ -109,7 +109,7 @@ const relatedLinks = [
           <strong>Send email:</strong> Write and send messages through a connected Gmail account.
         </li>
         <li>
-          <strong>Use Gmail and Google Calendar:</strong> Read email and check calendar
+          <strong>Use Connectors on demand:</strong> Connect services such as Gmail and Google Calendar to read email and check calendar
           information that is needed to complete a task.
         </li>
       </ul>
@@ -129,10 +129,9 @@ const relatedLinks = [
     <section aria-labelledby="cost-heading">
       <h2 id="cost-heading">How Much Meta Muse Costs</h2>
       <p>
-        Meta Muse has a free tier with a usage limit and two paid options. Meta says users who
-        reach the free limit can upgrade or wait for the limit to refresh. The available details do
-        not identify feature or allowance differences among the paid tiers.
-        <!-- TODO: verify paid-plan feature and allowance differences. -->
+        Meta Muse has limited free weekly usage, Power ($20/month) with 500M Muse tokens per week,
+        and Maximum ($100/month) with 3B per week. If you reach a limit, you can buy additional
+        tokens; free users can also upgrade or wait for their allowance to refresh.
       </p>
       <div class="table-scroll">
         <table>
@@ -151,14 +150,14 @@ const relatedLinks = [
               <td>Testing the agent and handling occasional tasks.</td>
             </tr>
             <tr>
-              <th scope="row">Paid tier</th>
+              <th scope="row">Power</th>
               <td>$20 per month</td>
-              <td>Regular use that fits the lower paid tier.</td>
+              <td>Regular use with 500M Muse tokens per week.</td>
             </tr>
             <tr>
-              <th scope="row">Higher paid tier</th>
+              <th scope="row">Maximum</th>
               <td>$100 per month</td>
-              <td>Frequent use as an ongoing task tool.</td>
+              <td>Heavy use with 3B Muse tokens per week.</td>
             </tr>
           </tbody>
         </table>
@@ -178,31 +177,31 @@ const relatedLinks = [
       <ol>
         <li>
           <strong>Download the app and sign in.</strong> Choose the iOS or Android app, or use the
-          web version, then sign in with your account.
+          web version at <a href="https://muse.ai/">muse.ai</a>, then sign in with your Meta account.
         </li>
         <li>
           <strong>Choose the free tier or a paid plan.</strong> Start with the option that matches
           how often you expect to hand off online tasks.
         </li>
         <li>
-          <strong>Connect Gmail or Google Calendar.</strong> Add only the services a task needs,
+          <strong>Use Connectors such as Gmail or Google Calendar.</strong> Add only the services a task needs,
           because those connections determine what information the agent can use.
         </li>
       </ol>
       <p>
         For a fuller walkthrough, read our <a href="/how-to-use-meta-muse/">how to use Meta Muse</a> guide.
-        The initial release is in the United States.
+        Muse and its subscriptions are in limited testing and are not globally available.
       </p>
     </section>
 
     <section aria-labelledby="privacy-heading">
       <h2 id="privacy-heading">Privacy and Trust</h2>
       <p>
-        Media reports say Meta Muse has read user private messages, and privacy is the largest
-        issue in the current discussion. That reported behavior deserves attention because an
-        agent may need access to personal communications and connected services to complete a
-        task. The concern is not limited to where the work happens; it also includes what data the
-        system can see, use, or retain.
+        <strong>Media reporting:</strong> Coverage has raised allegations about private-message access.
+        These are reported claims, not findings established by this site. See the
+        <a href="/meta-muse-review/#privacy-heading">review’s reporting and official-response section</a>.
+        <strong>Official explanation:</strong> Meta describes permission controls, optional Connectors,
+        and user oversight. Review access before connecting personal communications.
       </p>
       <p>
         Meta Muse runs in a separate cloud virtual machine called Muse Secure VM. The listed
@@ -218,6 +217,15 @@ const relatedLinks = [
         product is designed to request permission and keep an audit trail. Read our
         <a href="/meta-muse-review/">Meta Muse review</a> for a closer look at those tradeoffs.
       </p>
+    </section>
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Official Sources</h2>
+      <ul>
+        <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
+        <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
+      </ul>
     </section>
 
     <FAQ items={faqItems} />

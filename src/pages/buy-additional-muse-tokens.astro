@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+const faqItems = [{"question": "Can I buy more Muse tokens without a subscription?", "answer": "Yes. After reaching the free weekly limit, you can make a one-time purchase instead of subscribing."}, {"question": "Do purchased Muse tokens expire?", "answer": "No. Additional purchased tokens stay available until consumed, including after a subscription is canceled."}, {"question": "Do unused weekly subscription tokens roll over?", "answer": "No. Meta says unused subscription usage from a previous billing cycle does not roll over."}];
+const relatedLinks = [{"label": "Compare Free, Power, and Maximum", "href": "/meta-muse-pricing/", "description": "Monthly prices and official weekly allowances."}, {"label": "Manage or cancel your subscription", "href": "/cancel-manage-muse-subscription/", "description": "Billing platforms and cancellation effects."}];
+---
+<Base title="Buy Additional Muse Tokens" description="How to buy extra Meta Muse tokens on web or mobile, whether you need a subscription, and what expires." canonicalPath="/buy-additional-muse-tokens/" pageType="article" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Buy Additional Muse Tokens' }]}>
+  <article class="content">
+    <p class="eyebrow">Subscription FAQ</p>
+    <h1>Buy Additional Muse Tokens</h1>
+    <p class="lede">You can buy additional Muse tokens after reaching your free limit, or on top of a subscription’s weekly allowance. These are one-time purchases available through the Muse app or <a href="https://muse.ai/">muse.ai</a>.</p>
+    <section aria-labelledby="buy-heading">
+      <h2 id="buy-heading">How to Buy on Web or Mobile</h2>
+      <ol>
+        <li>Sign in to Muse with your Meta account.</li>
+        <li>Open Menu, then Settings.</li>
+        <li>Under usage, choose Upgrade if you are free, or Manage subscription if subscribed.</li>
+        <li>Select Buy additional tokens, choose an amount, then Continue to payment.</li>
+      </ol>
+      <p>Check the price and amount displayed before purchase. Availability can differ by account and region during limited testing.</p>
+    </section>
+    <section aria-labelledby="expiry-heading">
+      <h2 id="expiry-heading">Expiry, Rollover, and Refunds</h2>
+      <p>Purchased top-ups remain usable until consumed, even if you later cancel your plan. Weekly subscription usage does not carry over from a previous billing cycle. Tokens are account-bound, have no cash value, and cannot be transferred or refunded except where law requires it.</p>
+      <p>Source: <a href="https://www.meta.com/help/subscriptions/28153473374286914/">Meta Help: How to buy additional Muse tokens</a>.</p>
+    </section>
+    <FAQ items={faqItems} />
+    <RelatedLinks links={relatedLinks} />
+  </article>
+</Base>
