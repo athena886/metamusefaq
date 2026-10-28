@@ -1,0 +1,15 @@
+{
+  "name": "metamusefaq",
+  "account_id": "b46bca8a08488a19777a6e17108fa8ee",
+  "compatibility_date": "2026-09-26",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "metamusefaq.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}
