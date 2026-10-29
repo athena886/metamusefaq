@@ -4,6 +4,8 @@ import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const faqItems = [
+  {"question": "Is Muse Code the same as the Muse personal agent?", "answer": "No. Muse Code is a separate developer product. Its Everyday Usage, High Usage, Power Usage, and Maximum Usage plans are not the personal agent\u2019s Free, Power, and Maximum plans."},
+
   {
     question: 'What is Meta Muse in one sentence?',
     answer:
@@ -17,12 +19,12 @@ const faqItems = [
   {
     question: 'Does Meta Muse run on my phone or in the cloud?',
     answer:
-      "Meta Muse runs in Muse Secure VM, an independent cloud virtual machine with enough storage, CPU, and memory for real work. It includes its own browser and is isolated from the user's local computer, although the iOS and Android apps provide access to it.",
+      "Muse has a cloud browser in Muse Secure VM. Muse for Mac can also use local files and apps such as Messages, Notes, and Calendar after system authorization. Web, mobile, Mac, and WhatsApp provide entry points where available.",
   },
   {
     question: 'Is Meta Muse part of Meta AI?',
     answer:
-      'No. Meta Muse is available through separate iOS and Android apps and a separate web product. It is not the same client as Meta AI.',
+      'No. Muse is a separate personal agent available through web, mobile, Mac, and WhatsApp entry points. It is not the same product as Meta AI.',
   },
   {
     question: 'When did Meta Muse launch?',
@@ -57,7 +59,7 @@ const relatedLinks = [
 
 <Base
   title="What Is Meta Muse? Meta's Personal AI Agent Explained"
-  description="Meta Muse is a personal AI agent released on September 8, 2026. It runs on its own cloud computer and does tasks for you instead of just answering questions."
+  description="Meta Muse is a personal AI agent released on September 8, 2026. It uses a cloud computer and, with permission, local Mac apps. Compare Muse, Meta AI, Muse Image/Video, and Muse Code."
   canonicalPath="/what-is-meta-muse/"
   pageType="article"
   breadcrumbs={[
@@ -110,7 +112,7 @@ const relatedLinks = [
             <tr>
               <th scope="row">Where it runs</th>
               <td>Inside a conversation interface.</td>
-              <td>In an independent cloud virtual machine.</td>
+              <td>Cloud VM, plus authorized local access through the Mac app.</td>
             </tr>
             <tr>
               <th scope="row">What you do after</th>
@@ -131,18 +133,19 @@ const relatedLinks = [
     <section aria-labelledby="runs-heading">
       <h2 id="runs-heading">Where Meta Muse Runs</h2>
       <p>
-        Meta Muse runs in a separate cloud virtual machine called Muse Secure VM. Meta says the
+        Muse’s cloud browser runs in a separate virtual machine called Muse Secure VM. Meta says the
         environment provides enough storage, CPU, and memory for real work, along with its own
         browser. It is isolated from the user's local computer.
       </p>
       <p>
-        That setup means the agent is not operating inside your phone or personal desktop. The
-        remote browser is where webpages load and actions occur, while the iOS app, Android app,
-        or web client gives you a way to assign tasks and review the outcome. Isolation reduces
-        direct exposure of the local device, but it does not resolve every privacy issue.
+        The cloud browser is one part of Muse. <a href="https://ai.meta.com/muse/download/">Muse for Mac</a>
+        can also use local files and apps after macOS authorization. You can chat with Muse on the
+        web, mobile, Mac, or in WhatsApp where available. Cloud isolation does not describe the
+        separate permissions you may grant on your Mac.
       </p>
       <p>
-        Connectors are optional and should be authorized only as needed. Meta says you can change
+        Review Connector access, including automatic Facebook, Instagram, and Threads connections
+        for accounts in the same Accounts Center. Meta says you can change
         access, disconnect services, and opt out of interactions being used for model training.
         Sensitive Connector writes need approval each time. Media allegations about message access
         are discussed separately from these official controls in the
@@ -154,8 +157,8 @@ const relatedLinks = [
       <h2 id="meta-ai-heading">How Meta Muse Relates to Meta AI</h2>
       <p>
         Meta Muse and Meta AI have separate entry points. Meta Muse is available as an independent
-        iOS app, Android app, and web product rather than as a mode inside Meta AI. Its model is
-        Muse Spark 1.3, and the related Muse product line also includes Muse Image and Muse Video.
+        iOS app, Android app, Mac app, and web product, with WhatsApp chat also available.
+        It should be evaluated separately from Meta AI and other products with Muse in their names.
       </p>
       <p>
         The distinction is practical for anyone comparing tools: opening Meta AI does not mean
@@ -165,12 +168,27 @@ const relatedLinks = [
       </p>
     </section>
 
+    <section aria-labelledby="product-names-heading">
+      <h2 id="product-names-heading">Muse, Muse Image/Video, and Muse Code</h2>
+      <div class="table-scroll"><table>
+        <caption>Which Muse product does a search result describe?</caption>
+        <thead><tr><th scope="col">Name</th><th scope="col">What it refers to</th><th scope="col">Plan distinction</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Muse personal agent</th><td>The task agent covered by this site.</td><td><a href="/meta-muse-pricing/">Free, Power, and Maximum</a>; weekly Muse token allowances.</td></tr>
+          <tr><th scope="row">Muse Image / Muse Video</th><td>Image and video generation offerings.</td><td>Names alone do not establish personal-agent subscription benefits.</td></tr>
+          <tr><th scope="row">Muse Code</th><td>A separate developer coding product and subscription.</td><td>Everyday Usage, High Usage, Power Usage, and Maximum Usage.</td></tr>
+        </tbody>
+      </table></div>
+      <p><a href="https://dev.meta.ai/docs/muse-code/subscriptions">Muse Code subscription documentation</a>
+        uses its own usage rules. Power Usage and Maximum Usage are not the personal agent’s
+        Power and Maximum weekly-token plans. Do not transfer pricing or benefits between them.</p>
+    </section>
+
     <section aria-labelledby="timeline-heading">
       <h2 id="timeline-heading">Timeline</h2>
       <p>
-        The verified timeline currently contains the product launch. Later milestones should not
-        be inferred until they are documented.
-        <!-- TODO: verify later release dates, version milestones, and regional expansion. -->
+        The launch date below is separate from our documentation review date; the latter does not
+        establish when an individual feature first became available.
       </p>
       <div class="table-scroll">
         <table>
@@ -186,6 +204,8 @@ const relatedLinks = [
               <th scope="row"><time datetime="2026-09-08">September 8, 2026</time></th>
               <td>Meta releases Meta Muse, with the initial release in the United States.</td>
             </tr>
+            <tr><th scope="row"><time datetime="2026-10-29">October 29, 2026</time></th>
+              <td>Documentation reviewed for Mac access, Connectors, WhatsApp, security status, and Muse Code naming.</td></tr>
           </tbody>
         </table>
       </div>
@@ -219,9 +239,14 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
+      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
       <ul>
         <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1126304576638594/">Mac files and app access</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1687253048996149/">Connectors and automatic Meta connections</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1047255454427887/">Privacy, safety, and security</a></li>
         <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
       </ul>
     </section>

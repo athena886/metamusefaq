@@ -22,7 +22,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse the same as Meta AI?',
     answer:
-      'No. Meta Muse is available as an app for iOS and Android and as a web product, separate from Meta AI.',
+      'No. Muse is a separate personal agent with web, iOS, Android, Mac, and WhatsApp entry points. Muse Image/Video and the developer product Muse Code are different offerings.',
   },
   {
     question: 'Is Meta Muse available in my country?',
@@ -77,8 +77,8 @@ const relatedLinks = [
       <p>
         That distinction matters because a conversational tool usually returns instructions you
         carry out yourself. Meta Muse is positioned as an agent that can act on your behalf in a
-        separate cloud environment. It can connect to some services and use a browser to work
-        through a task, while keeping that work away from your own computer.
+        cloud environment through Muse Secure VM. The Mac app can also work with local files and
+        apps after system authorization, so Muse is not limited to its cloud browser.
       </p>
     </section>
 
@@ -109,9 +109,12 @@ const relatedLinks = [
           <strong>Send email:</strong> Write and send messages through a connected Gmail account.
         </li>
         <li>
-          <strong>Use Connectors on demand:</strong> Connect services such as Gmail and Google Calendar to read email and check calendar
-          information that is needed to complete a task.
+          <strong>Use Connectors:</strong> Connect Gmail, Calendar, and other services. Facebook,
+          Instagram, and Threads connect automatically when accounts share an Accounts Center.
+          See the <a href="/how-to-use-meta-muse/#connectors-heading">Connector setup and access guide</a>.
         </li>
+        <li><strong>Work on your Mac:</strong> With system authorization, Muse can use local files
+          and information in Messages, Notes, Calendar, and other supported apps.</li>
       </ul>
       <p>
         These abilities describe the kinds of actions Meta says the product can take. They do not
@@ -171,8 +174,9 @@ const relatedLinks = [
     <section aria-labelledby="start-heading">
       <h2 id="start-heading">How to Get Started</h2>
       <p>
-        Setup begins with an account and a device. Meta Muse is available through separate iOS
-        and Android apps and a web product, outside the Meta AI app experience.
+        Start at <a href="https://muse.ai/">muse.ai</a>, in the iOS or Android app, or with
+        <a href="https://ai.meta.com/muse/download/">Muse for Mac</a>. You can also chat with Muse
+        in WhatsApp where available. These are Muse entry points, separate from Meta AI.
       </p>
       <ol>
         <li>
@@ -184,8 +188,8 @@ const relatedLinks = [
           how often you expect to hand off online tasks.
         </li>
         <li>
-          <strong>Use Connectors such as Gmail or Google Calendar.</strong> Add only the services a task needs,
-          because those connections determine what information the agent can use.
+          <strong>Review Connectors and local access.</strong> Add needed services, check automatic Meta
+          connections in Accounts Center, and review any Mac permissions you grant.
         </li>
       </ol>
       <p>
@@ -200,11 +204,11 @@ const relatedLinks = [
         <strong>Media reporting:</strong> Coverage has raised allegations about private-message access.
         These are reported claims, not findings established by this site. See the
         <a href="/meta-muse-review/#privacy-heading">review’s reporting and official-response section</a>.
-        <strong>Official explanation:</strong> Meta describes permission controls, optional Connectors,
+        <strong>Official explanation:</strong> Meta describes permission controls, Connector access,
         and user oversight. Review access before connecting personal communications.
       </p>
       <p>
-        Meta Muse runs in a separate cloud virtual machine called Muse Secure VM. The listed
+        Muse’s cloud browser runs in a separate virtual machine called Muse Secure VM. The listed
         environment provides the storage, CPU, and memory needed for real work, and it includes
         its own browser with isolation from the user's local computer. That isolation can reduce
         direct exposure of your device, but it does not settle the privacy questions raised by the
@@ -219,11 +223,25 @@ const relatedLinks = [
       </p>
     </section>
 
+    <section aria-labelledby="security-status-heading">
+      <h2 id="security-status-heading">Security Features and Product Names</h2>
+      <p>Meta describes Secure Credentials Store and Sentinel protections. Muse Confidential VM
+        remains a planned option. See <a href="/meta-muse-review/#security-features-heading">what is documented and what is planned</a>.</p>
+      <p>Muse the personal agent is distinct from Muse Image, Muse Video, and Muse Code.
+        <a href="/what-is-meta-muse/#product-names-heading">Compare the Muse product names</a>
+        before applying Power or Maximum plan details to another product.</p>
+    </section>
+
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
+      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
       <ul>
         <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1126304576638594/">Mac files and app access</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1687253048996149/">Connectors and automatic Meta connections</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1047255454427887/">Privacy, safety, and security</a></li>
         <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
       </ul>
     </section>

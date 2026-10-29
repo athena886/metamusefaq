@@ -4,6 +4,9 @@ import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const faqItems = [
+  {"question": "Is Muse Confidential VM available now?", "answer": "The cited Meta Help page describes Muse Confidential VM as a future option. This review treats it as planned, not a protection already available to every account."},
+  {"question": "What are Secure Credentials Store and Sentinel?", "answer": "Meta describes Secure Credentials Store as a way to use credentials without exposing passwords to the model. Its launch explanation describes Sentinel as a separate system-level agent that checks outgoing actions."},
+
   {
     question: 'Is Meta Muse good?',
     answer:
@@ -22,7 +25,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse safe to use?',
     answer:
-      'There is no blanket yes or no. Meta Muse runs in an independent cloud virtual machine that is isolated from the local computer, but connected services can still expose data, and media allegations should be assessed alongside the official explanation of access controls. Start with the free tier and limit access to accounts that carry low risk.',
+      'There is no blanket yes or no. Muse has an isolated cloud VM, while the Mac app can also use authorized local data. Connected services can expose data, and media allegations should be assessed alongside the official explanation of access controls. Start with the free tier and limit access to accounts that carry low risk.',
   },
   {
     question: 'Should I wait before signing up?',
@@ -95,9 +98,8 @@ const relatedLinks = [
           filling a form or sending email rather than stopping at instructions.
         </li>
         <li>
-          <strong>Task work happens off the local device.</strong> Muse Secure VM is an
-          independent cloud virtual machine with its own browser, so web tasks do not run inside
-          the user's phone or computer.
+          <strong>Cloud browsing has its own environment.</strong> Muse Secure VM provides an isolated
+          browser. The Mac app can separately use local apps and files after system authorization.
         </li>
         <li>
           <strong>Gmail and Google Calendar can supply practical context.</strong> Those
@@ -171,10 +173,32 @@ const relatedLinks = [
       <p>The <a href="https://platform.muse.ai/docs">official Connector guidelines</a> specify approval
         on every sensitive write. Other tools may support a saved permission. Connecting an account
         alone does not authorize every action.</p>
+      <p>In <a href="https://www.meta.com/help/superintelligence/1047255454427887/">Meta Help</a>,
+        model-improvement use is initially enabled. Review Settings → Data controls to change it.</p>
       <h3>What this means for your decision</h3>
       <p>These are documented controls, not an independent guarantee of safety. Cloud isolation does
-        not prevent exposure of data you authorize a Connector to use. Start with a limited task,
+        not cover all local Mac permissions or prevent exposure of connected data. Start with a limited task,
         grant only needed access, check the activity trail, and review your training preference.</p>
+    </section>
+
+    <section aria-labelledby="security-features-heading">
+      <h2 id="security-features-heading">Secure Credentials Store, Sentinel, and Confidential VM</h2>
+      <p>Documentation checked <time datetime="2026-10-29">2026-10-29</time>.</p>
+      <div class="table-scroll"><table>
+        <caption>Officially described mechanisms versus planned functionality</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Documented status</th><th scope="col">What Meta describes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Secure Credentials Store</th><td>Documented mechanism</td><td>Uses stored logins for authorized actions without exposing passwords to the AI model.</td></tr>
+          <tr><th scope="row">Sentinel</th><td>Described in the launch explanation</td><td>A separate system-level agent checks Muse’s outgoing actions and requests permission when needed.</td></tr>
+          <tr><th scope="row">Muse Confidential VM</th><td>Planned / future option</td><td>Designed to keep VM information private even from Meta; not treated here as generally available.</td></tr>
+        </tbody>
+      </table></div>
+      <p>The <a href="https://www.meta.com/help/superintelligence/1047255454427887/">privacy and security Help page</a>
+        still describes Confidential VM as future work. The
+        <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">launch explanation</a>
+        supplies the Sentinel description. These are official descriptions, not an independent security audit.</p>
+      <p>Mac access is a separate consideration: Messages, Notes, Calendar, and local files can be
+        accessible after system authorization. See the <a href="/how-to-use-meta-muse/#mac-heading">Mac permission guide</a>.</p>
     </section>
 
     <section aria-labelledby="worth-heading">

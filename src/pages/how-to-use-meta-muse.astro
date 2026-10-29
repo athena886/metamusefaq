@@ -4,10 +4,14 @@ import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const faqItems = [
+  {"question": "Can Muse access Messages and Notes on my Mac?", "answer": "Yes, through Muse for Mac after system authorization. Review macOS permissions and each app\u2019s Off, Read only, or Read and interact setting."},
+  {"question": "Are Facebook, Instagram, and Threads connected automatically?", "answer": "Yes, when those accounts are in the same Accounts Center. Review account connections and permissions before assigning tasks."},
+  {"question": "Can I chat with Muse in WhatsApp?", "answer": "Yes. Meta lists WhatsApp as a Muse chat entry point where available."},
+
   {
     question: 'What do I need before setting up Meta Muse?',
     answer:
-      'You need a Meta account, an iOS or Android phone or the web version, and a Google account if you plan to connect Gmail or Google Calendar. Muse is in limited testing and is not available in all locations.',
+      'You need a Meta account, the web version, an iOS or Android phone, or the Mac app, and a Google account if you plan to connect Gmail or Google Calendar. Muse is in limited testing and is not available in all locations.',
   },
   {
     question: 'Do I have to pay to use Meta Muse?',
@@ -17,7 +21,7 @@ const faqItems = [
   {
     question: 'Can Meta Muse access my email and calendar?',
     answer:
-      'Connectors such as Gmail and Google Calendar are optional. Grant access only when a task needs it, review permission settings, and approve sensitive actions. You can disconnect a service later.',
+      'Gmail and Google Calendar require connection; Meta accounts in the same Accounts Center can connect automatically. Grant access only when a task needs it, review permission settings, and approve sensitive actions. You can disconnect a service later.',
   },
   {
     question: 'What can Meta Muse not do?',
@@ -27,7 +31,7 @@ const faqItems = [
   {
     question: 'Where does Meta Muse run my tasks?',
     answer:
-      'Tasks run in Muse Secure VM, an independent cloud virtual machine with enough storage, CPU, and memory for real work. It includes its own browser and is isolated from your local computer.',
+      'Cloud browsing runs in Muse Secure VM. The Mac app can additionally access local files and apps after macOS authorization; cloud isolation does not remove those local permissions.',
   },
 ];
 
@@ -69,20 +73,20 @@ const relatedLinks = [
     <p class="eyebrow">Setup guide</p>
     <h1>How to Use Meta Muse</h1>
     <p class="lede">
-      Meta Muse is designed to work through online tasks in a separate cloud environment. This
-      guide covers the account, device, and service access needed before you begin.
+      Use Muse on the web, mobile, Mac, or through WhatsApp where available. This guide covers
+      cloud tasks, local Mac access, Connectors, and the permissions to review before you begin.
     </p>
 
     <section aria-labelledby="requirements-heading">
       <h2 id="requirements-heading">What You Need Before You Start</h2>
       <p>
         Setup is built around a Meta account and a way to reach the product. Meta Muse has its own
-        iOS and Android apps and a web version, separate from Meta AI. If your tasks involve email
-        or scheduling, you can also connect Google services.
+        iOS, Android, and Mac apps and a web version, separate from Meta AI. WhatsApp is another
+        way to chat with Muse where supported.
       </p>
       <ul>
         <li>A Meta account for signing in.</li>
-        <li>An iOS or Android phone, or access to the web version.</li>
+        <li>Access to muse.ai, an iOS or Android phone, or a supported Mac.</li>
         <li>A Google account if you want to connect Gmail or Google Calendar.</li>
       </ul>
       <p>
@@ -103,7 +107,8 @@ const relatedLinks = [
         <li>
           <h3>Install the App and Sign In</h3>
           <p>
-            Download the separate Meta Muse app for iOS or Android, or open <a href="https://muse.ai/">muse.ai</a>. Sign
+            Open <a href="https://muse.ai/">muse.ai</a> or get the mobile or Mac app from the
+            <a href="https://ai.meta.com/muse/download/">official Muse download page</a>. Sign
             in with your Meta account after the app or page loads.
           </p>
           <ol>
@@ -132,7 +137,7 @@ const relatedLinks = [
         </li>
 
         <li>
-          <h3>Add Connectors Only When Needed</h3>
+          <h3>Review Connector Connections</h3>
           <p>
             Use Connectors for services such as Gmail and Google Calendar when a task needs them.
             Review the requested scope; connecting an account does not approve every action.
@@ -150,13 +155,14 @@ const relatedLinks = [
         <li>
           <h3>Understand Where It Runs</h3>
           <p>
-            Meta Muse runs in Muse Secure VM, a separate cloud virtual machine with enough
+            Cloud browsing runs in Muse Secure VM, a separate virtual machine with enough
             storage, CPU, and memory for real work. It includes its own browser, and the environment
             is isolated from your local computer.
           </p>
           <p>
-            That isolation means web tasks run away from your own device. It does not remove the
-            need to review which data the agent can access through connected services.
+            The Mac app adds local access when authorized. Follow the
+            <a href="#mac-heading">Mac permission checklist below</a>; review both local access
+            and connected-service permissions.
           </p>
         </li>
 
@@ -193,6 +199,33 @@ const relatedLinks = [
       </ol>
     </section>
 
+    <section aria-labelledby="mac-heading">
+      <h2 id="mac-heading">Muse for Mac: Local Files and App Permissions</h2>
+      <p>Muse for Mac can work with local files and apps including Messages (iMessage), Notes,
+        Reminders, Mail, and Calendar. This access is separate from the cloud Secure VM.</p>
+      <ul>
+        <li><strong>macOS permissions:</strong> Full Disk Access covers files; Automation permits app actions; Notifications provides task updates.</li>
+        <li><strong>Per-app choices:</strong> Off, Read only, or Read and interact.</li>
+        <li><strong>Revoke access:</strong> Review File System Access in Muse Settings and permissions in macOS System Settings → Privacy &amp; Security.</li>
+      </ul>
+      <p>Review important actions before confirming. See <a href="https://www.meta.com/help/superintelligence/1126304576638594/">Meta’s Mac access guide</a>.</p>
+    </section>
+    <section aria-labelledby="connectors-heading">
+      <h2 id="connectors-heading">Meta, Custom, and Device Connectors</h2>
+      <p>Facebook, Instagram, and Threads connect automatically when accounts share an Accounts Center.
+        For other services, use Settings → Connectors or ask Muse to connect one.</p>
+      <p>Custom Connectors can use service API credentials; Meta does not review them. Apple Health
+        and Android SMS access is managed in device settings after setup. Disconnecting a Connector
+        stops further exchange but may leave earlier information in Muse’s history or memories.</p>
+      <p>Source: <a href="https://www.meta.com/help/superintelligence/1687253048996149/">Meta’s Connector guide</a>.</p>
+    </section>
+    <section aria-labelledby="whatsapp-heading">
+      <h2 id="whatsapp-heading">Chat with Muse in WhatsApp</h2>
+      <p>Meta also lists WhatsApp as a way to chat with Muse. Check the available setup in your account;
+        this is an entry point to the personal agent, not a Muse Code subscription.</p>
+      <p>Source: <a href="https://ai.meta.com/muse/">Meta’s Muse product page</a>.</p>
+    </section>
+
     <section aria-labelledby="limits-heading">
       <h2 id="limits-heading">Practical Limits and Permissions</h2>
       <p>
@@ -201,8 +234,7 @@ const relatedLinks = [
       </p>
       <ul>
         <li>
-          <strong>The cloud browser is separate from your device.</strong> This guide covers the cloud
-          workflow; local files and apps depend on your Muse client and the access you authorize.
+          <strong>The cloud browser is separate from your device.</strong> Local files and apps require the Mac client and the access you authorize.
         </li>
         <li>
           <strong>Connected tasks need permission.</strong> Connectors such as Gmail and Google Calendar
@@ -231,9 +263,14 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
+      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
       <ul>
         <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
+        <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1126304576638594/">Mac files and app access</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1687253048996149/">Connectors and automatic Meta connections</a></li>
+        <li><a href="https://www.meta.com/help/superintelligence/1047255454427887/">Privacy, safety, and security</a></li>
         <li><a href="https://platform.muse.ai/docs">Meta: Connector permissions and sensitive-action approval</a></li>
       </ul>
     </section>
