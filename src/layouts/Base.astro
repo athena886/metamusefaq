@@ -11,6 +11,7 @@ interface Props {
   canonicalPath?: string;
   image?: string;
   pageType?: 'website' | 'article';
+  dateModified?: string;
   breadcrumbs?: BreadcrumbItem[];
   noindex?: boolean;
 }
@@ -21,6 +22,7 @@ const {
   canonicalPath = Astro.url.pathname,
   image = '/og-default.svg',
   pageType = 'website',
+  dateModified,
   breadcrumbs = [{ label: 'Home', href: '/' }],
   noindex = false,
 } = Astro.props;
@@ -30,6 +32,14 @@ const imageURL = new URL(image, SITE_URL).toString();
 const siteSchema = {
   '@context': 'https://schema.org',
   '@graph': [
+    ...(dateModified ? [{
+      '@type': pageType === 'article' ? 'Article' : 'WebPage',
+      '@id': canonicalURL,
+      headline: title,
+      dateModified,
+      inLanguage: 'en-US',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+    }] : []),
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
@@ -60,7 +70,7 @@ const siteSchema = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="msvalidate.01" content="283F3BA96D0D32A7E7D4063F06D545E7" />
-    <meta name="theme-color" content="#29251f" />
+    <meta name="theme-color" content="#F5F6F8" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />

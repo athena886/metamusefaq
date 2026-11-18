@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
 import { CONTACT_EMAIL } from '../data/site';
 
 const pageSchema = {
@@ -25,8 +26,11 @@ const pageSchema = {
   ]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Site policy</p>
     <h1>Terms of Use</h1>
+    <StatusChips />
+    </header>
     <p><strong>Effective date:</strong> September 24, 2026</p>
 
     <section aria-labelledby="acceptance-heading">

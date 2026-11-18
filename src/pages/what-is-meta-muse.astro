@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
@@ -19,7 +21,7 @@ const faqItems = [
   {
     question: 'Does Meta Muse run on my phone or in the cloud?',
     answer:
-      "Muse has a cloud browser in Muse Secure VM. Muse for Mac can also use local files and apps such as Messages, Notes, and Calendar after system authorization. Web, mobile, Mac, and WhatsApp provide entry points where available.",
+      "Muse has a cloud browser in Muse Secure VM. Muse for Mac can also use local files and apps such as Messages, Notes, and Calendar after system authorization. Web, mobile, Mac, and WhatsApp provide entry points where available. Meta has also announced Apple Watch and Wear OS support.",
   },
   {
     question: 'Is Meta Muse part of Meta AI?',
@@ -29,7 +31,7 @@ const faqItems = [
   {
     question: 'When did Meta Muse launch?',
     answer:
-      'Meta released Meta Muse on September 8, 2026. Muse and its subscriptions remain in limited testing and are not available everywhere.',
+      'Meta released Meta Muse on September 8, 2026. Availability of Muse and its subscriptions varies by region and account.',
   },
 ];
 
@@ -58,6 +60,7 @@ const relatedLinks = [
 ---
 
 <Base
+  dateModified={productUpdateDate}
   title="What Is Meta Muse? Meta's Personal AI Agent Explained"
   description="Meta Muse is a personal AI agent released on September 8, 2026. It uses a cloud computer and, with permission, local Mac apps. Compare Muse, Meta AI, Muse Image/Video, and Muse Code."
   canonicalPath="/what-is-meta-muse/"
@@ -68,12 +71,15 @@ const relatedLinks = [
   ]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Product guide</p>
     <h1>What Is Meta Muse?</h1>
     <p class="lede">
-      Meta Muse is a personal AI agent built for ordinary online tasks. Its defining idea is
-      action: the product is meant to complete work, not only describe how to do it.
-    </p>
+      Meta Muse is a personal AI agent built for ordinary online tasks.</p>
+    <StatusChips checked={productUpdateDate} />
+    </header>
+    <p class="hero-context">Its defining idea is
+      action: the product is meant to complete work, not only describe how to do it.</p>
 
     <section aria-labelledby="definition-heading">
       <h2 id="definition-heading">Meta Muse in One Sentence</h2>
@@ -81,9 +87,32 @@ const relatedLinks = [
         Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026, that carries
         out online tasks for a user instead of only answering questions. It can browse webpages,
         fill forms, place orders, send email, and use Connectors such as Gmail and Google Calendar.
-        Muse and its subscriptions are in limited testing and are not globally available.
+        Access to Muse and its subscriptions varies by region and account.
         Access starts at <a href="https://muse.ai/">muse.ai</a> or the standalone Muse app.
       </p>
+    </section>
+
+    <section aria-labelledby="personal-availability-heading">
+      <h2 id="personal-availability-heading">Personal Muse features and availability</h2>
+      <p>Muse can work with an existing mailbox through a Connector. Paid subscribers in the US
+        and Canada can also use <a href="/muse-email/">Muse’s own email address</a> to send and
+        receive mail. <a href="/muse-spaces/">Spaces</a> let you build custom experiences inside Muse
+        by describing what you want.</p>
+      <p>Meta announced <a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS support</a>
+        alongside its existing web, mobile, Mac, and WhatsApp entry points where available.
+        Official @Muse later said voice is available on both watch platforms.</p>
+      <p>People can also use the <a href="/muse-chrome-extension/">Muse Chrome Extension</a> so Muse
+        browses in personal Chrome, or, for paid US subscribers, <a href="/muse-outbound-calling/">outbound calling</a>.</p>
+      <p>On November 5, Meta <a href={updateSources.mexico}>announced Mexico as the first Latin American
+        country with personal Muse access</a>. Muse is available there in Spanish on iOS, Android,
+        the web, and WhatsApp. Meta lists Cinépolis, Coppel, Despegar, Kavak, Kueski, Liverpool, Rappi,
+        and Walmart México among the local Connectors.</p>
+      <p>On November 17, Meta <a href={updateSources.australia}>announced personal Muse in Australia</a>
+        on iOS, Android, muse.ai, and the Mac app, with AI glasses listed as coming soon. Early local
+        Connectors there will roll out progressively, including Canva, Domain, Kogan, MECCA, Officeworks,
+        realestate.com.au, SWEAT, ShopBack, and Ticketek. The same post says Canva is also a Connector
+        for Muse users around the world. <a href="/muse-for-small-business/#availability-heading">Small Business eligibility</a>
+        is separate.</p>
     </section>
 
     <section aria-labelledby="difference-heading">

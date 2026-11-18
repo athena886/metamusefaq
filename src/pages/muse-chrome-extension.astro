@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "How do I install the Muse Chrome Extension?",
+    answer: "Official Help says to ask Muse in Chat to download it, then sign in. The official Chrome Web Store listing is “Muse from Meta,” offered by Meta.",
+  },
+  {
+    question: "Can Muse see my Chrome passwords or history?",
+    answer: "Official Help says the extension cannot see saved passwords, browsing history, or Chrome settings. Passwords are stripped before Muse can read a page.",
+  },
+  {
+    question: "Is the Chrome Extension the same as Muse’s in-chat browser?",
+    answer: "No. The extension uses your personal Chrome browser in a separate tab group. Muse also has an in-chat browser, and Muse for Mac can use authorized local files and apps. These are different environments.",
+  },
+];
+---
+
+<Base
+  title="Muse Chrome Extension: Browse in Your Personal Chrome"
+  description="How the official Muse Chrome Extension works, what it can and cannot see, how to pause or take over, and how it differs from Muse’s in-chat browser and Mac access."
+  canonicalPath="/muse-chrome-extension/"
+  pageType="article"
+  dateModified={productUpdateDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Chrome Extension" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse Chrome Extension</h1>
+      <p class="lede">Official Help documents a Muse Chrome Extension that lets Muse browse with your personal Chrome browser, in a side panel and a separate tab group. This is distinct from Muse’s in-chat browser and from Muse for Mac local access.</p>
+      <StatusChips checked={productUpdateDate} />
+    </header>
+
+    <section>
+      <h2>What the extension is</h2>
+      <p>The official Chrome Web Store listing is “Muse from Meta,” offered by Meta. As of November 18, 2026, that listing shows version 2.0.77, updated November 16, 2026. There was no official @Muse or English Newsroom announcement of the extension as of this check. Official Help is the source for how it works.</p>
+      <p>Once installed, Muse uses your personal Chrome and keeps its tabs in their own tab group. Official Help says Muse can use sites you are already signed into.</p>
+    </section>
+
+    <section>
+      <h2>How to get it and how to pause</h2>
+      <p>Ask Muse in Chat to download the extension, then sign in. You can pause or take over by clicking, pressing Esc, or moving the tab out of the Muse tab group. You can uninstall the extension at any time.</p>
+    </section>
+
+    <section>
+      <h2>What it can and cannot see</h2>
+      <p>Official Help says the extension cannot see saved passwords, browsing history, or Chrome settings, and that passwords are stripped before Muse can read a page. Activity may still appear in your Google account or browsing history and can affect ads.</p>
+    </section>
+
+    <section>
+      <h2>In-chat browser and other environments</h2>
+      <p>The in-chat browser still exists alongside the extension. Official Help describes Open browser, Take control, and Stop the task. Web access is a default setting under Settings → Permissions.</p>
+      <p>Treat these as separate environments: the cloud browser in Muse Secure VM, authorized local files and apps in Muse for Mac, and your personal Chrome through the extension.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.chromeHelp}>Meta Help: How your Muse agent browses the web</a></li>
+        <li><a href={updateSources.chromeStore}>Chrome Web Store: Muse from Meta</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup, platform access, and Connectors.' },
+      { label: "Muse outbound calling", href: "/muse-outbound-calling/", description: "Paid US subscribers and business opt-out." },
+    ]} />
+  </article>
+</Base>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
 import { CONTACT_EMAIL } from '../data/site';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
@@ -54,12 +55,15 @@ const relatedLinks = [
   ]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Editorial and trust</p>
     <h1>About MetaMuseFAQ</h1>
     <p class="lede">
       MetaMuseFAQ organizes public information about Meta Muse into practical answers for
       readers who want to understand the product before using it.
     </p>
+    <StatusChips />
+    </header>
 
     <section aria-labelledby="site-is-heading">
       <h2 id="site-is-heading">What This Site Is</h2>

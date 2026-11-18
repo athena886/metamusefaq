@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "How do I set up Muse Mail?",
+    answer: "Ask Muse to help you set it up, then follow the in-app steps. Official @Muse also described opening the mail tab from your avatar. Setting up Muse Mail does not grant Muse access to a personal Gmail or Outlook inbox.",
+  },
+  {
+    question: "Does Muse send mail without approval?",
+    answer: "Official Help says Muse asks for approval before sending. You can also change the sender name. Recipients do not need a Muse account, but they should check the full @muse.ai address.",
+  },
+  {
+    question: "How is Muse Mail different from a Gmail or Outlook Connector?",
+    answer: "Muse Mail is a dedicated @muse.ai address for your Muse, separate from your personal inbox. Connecting Gmail or Outlook is a different step that gives Muse permission to work with a mailbox you already use.",
+  },
+];
+---
+
+<Base
+  title="Muse Mail: Setup, Safety, and Eligibility"
+  description="How eligible paid subscribers in the US and Canada can set up Muse Mail, approve outgoing messages, and keep it separate from Gmail or Outlook Connectors."
+  canonicalPath="/muse-email/"
+  pageType="article"
+  dateModified={productUpdateDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Mail" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse Mail</h1>
+      <p class="lede">Muse Mail is a dedicated @muse.ai address for your Muse. Official sources describe it for paid subscribers in the United States and Canada. Meta announced availability on November 10, 2026, and later published official Help for setup and safe use.</p>
+      <StatusChips checked={productUpdateDate} />
+    </header>
+
+    <section>
+      <h2>Set up the address</h2>
+      <p>Ask Muse to help you set it up, then follow the in-app steps. Official @Muse also described tapping your avatar and opening the mail tab. Official Help says setup does not grant Muse access to a personal Gmail or Outlook inbox. Meta may ask you to verify an external email address you solely control so it can send instructions without accessing that inbox.</p>
+      <p>Once you have the address, you can forward a message to it or add it to a thread. Recipients do not need a Muse account. Check the full @muse.ai address before trusting a message.</p>
+    </section>
+
+    <section>
+      <h2>Sending, limits, and what not to use it for</h2>
+      <p>Official Help says Muse asks for approval before sending, and that you can change the sender name. It also describes sending limits and says Muse Mail is not for bulk campaigns. It does not publish a numeric attachment cap in the Help articles reviewed for this page.</p>
+      <p>Official Help says not to use Muse Mail for bank or payment details, medical information, passwords, or recovery codes. You can unlink Muse Mail in Settings. If you delete the address, reset Muse, or delete your account, later mail to that address may be undeliverable.</p>
+    </section>
+
+    <section>
+      <h2>Dedicated address and connected mailboxes</h2>
+      <p>The dedicated address is separate from your personal inbox. Connecting Gmail or Outlook is a different way to let Muse work with a mailbox you already use. Review the permissions and approval prompts for each path. Official Help says Meta processes messages and attachments, and whether they are used to improve AI depends on your settings and Meta’s Privacy Policy.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.emailHelpAbout}>Meta Help: About Muse email addresses</a></li>
+        <li><a href={updateSources.emailHelpSafe}>Meta Help: How to safely use your Muse email</a></li>
+        <li><a href={updateSources.email}>Muse announcement on X</a></li>
+        <li><a href={updateSources.emailSetup}>Muse setup instructions on X</a></li>
+        <li><a href={updateSources.emailConnectors}>Meta launch thread: Gmail and Outlook Connectors</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup, platform access, and Connectors.' },
+      { label: "Muse outbound calling", href: "/muse-outbound-calling/", description: "A separate, US-only paid feature." },
+    ]} />
+  </article>
+</Base>

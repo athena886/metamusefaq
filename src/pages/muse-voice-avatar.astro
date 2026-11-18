@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const newsroomUrl = 'https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/';
+const helpUrl = 'https://www.meta.com/help/artificial-intelligence/1331373868832401/';
+
+const faqItems = [
+  {
+    question: 'Does Meta Muse have voice mode?',
+    answer: 'Yes, where Meta has enabled it. Meta announced the rollout on November 5, 2026 for the Muse app on mobile, web, and Mac, starting in the United States. The November 17 Australia launch post also describes real-time voice there on mobile, web, and Mac, and official @Muse later said voice is available on Apple Watch and Wear OS. Start from the phone icon in the top-right corner in the app. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
+  },
+  {
+    question: 'What are Muse Realtime Voice and Muse Realtime Avatar?',
+    answer: 'They are Meta’s names for real-time spoken conversation and the expressive avatar that reacts while Muse listens and speaks. You can use voice only, keep the avatar beside chat, or go full screen. Hundreds of voice styles are offered. Source: Meta Newsroom, November 5, 2026.',
+  },
+  {
+    question: 'What is Muse Charm?',
+    answer: 'In the November 5 Newsroom post, Meta lists Muse Charm (and AI Glasses) as forthcoming places for voice conversations with Muse. As of that announcement it was “coming soon,” not a shipped product. Check Meta’s Muse pages before assuming access.',
+  },
+  {
+    question: 'Can I use voice while using other apps?',
+    answer: 'Meta Help says that where voice mode is available, you can continue talking to Muse in the background while using other apps, and that the device will indicate microphone use. You control background listening in Settings → Voice and Avatar.',
+  },
+  {
+    question: 'Does voice mode change Power or Maximum pricing?',
+    answer: 'No published plan change was announced with the voice rollout. Power remains $20/month (500M tokens/week) and Maximum $100/month (3B/week) on our pricing summary unless your account shows otherwise.',
+  },
+];
+---
+
+<Base
+  title="Meta Muse Voice Mode and Expressive Avatars"
+  description="Independent FAQ on Muse voice mode and expressive avatars: US rollout, later Australia mention, watch voice, phone icon, Muse Realtime Voice/Avatar, Settings → Voice and Avatar, Muse Charm, and pricing."
+  canonicalPath="/muse-voice-avatar/"
+  pageType="article"
+  dateModified="2026-11-18"
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Muse Voice & Avatars' }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Meta Muse Voice Mode and Expressive Avatars</h1>
+      <p class="lede">Meta began rolling out voice conversations and expressive avatars in the Muse app on November 5, 2026.</p>
+      <StatusChips checked="2026-11-18" />
+      <p>Checked <time datetime="2026-11-18">November 18, 2026</time>.</p>
+    </header>
+    <p class="hero-context">This page summarizes what Meta announced, how to start a voice chat where it is available, and how the new product names relate to the rest of Muse. It is a third-party FAQ, not an official Meta page.</p>
+
+    <section aria-labelledby="shipped-heading">
+      <h2 id="shipped-heading">What shipped</h2>
+      <p>According to Meta’s Newsroom post <a href={newsroomUrl}>Give Your Muse a Voice</a>, voice and expressive avatars are rolling out in the Muse app on <strong>mobile, web, and Mac</strong>. Tap the <strong>phone icon</strong> in the top-right corner to start talking.</p>
+      <p>Meta’s stated uses include thinking out loud, trip planning, brainstorming, and rehearsing interviews or presentations. Voice can keep working while you talk in the background—for example on a walk or while your hands are full.</p>
+    </section>
+
+    <section aria-labelledby="realtime-heading">
+      <h2 id="realtime-heading">Muse Realtime Voice and Muse Realtime Avatar</h2>
+      <p>Meta names the underlying tech <strong>Muse Realtime Voice</strong> and <strong>Muse Realtime Avatar</strong>. The Newsroom post says you can:</p>
+      <ul>
+        <li>Speak and hear replies in real time</li>
+        <li>Interrupt mid-conversation</li>
+        <li>Pick among hundreds of voice styles</li>
+        <li>Choose how present the avatar is: <strong>voice only</strong>, <strong>avatar beside the chat</strong>, or <strong>full screen</strong></li>
+      </ul>
+      <p>The avatar uses expressions and gestures that Meta says match the tone of the conversation while Muse listens and speaks.</p>
+    </section>
+
+    <section aria-labelledby="help-heading">
+      <h2 id="help-heading">How to use voice mode (Help Center)</h2>
+      <p>Meta Help article <a href={helpUrl}>How to get started with Muse</a> was updated around the launch with a <strong>Chat in voice mode</strong> section. Key points from that Help page:</p>
+      <ol>
+        <li>Voice mode is <strong>only available in some countries</strong>.</li>
+        <li>Where available, tap the phone icon before speaking a prompt. You can end with phrases such as “Goodbye” or “Hang up.”</li>
+        <li>The Muse app needs <strong>microphone</strong> access.</li>
+        <li>You can continue talking to Muse in the background while using other apps; the device will show that the microphone is in use while Muse is active in the background.</li>
+        <li>Review and change related permissions in <strong>Settings → Voice and Avatar</strong>.</li>
+      </ol>
+      <p>Exact buttons and labels can vary by device.</p>
+    </section>
+
+    <section aria-labelledby="availability-heading">
+      <h2 id="availability-heading">Availability</h2>
+      <p>Meta’s Newsroom post says voice and expressive avatars are rolling out <strong>in the US to start</strong>. Help separately states that voice mode is only available in some countries. Meta’s November 17 Australia launch post also describes real-time voice there on mobile, web, and Mac. Official @Muse later said <a href="https://x.com/Muse/status/2122797416856658255">voice is available now on Apple Watch and Android Wear OS</a>. Treat access as region- and account-dependent; confirm in your Muse app rather than assuming global availability.</p>
+      <p>Voice conversations with Muse on <strong>AI Glasses</strong> and <strong>Muse Charm</strong> are listed as <strong>coming soon</strong> in the November 5 announcement. They were not described as already shipped. The Australia post also lists AI glasses as coming soon.</p>
+    </section>
+
+    <section aria-labelledby="pricing-heading">
+      <h2 id="pricing-heading">Pricing</h2>
+      <p>This voice rollout does <strong>not</strong> change the published subscription table on our pricing page: Free (limited weekly usage), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B/week). Confirm current limits in your account. See <a href="/meta-muse-pricing/">Meta Muse pricing</a>.</p>
+    </section>
+
+    <section aria-labelledby="product-heading">
+      <h2 id="product-heading">How this fits the rest of Muse</h2>
+      <p>Voice mode is another way to talk with the same personal Muse agent. It does not replace cloud task actions (browse, forms, Connectors) or Muse for Mac local access. Muse the personal agent remains distinct from Muse Image, Muse Video, and Muse Code—see our product-name notes on the <a href="/">homepage</a>.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Official sources</h2>
+      <p>Checked against Meta materials dated November 5–18, 2026.</p>
+      <ul>
+        <li><a href={newsroomUrl}>Give Your Muse a Voice</a> (Newsroom, November 5, 2026)</li>
+        <li><a href={helpUrl}>How to get started with Muse</a> (Help; Chat in voice mode section)</li>
+        <li><a href="https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/">Muse Is Now Available in Australia</a> (Newsroom, November 17, 2026)</li>
+        <li><a href="https://x.com/Muse/status/2122797416856658255">Official @Muse: voice on Apple Watch and Wear OS</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'Muse on Apple Watch and Wear OS', href: '/muse-apple-watch-wear-os/', description: 'Official confirmation that voice is available on both watch platforms.' },
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup for Mac, Accounts Center connections, WhatsApp, and other Connectors.' },
+      { label: 'Meta Muse pricing', href: '/meta-muse-pricing/', description: 'Free, Power, and Maximum: official prices and weekly token allowances.' },
+    ]} />
+  </article>
+</Base>

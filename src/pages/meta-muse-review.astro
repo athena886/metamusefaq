@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import { productUpdateDate } from '../data/muse-updates';
+import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
@@ -10,7 +12,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse good?',
     answer:
-      'Meta Muse is a strong fit for people who want routine web tasks carried out, not another tool that only supplies text. It is less suitable for anyone without access during limited testing or anyone who is uncomfortable connecting sensitive services.',
+      'Meta Muse is a strong fit for people who want routine web tasks carried out, not another tool that only supplies text. It is less suitable for anyone without access in their region or anyone who is uncomfortable connecting sensitive services.',
   },
   {
     question: 'Is Meta Muse worth $20 a month?',
@@ -20,7 +22,7 @@ const faqItems = [
   {
     question: 'What are the main problems with Meta Muse?',
     answer:
-      'Media allegations about private-message access warrant scrutiny alongside Meta’s permission controls and response. Other limits include availability during limited testing, website access, Connector permissions, and weekly token allowances.',
+      'Media allegations about private-message access warrant scrutiny alongside Meta’s permission controls and response. Other limits include regional availability, website access, Connector permissions, and weekly token allowances.',
   },
   {
     question: 'Is Meta Muse safe to use?',
@@ -30,7 +32,7 @@ const faqItems = [
   {
     question: 'Should I wait before signing up?',
     answer:
-      'Waiting makes sense if you are in a location where Muse is unavailable, have sensitive email or calendar accounts, or only need written answers. If you are able to access Muse during limited testing and have a repetitive web task that is safe to test, the free tier provides a limited way to evaluate the fit.',
+      'Waiting makes sense if you are in a location where Muse is unavailable, have sensitive email or calendar accounts, or only need written answers. If Muse is available in your account and have a repetitive web task that is safe to test, the free tier provides a limited way to evaluate the fit.',
   },
 ];
 
@@ -58,7 +60,7 @@ const relatedLinks = [
 ];
 ---
 
-<Base
+<Base dateModified={productUpdateDate}
   title="Meta Muse Review: An Early Assessment (October 2026)"
   description="An early assessment of Meta Muse based on public reporting and Meta's documentation: where it's strong, where it's limited, and who should wait for now."
   canonicalPath="/meta-muse-review/"
@@ -69,13 +71,16 @@ const relatedLinks = [
   ]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Early assessment</p>
     <h1>Meta Muse Review</h1>
     <p class="lede">
       Meta Muse is an early consumer AI agent that moves part of online work into a separate
-      cloud browser. This assessment focuses on what that shift makes possible and what it asks
-      users to trust.
-    </p>
+      cloud browser.</p>
+    <StatusChips />
+    </header>
+    <p class="hero-context">This assessment focuses on what that shift makes possible and what it asks
+      users to trust.</p>
 
     <section aria-labelledby="short-version-heading">
       <h2 id="short-version-heading">The Short Version</h2>
@@ -130,8 +135,7 @@ const relatedLinks = [
           access. Keep those claims separate from Meta’s explanation of permissions and its response.
         </li>
         <li>
-          <strong>Availability is limited.</strong> Muse and its subscriptions are in limited testing
-          and are not available in every location.
+          <strong>Availability is limited.</strong> Availability of Muse and its subscriptions varies by region and account.
         </li>
         <li>
           <strong>Its usefulness depends on access.</strong> Connectors such as Gmail

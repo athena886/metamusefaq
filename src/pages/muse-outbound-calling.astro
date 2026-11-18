@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "Who can use Muse outbound calling?",
+    answer: "Official @Muse said it is available now for paid subscribers in the United States. That is narrower than Muse Mail, which official sources describe for paid subscribers in the US and Canada.",
+  },
+  {
+    question: "What kinds of calls is Meta describing?",
+    answer: "Official Help for people who do not use Muse says Meta is experimenting with Muse making AI phone calls to businesses with publicly available numbers, for things such as hours or bookings.",
+  },
+  {
+    question: "Can a business opt out of Muse calls?",
+    answer: "Yes. Official Help points businesses to an opt-out form. Check that Help article for the current form and instructions.",
+  },
+];
+---
+
+<Base
+  title="Muse Outbound Calling: Paid US Subscribers"
+  description="What Meta has announced about Muse making outbound phone calls for paid US subscribers, how that differs from Muse Mail eligibility, and how businesses can opt out."
+  canonicalPath="/muse-outbound-calling/"
+  pageType="article"
+  dateModified={productUpdateDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse outbound calling" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse Outbound Calling</h1>
+      <p class="lede">Official @Muse announced outbound calling on November 13, 2026, for paid subscribers in the United States. This is narrower than Muse Mail eligibility, which covers paid subscribers in the US and Canada.</p>
+      <StatusChips checked={productUpdateDate} />
+    </header>
+
+    <section>
+      <h2>Who it is for</h2>
+      <p>Treat outbound calling as a paid, US-only feature unless Meta publishes a wider eligibility rule. Do not apply the US-and-Canada scope used for Muse Mail to calling.</p>
+    </section>
+
+    <section>
+      <h2>What Meta has said so far</h2>
+      <p>Official Help for people who do not use Muse says Meta is experimenting with Muse making AI phone calls to businesses that have publicly available numbers, including for hours or bookings. Official sources reviewed for this page do not publish a call-length limit, a recording policy, or a full list of supported call types, so this guide does not invent those details.</p>
+    </section>
+
+    <section>
+      <h2>If you are a business</h2>
+      <p>The same Help article says businesses can opt out through an official form. Use that article for the current opt-out path rather than a third-party workaround.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.calling}>Muse announcement on X</a></li>
+        <li><a href={updateSources.callingHelp}>Meta Help: Information for people who don’t use Muse</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'Muse Mail', href: '/muse-email/', description: 'Dedicated @muse.ai address for paid US and Canada subscribers.' },
+      { label: "How to use Meta Muse", href: "/how-to-use-meta-muse/", description: "Setup, platform access, and Connectors." },
+    ]} />
+  </article>
+</Base>

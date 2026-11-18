@@ -1,9 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const faqItems = [
+  { question: 'Which business apps can Muse connect to?', answer: 'Meta lists Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, and Zoom. Check Settings → Connectors for the options available to your account.' },
+  { question: 'What are side chats in Muse?', answer: 'Side chats organize separate topics without cluttering the main chat. Muse stays aware across the main chat and side chats; they are not separate agents.' },
+  { question: 'Where are Muse Artifacts saved?', answer: 'Completed Artifacts are saved to a workspace in the Library tab and shared in the thread. They can include PDFs, spreadsheets, documents, images, and podcasts.' },
+  { question: 'Where is Muse for Small Business available?', answer: 'The official business page lists people in the US and Canada aged 18 and over. This is distinct from the wider personal-agent rollout, including Singapore, Mexico, and Australia. Check your account for access.' },
   {"question": "Can Muse access Messages and Notes on my Mac?", "answer": "Yes, through Muse for Mac after system authorization. Review macOS permissions and each app\u2019s Off, Read only, or Read and interact setting."},
   {"question": "Are Facebook, Instagram, and Threads connected automatically?", "answer": "Yes, when those accounts are in the same Accounts Center. Review account connections and permissions before assigning tasks."},
   {"question": "Can I chat with Muse in WhatsApp?", "answer": "Yes. Meta lists WhatsApp as a Muse chat entry point where available."},
@@ -11,7 +17,7 @@ const faqItems = [
   {
     question: 'What do I need before setting up Meta Muse?',
     answer:
-      'You need a Meta account, the web version, an iOS or Android phone, or the Mac app, and a Google account if you plan to connect Gmail or Google Calendar. Muse is in limited testing and is not available in all locations.',
+      'You need a Meta account, the web version, an iOS or Android phone, or the Mac app, and a Google account if you plan to connect Gmail or Google Calendar. Access varies by location and account.',
   },
   {
     question: 'Do I have to pay to use Meta Muse?',
@@ -26,7 +32,7 @@ const faqItems = [
   {
     question: 'What can Meta Muse not do?',
     answer:
-      'The cloud browser runs in a separate virtual machine. Tasks depend on available websites, Connectors, permissions, and account access. Muse is in limited testing and is not globally available; desktop capabilities depend on the client you use.',
+      'The cloud browser runs in a separate virtual machine. Tasks depend on available websites, Connectors, permissions, and account access. Access varies by region and account, and desktop capabilities depend on the client you use.',
   },
   {
     question: 'Where does Meta Muse run my tasks?',
@@ -60,8 +66,9 @@ const relatedLinks = [
 ---
 
 <Base
+  dateModified={productUpdateDate}
   title="How to Use Meta Muse: Step-by-Step Setup Guide"
-  description="Set up Meta Muse at muse.ai or in the standalone app. Compare Free, Power and Maximum, add Connectors, and approve sensitive actions during limited testing."
+  description="Set up Meta Muse at muse.ai or in the standalone app. Compare Free, Power and Maximum, add Connectors, and review permissions and approve sensitive actions."
   canonicalPath="/how-to-use-meta-muse/"
   pageType="article"
   breadcrumbs={[
@@ -70,12 +77,15 @@ const relatedLinks = [
   ]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Setup guide</p>
     <h1>How to Use Meta Muse</h1>
     <p class="lede">
-      Use Muse on the web, mobile, Mac, or through WhatsApp where available. This guide covers
-      cloud tasks, local Mac access, Connectors, and the permissions to review before you begin.
-    </p>
+      Use Muse on the web, mobile, Mac, or through WhatsApp where available.</p>
+    <StatusChips checked={productUpdateDate} />
+    </header>
+    <p class="hero-context">This guide covers
+      cloud tasks, local Mac access, Connectors, and the permissions to review before you begin.</p>
 
     <section aria-labelledby="requirements-heading">
       <h2 id="requirements-heading">What You Need Before You Start</h2>
@@ -90,8 +100,13 @@ const relatedLinks = [
         <li>A Google account if you want to connect Gmail or Google Calendar.</li>
       </ul>
       <p>
-        Muse and Muse subscriptions are in limited testing and are not available in all locations.
-        Check access for your country and account at <a href="https://muse.ai/">muse.ai</a>.
+        Muse for Small Business is available in the US and Canada for people 18 and over. Personal
+        Muse has also launched in Singapore, <a href={updateSources.mexico}>Mexico</a>, and
+        <a href={updateSources.australia}>Australia</a>. In Mexico
+        it is available in Spanish on iOS, Android, the web, and WhatsApp. In Australia, Meta says it
+        is available on iOS, Android, muse.ai, and the Mac app, with AI glasses listed as coming soon.
+        Subscriptions and
+        connectors may vary by region and account. Check access at <a href="https://muse.ai/">muse.ai</a>.
       </p>
     </section>
 
@@ -188,8 +203,9 @@ const relatedLinks = [
               quantities, and order details you want, then review and approve the purchase before it is placed.
             </li>
             <li>
-              <strong>Send an email:</strong> Connect Gmail and give it the recipient, subject, and
-              message requirements, then review the draft and approve sending when prompted.
+              <strong>Send an email:</strong> Use a connected mailbox or, if eligible, Muse’s own
+              address. Give Muse the recipient, subject, and message requirements. Review the draft
+              and any approval prompt before sending.
             </li>
             <li>
               <strong>Align upcoming commitments:</strong> Ask it to check calendar events and
@@ -198,6 +214,24 @@ const relatedLinks = [
           </ol>
         </li>
       </ol>
+    </section>
+
+    <section aria-labelledby="new-entry-points-heading">
+      <h2 id="new-entry-points-heading">Muse Mail, Spaces, watches, browsing, and calling</h2>
+      <ul>
+        <li><a href="/muse-email/">Muse Mail</a>: Paid subscribers in the US and Canada can ask Muse
+          to set up a dedicated @muse.ai address, or open the mail tab from their avatar. Official Help
+          says Muse asks for approval before sending.</li>
+        <li><a href="/muse-spaces/">Spaces</a>: Tell Muse what you want to build. You can put the
+          resulting space in the sidebar or main tabs, hide it, or schedule when it appears.</li>
+        <li><a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS</a>: Meta announced both
+          platforms. Official @Muse later said voice is available on Apple Watch and Wear OS. Check the official App Store listing for Apple Watch compatibility.</li>
+        <li><a href="/muse-chrome-extension/">Muse Chrome Extension</a>: Official Help says you can
+          ask Muse in Chat to download it. Muse then browses in your personal Chrome, in a separate tab group,
+          which is distinct from the in-chat browser and from Muse for Mac.</li>
+        <li><a href="/muse-outbound-calling/">Outbound calling</a>: Official @Muse said this is available
+          for paid subscribers in the United States, a narrower scope than Muse Mail.</li>
+      </ul>
     </section>
 
     <section aria-labelledby="mac-heading">
@@ -212,13 +246,40 @@ const relatedLinks = [
       <p>Review important actions before confirming. See <a href="https://www.meta.com/help/superintelligence/1126304576638594/">Meta’s Mac access guide</a>.</p>
     </section>
     <section aria-labelledby="connectors-heading">
-      <h2 id="connectors-heading">Meta, Custom, and Device Connectors</h2>
+      <h2 id="connectors-heading">Personal, Business, and Device Connectors</h2>
+      <p><a href="/muse-for-small-business/">Muse for Small Business</a> adds connections to Asana,
+        Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable,
+        Notion, Shopify, Slack, Stripe, and Zoom. Meta also lists Facebook Pages, Instagram
+        professional account analytics, and Meta ad accounts. These business connections are
+        distinct from the automatic personal-account connections described below.</p>
+      <p>Check Settings → Connectors for your account’s current list. Developers and partners can
+        learn about building integrations at the <a href="https://platform.muse.ai/">Muse Connector Platform</a>.
+        Source: <a href="https://about.fb.com/news/2026/09/introducing-muse-small-business/">Meta’s small-business announcement</a>.</p>
       <p>Facebook, Instagram, and Threads connect automatically when accounts share an Accounts Center.
         For other services, use Settings → Connectors or ask Muse to connect one.</p>
+      <p>For personal travel planning, Meta <a href={updateSources.expedia}>announced Expedia as
+        a Muse Connector</a> on November 10. The announcement does not specify which booking,
+        payment, or refund actions it supports.</p>
+      <p>Meta’s <a href={updateSources.australia}>November 17 Australia launch post</a> says Canva
+        is also available as a Connector for Muse users around the world, not only as a Small Business
+        Connector. The same post lists early local Australian partners that will roll out progressively,
+        with some experiences becoming available after launch: Canva, Domain, Kogan, MECCA, Officeworks,
+        realestate.com.au, SWEAT, ShopBack, and Ticketek. It also mentions services people in Australia
+        can already connect, such as Gmail, Google Calendar, Instagram, and OpenTable.</p>
       <p>Custom Connectors can use service API credentials; Meta does not review them. Apple Health
         and Android SMS access is managed in device settings after setup. Disconnecting a Connector
         stops further exchange but may leave earlier information in Muse’s history or memories.</p>
       <p>Source: <a href="https://www.meta.com/help/superintelligence/1687253048996149/">Meta’s Connector guide</a>.</p>
+    </section>
+    <section aria-labelledby="chats-artifacts-heading">
+      <h2 id="chats-artifacts-heading">Side Chats, Artifacts, and Library</h2>
+      <p>Use side chats to keep a project or topic organized outside the main conversation.
+        In the Chat tab, open the top-left menu and select the pencil-and-notepad icon to start
+        a side chat. Muse stays aware across both the main chat and side chats.</p>
+      <p>Upload a file or ask Muse to create one. Artifacts can include PDFs, spreadsheets,
+        documents, images, and podcasts. Completed Artifacts are saved to a workspace in the
+        Library tab and shared in the thread; open Library to find the finished result.</p>
+      <p>Source: <a href="https://www.meta.com/ja-jp/help/superintelligence/1331373868832401/">Meta Help: how to get started with Muse (Japanese edition)</a>.</p>
     </section>
     <section aria-labelledby="whatsapp-heading">
       <h2 id="whatsapp-heading">Chat with Muse in WhatsApp</h2>
@@ -246,8 +307,8 @@ const relatedLinks = [
           be checked, especially when a purchase, email, or form submission has consequences.
         </li>
         <li>
-          <strong>It is in limited testing.</strong> Muse and subscriptions are not available everywhere;
-          confirm access in your own account.
+          <strong>Availability varies.</strong> Business eligibility and personal-agent launches differ;
+          confirm region, age requirements, and subscription access in your account.
         </li>
       </ul>
       <!-- TODO: verify supported task limits, exclusions, and platform restrictions. -->
@@ -264,8 +325,13 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
-      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
+      <p>Business features, availability, and getting-started guidance checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
       <ul>
+        <li><a href={updateSources.australia}>Meta: personal Muse launch in Australia, November 17</a></li>
+        <li><a href={updateSources.chromeHelp}>Meta Help: How your Muse agent browses the web</a></li>
+        <li><a href={updateSources.calling}>Muse: outbound calling for paid US subscribers</a></li>
+        <li><a href="https://muse.ai/business">Muse for Small Business: eligibility and connectors</a></li>
+        <li><a href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/">Meta: personal Muse launch in Singapore</a></li>
         <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
         <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>

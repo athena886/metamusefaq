@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "How do I create a space in Muse?",
+    answer: "Describe your idea to Muse. After it builds the space, ask Muse to refine the layout or behavior as needed.",
+  },
+  {
+    question: "Can I schedule when a space appears?",
+    answer: "Yes. Meta says you can choose when a space appears, as well as put it in the sidebar or main tabs or hide it.",
+  },
+  {
+    question: "Can I share a Muse space?",
+    answer: "Meta says it is exploring sharing. The November 6 announcement does not describe sharing as available.",
+  },
+];
+---
+
+<Base
+  title="Muse Spaces: Create and Organize Custom Experiences"
+  description="Create a space in Muse, pin it to your tabs or sidebar, schedule when it appears, and check availability and sharing status."
+  canonicalPath="/muse-spaces/"
+  pageType="article"
+  dateModified={productUpdateDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Spaces" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse Spaces</h1>
+      <p class="lede">A space is a custom experience you build inside the Muse app by describing what you want. Meta announced Spaces on November 6, 2026, wherever Muse is available.</p>
+      <StatusChips checked={productUpdateDate} />
+    </header>
+
+    <section>
+      <h2>Start with an idea</h2>
+      <p>Tell Muse what you want the space to show and how you want to use it. Try an order tracker, a client hub with deadlines and invoices, or a trip planner. Ask Muse to make adjustments as you use it.</p>
+    </section>
+    <section>
+      <h2>Choose when and where it appears</h2>
+      <p>Put a space in the sidebar or the main tabs, hide it when you do not need it, or schedule when it appears. For example, keep your work planner up front on weekdays. Connected apps can keep relevant information in your space up to date in the background.</p>
+      <p>Meta also announced that it was rolling out specialized versions of its models informed by work on Muse Wonder.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.spaces}>Meta Newsroom: Design the Muse App, Just for You</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup, platform access, and Connectors.' },
+      { label: "What is Meta Muse?", href: "/what-is-meta-muse/", description: "How Spaces fit into the personal agent." },
+    ]} />
+  </article>
+</Base>

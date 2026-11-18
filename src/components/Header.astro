@@ -1,15 +1,19 @@
 ---
 import { SITE_NAME, nav } from '../data/site';
+const path = Astro.url.pathname;
+const labels: Record<string, string> = { '/what-is-meta-muse/': 'Overview', '/how-to-use-meta-muse/': 'How to use' };
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href="/" aria-label={`${SITE_NAME} home`}>
       <img class="brand__mark" src="/favicon.svg" alt="" width="34" height="34" />
-      <span>{SITE_NAME}</span>
+      <span>{SITE_NAME}<span class="brand__dot" aria-hidden="true">.</span></span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      {nav.filter((item) => !(path === '/' && item.href === '/')).map((item) => (
+        <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{labels[item.href] ?? item.label}</a>
+      ))}
     </nav>
   </div>
 </header>

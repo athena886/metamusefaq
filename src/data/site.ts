@@ -15,3 +15,6 @@ export const nav = [
   { label: 'Pricing', href: '/meta-muse-pricing/' },
   { label: 'Review', href: '/meta-muse-review/' },
 ];
+
+// Existing site-wide editorial review date, shared by hero status chips.
+export const LATEST_REVIEW_DATE = '2026-10-30';

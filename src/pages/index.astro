@@ -1,9 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 
 const faqItems = [
+  {
+    question: 'What is Muse for Small Business?',
+    answer: 'Muse for Small Business adds business skills and connectors inside the Muse agent. It can work with connected tools such as Shopify, QuickBooks, Canva, Slack, and Stripe. Meta says publishing, sending, and spending require your approval.',
+  },
+  {
+    question: 'Does Meta Muse have voice mode?',
+    answer:
+      'Yes. Meta began rolling out voice and expressive avatars in the Muse app on November 5, 2026, and that Newsroom post said the US first. The November 17 Australia launch post also describes real-time voice on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. Tap the phone icon in the top-right corner in the app. See our Muse voice and avatar guide and the watch guide. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
+  },
+  {
+    question: 'What are Muse Realtime Voice and Muse Realtime Avatar?',
+    answer:
+      'They are Meta’s names for real-time spoken conversation and the animated avatar that reacts while Muse listens and speaks. You can use voice only, keep the avatar beside the chat, or go full screen. Hundreds of voice styles are offered. Source: Meta Newsroom, November 5, 2026.',
+  },
+  {
+    question: 'What is Muse Charm?',
+    answer:
+      'Meta lists Muse Charm as a forthcoming place for voice conversations with Muse, alongside AI Glasses. As of the November 5 announcement it was “coming soon,” not a shipped product. Confirm details on Meta’s Muse pages before assuming access.',
+  },
   {
     question: 'What is Meta Muse?',
     answer:
@@ -27,11 +48,16 @@ const faqItems = [
   {
     question: 'Is Meta Muse available in my country?',
     answer:
-      'Muse and Muse subscriptions are in limited testing and are not available in all locations. Check access for your own country and account at muse.ai.',
+      'The Muse for Small Business page lists the US and Canada, ages 18 and over. The personal agent has a wider rollout, including Singapore, Mexico, and Australia. Mexico was the first Latin American launch, on November 5, 2026. Australia was announced on November 17, 2026, on iOS, Android, muse.ai, and the Mac app. Access and subscriptions can vary by region and account; check muse.ai.',
   },
 ];
 
 const relatedLinks = [
+  {
+    label: 'Muse voice and avatars',
+    href: '/muse-voice-avatar/',
+    description: 'Realtime Voice/Avatar, US-first availability, Settings → Voice and Avatar, Muse Charm.',
+  },
   {
     label: 'what is Meta Muse',
     href: '/what-is-meta-muse/',
@@ -56,6 +82,7 @@ const relatedLinks = [
 ---
 
 <Base
+  dateModified={productUpdateDate}
   title="Meta Muse: What It Is, What It Costs, How to Use It"
   description="Meta Muse is Meta's personal AI agent that browses, books, and buys for you. Here's what it does, what the $20 and $100 plans include, and how to get started."
   canonicalPath="/"
@@ -63,17 +90,44 @@ const relatedLinks = [
   breadcrumbs={[{ label: 'Home', href: '/' }]}
 >
   <article class="content">
+    <header class="hero-panel">
     <p class="eyebrow">Independent guide</p>
     <h1>Meta Muse Explained</h1>
+    <p class="lede">
+        Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026.</p>
+    <StatusChips checked={productUpdateDate} />
+      <nav class="jump-links" aria-label="Jump to overview sections">
+        <span>Jump to</span>
+        <a href="#definition-heading">What it is</a>
+        <a href="#capabilities-heading">Capabilities</a>
+        <a href="#business-heading">Small Business</a>
+        <a href="#cost-heading">Cost</a>
+        <a href="#start-heading">Get started</a>
+      </nav>
+    </header>
+
+    <section aria-labelledby="updates-heading">
+      <h2 id="updates-heading">Latest Muse updates</h2>
+      <p>Checked <time datetime={productUpdateDate}>November 18, 2026</time>.
+        Meta <a href={updateSources.australia}>launched personal Muse in Australia</a> on November 17,
+        with local Connectors rolling out progressively. The same post says
+        <a href={updateSources.australia}>Canva is also a Connector for Muse users around the world</a>.
+        Official @Muse also said <a href="/muse-apple-watch-wear-os/">voice is available on Apple Watch and Wear OS</a>.
+        See the <a href="/muse-chrome-extension/">Muse Chrome Extension</a>,
+        <a href="/muse-outbound-calling/">outbound calling for paid US subscribers</a>,
+        and official Help details on <a href="/muse-email/">Muse Mail</a>.
+        Earlier November updates include <a href="/muse-spaces/">Spaces</a>,
+        <a href={updateSources.expedia}>Expedia</a>, and the
+        <a href={updateSources.mexico}>Mexico launch</a>.</p>
+    </section>
 
     <section aria-labelledby="definition-heading">
       <h2 id="definition-heading">What Meta Muse Is</h2>
-      <p>
-        Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026. It is built
+      <p>It is built
         for everyday consumers and works on web-based tasks rather than stopping at a written
         answer. The practical goal is to hand over an outcome, then review the action it took or
-        the result it produced.
-      </p>
+        the result it produced.</p>
+
       <p>
         That distinction matters because a conversational tool usually returns instructions you
         carry out yourself. Meta Muse is positioned as an agent that can act on your behalf in a
@@ -88,7 +142,7 @@ const relatedLinks = [
         The currently listed capabilities center on routine online work. Each task still depends
         on access to the relevant website or service and on the details you provide.
       </p>
-      <ul>
+      <ul class="capability-grid">
         <li>
           <strong>Browse webpages:</strong> Open pages, gather information, and move through a
           site while working toward a requested result.
@@ -106,7 +160,9 @@ const relatedLinks = [
           returning dining recommendations.
         </li>
         <li>
-          <strong>Send email:</strong> Write and send messages through a connected Gmail account.
+          <strong>Work with email:</strong> Use a connected mailbox such as Gmail, or
+          <a href="/muse-email/">set up Muse’s own address</a> to send and receive mail.
+          The dedicated address is available to paid subscribers in the US and Canada.
         </li>
         <li>
           <strong>Use Connectors:</strong> Connect Gmail, Calendar, and other services. Facebook,
@@ -115,6 +171,12 @@ const relatedLinks = [
         </li>
         <li><strong>Work on your Mac:</strong> With system authorization, Muse can use local files
           and information in Messages, Notes, Calendar, and other supported apps.</li>
+        <li>
+          <strong>Talk in voice mode:</strong> Where available, tap the phone icon to speak with Muse in real time. Choose voice only, an expressive avatar beside chat, or full screen. Meta calls the tech Muse Realtime Voice and Muse Realtime Avatar. See our
+          <a href="/muse-voice-avatar/">Muse voice and avatar guide</a>.
+        </li>
+        <li><strong>Build a space:</strong> Describe what you want Muse to build, then choose when
+          and where it appears in the app. See <a href="/muse-spaces/">how Spaces work</a>.</li>
       </ul>
       <p>
         These abilities describe the kinds of actions Meta says the product can take. They do not
@@ -129,7 +191,20 @@ const relatedLinks = [
       </p>
     </section>
 
-    <section aria-labelledby="cost-heading">
+    <section class="callout-card" aria-labelledby="business-heading">
+      <h2 id="business-heading">Muse for Small Business</h2>
+      <p>Muse for Small Business adds skills and connectors inside Muse for business tasks.
+        Meta names Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks,
+        Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, and Zoom, alongside Facebook Pages,
+        Instagram professional account analytics, and Meta ad accounts.</p>
+      <p>Use it to review business information or prepare campaign drafts, then review the result.
+        Meta says nothing publishes, sends, or spends without your approval.
+        Read our <a href="/muse-for-small-business/">Muse for Small Business guide and FAQ</a>
+        for access, connectors, and security details.
+        Source: <a href="https://about.fb.com/news/2026/09/introducing-muse-small-business/">Meta’s September 29 announcement</a>.</p>
+    </section>
+
+    <section class="callout-card" aria-labelledby="cost-heading">
       <h2 id="cost-heading">How Much Meta Muse Costs</h2>
       <p>
         Meta Muse has limited free weekly usage, Power ($20/month) with 500M Muse tokens per week,
@@ -176,7 +251,9 @@ const relatedLinks = [
       <p>
         Start at <a href="https://muse.ai/">muse.ai</a>, in the iOS or Android app, or with
         <a href="https://ai.meta.com/muse/download/">Muse for Mac</a>. You can also chat with Muse
-        in WhatsApp where available. These are Muse entry points, separate from Meta AI.
+        in WhatsApp where available. Meta also announced
+        <a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS support</a>. These are Muse
+        entry points, separate from Meta AI.
       </p>
       <ol>
         <li>
@@ -193,8 +270,18 @@ const relatedLinks = [
         </li>
       </ol>
       <p>
+        Voice mode first rolled out in the United States on mobile, web, and Mac. Meta’s Australia launch post also describes real-time voice there on those platforms, and official @Muse later said voice is available on
+        <a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS</a>.
+        Microphone access is required; background conversation while using other apps is controlled in Settings → Voice and Avatar. Voice on AI Glasses and Muse Charm is listed as coming soon. Details:
+        <a href="/muse-voice-avatar/">Muse voice mode and expressive avatars</a>.
+      </p>
+      <p>
         For a fuller walkthrough, read our <a href="/how-to-use-meta-muse/">how to use Meta Muse</a> guide.
-        Muse and its subscriptions are in limited testing and are not globally available.
+        Personal Muse is available in Singapore, launched in Mexico in Spanish on iOS, Android,
+        the web, and WhatsApp, and <a href={updateSources.australia}>launched in Australia</a> on
+        November 17 on iOS, Android, muse.ai, and the Mac app, with AI glasses listed as coming soon.
+        Muse for Small Business has separate US and Canada eligibility for
+        people 18 and older. See the <a href="/muse-for-small-business/#availability-heading">availability distinction</a>.
       </p>
     </section>
 
@@ -235,8 +322,17 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
-      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
+      <p>Earlier business coverage checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
       <ul>
+        <li><a href={updateSources.australia}>Meta: personal Muse launch in Australia, November 17</a></li>
+        <li><a href={updateSources.watchVoice}>Muse: voice on Apple Watch and Wear OS</a></li>
+        <li><a href={updateSources.chromeHelp}>Meta Help: How your Muse agent browses the web</a></li>
+        <li><a href={updateSources.calling}>Muse: outbound calling for paid US subscribers</a></li>
+        <li><a href="https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/">Meta: voice and expressive avatars, November 5</a></li>
+        <li><a href={updateSources.spaces}>Meta: Muse Spaces, November 6</a></li>
+        <li><a href={updateSources.mexico}>Meta: personal Muse launch in Mexico, November 5 update</a></li>
+        <li><a href="https://muse.ai/business">Muse for Small Business: connectors, eligibility, and security</a></li>
+        <li><a href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/">Meta: personal Muse launch in Singapore, October 27</a></li>
         <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
         <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>

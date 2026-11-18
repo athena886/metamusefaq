@@ -1,0 +1,10 @@
+---
+import { LATEST_REVIEW_DATE } from '../data/site';
+interface Props { checked?: string; }
+const { checked = LATEST_REVIEW_DATE } = Astro.props;
+---
+<div class="status-chips" aria-label="Editorial status">
+  <span class="status-chip">Independent</span>
+  <span class="status-chip">Not affiliated with Meta</span>
+  {checked && <span class="status-chip">Checked <time datetime={checked}>{checked}</time></span>}
+</div>

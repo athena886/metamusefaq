@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { productUpdateDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "Is Muse available on Apple Watch and Wear OS?",
+    answer: "Yes. Muse’s November 9 announcement names both Apple Watch and Wear OS.",
+  },
+  {
+    question: "Is voice available on the watch?",
+    answer: "Yes. Official @Muse said on November 17, 2026, that voice is available now on Apple Watch and Android Wear OS. There is no matching English Newsroom or Help article for that update as of this check.",
+  },
+  {
+    question: "Where can I check Apple Watch compatibility?",
+    answer: "Check Meta’s Muse listing in the App Store for Apple Watch compatibility information.",
+  },
+  {
+    question: "Are the same Muse features available on both watch platforms?",
+    answer: "Official @Muse has confirmed voice on both Apple Watch and Wear OS. The original watch announcement did not give a full feature list or say the two platforms have the same capabilities in every other respect.",
+  },
+];
+---
+
+<Base
+  title="Muse on Apple Watch and Wear OS: Voice and Platforms"
+  description="Which smartwatch platforms Meta confirmed for Muse, official confirmation that voice is available on Apple Watch and Wear OS, and where to check compatibility."
+  canonicalPath="/muse-apple-watch-wear-os/"
+  pageType="article"
+  dateModified={productUpdateDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse on Apple Watch and Wear OS" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse on Apple Watch and Wear OS</h1>
+      <p class="lede">Meta announced Apple Watch and Wear OS support for Muse on November 9, 2026. On November 17, official @Muse said voice is available now on both platforms. Meta’s App Store listing also identifies Apple Watch as a supported platform.</p>
+      <StatusChips checked={productUpdateDate} />
+    </header>
+
+    <section>
+      <h2>Check your watch platform</h2>
+      <p>For Apple Watch, look for Muse from Meta in the App Store and check its compatibility section. For Wear OS, Meta’s announcement confirms support but does not provide a setup walkthrough or a list of compatible models.</p>
+    </section>
+    <section>
+      <h2>Voice on the watch</h2>
+      <p>Official @Muse said, “Voice is available now on Apple Watch and Android WearOS.” That post does not have a matching English Newsroom or Help article as of this check. The original watch announcement did not include a feature list; this later post is the official confirmation that voice works on the watch.</p>
+      <p>For voice and expressive avatars in the Muse app on phone, web, and Mac, see our <a href="/muse-voice-avatar/">voice and avatar guide</a>.</p>
+    </section>
+    <section>
+      <h2>What remains unspecified</h2>
+      <p>The watch posts do not specify a country list or a minimum Wear OS version. Consult the listing for your device and region before relying on watch access.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.watches}>Muse smartwatch announcement on X</a></li>
+        <li><a href={updateSources.watchVoice}>Muse: voice on Apple Watch and Wear OS</a></li>
+        <li><a href={updateSources.appleWatch}>Muse from Meta on the App Store</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup, platform access, and Connectors.' },
+      { label: "Muse voice and avatars", href: "/muse-voice-avatar/", description: "Voice mode in the Muse app on phone, web, and Mac." },
+    ]} />
+  </article>
+</Base>
