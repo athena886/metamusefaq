@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 
 const faqItems = [
   {
@@ -26,15 +26,15 @@ const faqItems = [
   description="Create a space in Muse, pin it to your tabs or sidebar, schedule when it appears, and check availability and sharing status."
   canonicalPath="/muse-spaces/"
   pageType="article"
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Spaces" }]}
 >
   <article class="content">
     <header class="hero-panel">
       <p class="eyebrow">Independent guide</p>
       <h1>Muse Spaces</h1>
-      <p class="lede">A space is a custom experience you build inside the Muse app by describing what you want. Meta announced Spaces on November 6, 2026, wherever Muse is available.</p>
-      <StatusChips checked={productUpdateDate} />
+      <p class="lede">A space is a custom experience you build inside the Muse app by describing what you want. Meta announced Spaces on November 6, 2026, wherever Muse is available. A November 18 Newsroom post also says Canadians can now build spaces.</p>
+      <StatusChips checked={latestCheckDate} />
     </header>
 
     <section>
@@ -53,6 +53,7 @@ const faqItems = [
       <h2>Official sources</h2>
       <ul>
         <li><a href={updateSources.spaces}>Meta Newsroom: Design the Muse App, Just for You</a></li>
+        <li><a href={updateSources.loblaw}>Meta Newsroom: Loblaw partner post, November 18, 2026 (Spaces in Canada)</a></li>
       </ul>
     </section>
 

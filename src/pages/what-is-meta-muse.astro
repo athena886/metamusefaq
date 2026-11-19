@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -47,6 +47,11 @@ const relatedLinks = [
     description: 'Setup for Mac, Accounts Center connections, WhatsApp, and other Connectors.',
   },
   {
+    label: 'Muse Try On',
+    href: '/muse-try-on/',
+    description: 'What official @Muse has said about previewing clothes while shopping.',
+  },
+  {
     label: 'Meta Muse pricing',
     href: '/meta-muse-pricing/',
     description: 'Compare Free, Power, and Maximum with official weekly token allowances.',
@@ -60,7 +65,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   title="What Is Meta Muse? Meta's Personal AI Agent Explained"
   description="Meta Muse is a personal AI agent released on September 8, 2026. It uses a cloud computer and, with permission, local Mac apps. Compare Muse, Meta AI, Muse Image/Video, and Muse Code."
   canonicalPath="/what-is-meta-muse/"
@@ -76,7 +81,7 @@ const relatedLinks = [
     <h1>What Is Meta Muse?</h1>
     <p class="lede">
       Meta Muse is a personal AI agent built for ordinary online tasks.</p>
-    <StatusChips checked={productUpdateDate} />
+    <StatusChips checked={latestCheckDate} />
     </header>
     <p class="hero-context">Its defining idea is
       action: the product is meant to complete work, not only describe how to do it.</p>
@@ -102,7 +107,14 @@ const relatedLinks = [
         alongside its existing web, mobile, Mac, and WhatsApp entry points where available.
         Official @Muse later said voice is available on both watch platforms.</p>
       <p>People can also use the <a href="/muse-chrome-extension/">Muse Chrome Extension</a> so Muse
-        browses in personal Chrome, or, for paid US subscribers, <a href="/muse-outbound-calling/">outbound calling</a>.</p>
+        browses in personal Chrome, or, for paid US subscribers, <a href="/muse-outbound-calling/">outbound calling</a>.
+        Official Help now lists daily phone-call allowances on paid plans; that does not, by itself, widen calling eligibility.</p>
+      <p>Official @Muse introduced <a href="/muse-try-on/">Try On</a>, a shopping prompt that can show
+        how clothes might look before you buy. Official sources reviewed here do not specify where it is available.
+        On November 18, Meta <a href={updateSources.loblaw}>announced Loblaw as the first Canadian retail partner</a>:
+        Canadian shoppers can plan meals, build a basket, and check out with participating banners, which the post does not name.
+        The same post says <a href="/muse-voice-avatar/">Voice is rolling out in Canada</a> on mobile, web, and Mac,
+        and that Canadians can now also <a href="/muse-spaces/">build Spaces</a>.</p>
       <p>On November 5, Meta <a href={updateSources.mexico}>announced Mexico as the first Latin American
         country with personal Muse access</a>. Muse is available there in Spanish on iOS, Android,
         the web, and WhatsApp. Meta lists Cinépolis, Coppel, Despegar, Kavak, Kueski, Liverpool, Rappi,
@@ -270,7 +282,9 @@ const relatedLinks = [
       <h2 id="sources-heading">Official Sources</h2>
       <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
       <ul>
-        <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
+        <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
+        <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
+        <li><a href={updateSources.subscriptions}>Meta Help: subscriptions, weekly tokens, and daily phone-call allowances</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
         <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>
         <li><a href="https://www.meta.com/help/superintelligence/1126304576638594/">Mac files and app access</a></li>

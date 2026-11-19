@@ -3,12 +3,12 @@ import Base from '../layouts/Base.astro';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 
 const faqItems = [
   {
     question: "Who can use Muse outbound calling?",
-    answer: "Official @Muse said it is available now for paid subscribers in the United States. That is narrower than Muse Mail, which official sources describe for paid subscribers in the US and Canada.",
+    answer: "Official @Muse said it is available now for paid subscribers in the United States. That is narrower than Muse Mail, which official sources describe for paid subscribers in the US and Canada. Official Help now lists daily call allowances on paid plans, but that does not, by itself, widen this eligibility.",
   },
   {
     question: "What kinds of calls is Meta describing?",
@@ -18,6 +18,10 @@ const faqItems = [
     question: "Can a business opt out of Muse calls?",
     answer: "Yes. Official Help points businesses to an opt-out form. Check that Help article for the current form and instructions.",
   },
+  {
+    question: "How many Muse phone calls are included each day?",
+    answer: "Official Help lists 10 phone calls per day on Power and 20 on Maximum. Help says benefits and availability may vary by region and account, and it is unclear whether those daily quotas apply only in the United States. Confirm what your account shows.",
+  },
 ];
 ---
 
@@ -26,7 +30,7 @@ const faqItems = [
   description="What Meta has announced about Muse making outbound phone calls for paid US subscribers, how that differs from Muse Mail eligibility, and how businesses can opt out."
   canonicalPath="/muse-outbound-calling/"
   pageType="article"
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse outbound calling" }]}
 >
   <article class="content">
@@ -34,17 +38,22 @@ const faqItems = [
       <p class="eyebrow">Independent guide</p>
       <h1>Muse Outbound Calling</h1>
       <p class="lede">Official @Muse announced outbound calling on November 13, 2026, for paid subscribers in the United States. This is narrower than Muse Mail eligibility, which covers paid subscribers in the US and Canada.</p>
-      <StatusChips checked={productUpdateDate} />
+      <StatusChips checked={latestCheckDate} />
     </header>
 
     <section>
       <h2>Who it is for</h2>
-      <p>Treat outbound calling as a paid, US-only feature unless Meta publishes a wider eligibility rule. Do not apply the US-and-Canada scope used for Muse Mail to calling.</p>
+      <p>Treat outbound calling as a paid, US-only feature unless Meta publishes a wider eligibility rule. Do not apply the US-and-Canada scope used for Muse Mail to calling. Official Help’s daily call allowances, described below, do not change that eligibility rule on their own.</p>
     </section>
 
     <section>
       <h2>What Meta has said so far</h2>
       <p>Official Help for people who do not use Muse says Meta is experimenting with Muse making AI phone calls to businesses that have publicly available numbers, including for hours or bookings. Official sources reviewed for this page do not publish a call-length limit, a recording policy, or a full list of supported call types, so this guide does not invent those details.</p>
+    </section>
+
+    <section>
+      <h2>Daily call allowances</h2>
+      <p>As of <time datetime={latestCheckDate}>November 19, 2026</time>, official Help lists 10 phone calls per day on the Power plan and 20 on Maximum, alongside the unchanged weekly token allowances. Help says subscription benefits and availability may vary by region and account, and it does not clearly say whether those daily quotas apply only to paid US subscribers. This page still treats calling eligibility as limited to paid subscribers in the United States unless Meta publishes a wider rule. Confirm what your account shows. See <a href="/meta-muse-pricing/">Meta Muse pricing</a> and <a href={updateSources.subscriptions}>Meta Help: About Muse subscriptions</a>.</p>
     </section>
 
     <section>
@@ -59,10 +68,12 @@ const faqItems = [
       <ul>
         <li><a href={updateSources.calling}>Muse announcement on X</a></li>
         <li><a href={updateSources.callingHelp}>Meta Help: Information for people who don’t use Muse</a></li>
+        <li><a href={updateSources.subscriptions}>Meta Help: About Muse subscriptions</a></li>
       </ul>
     </section>
 
     <RelatedLinks links={[
+      { label: 'Meta Muse pricing', href: '/meta-muse-pricing/', description: 'Official prices, weekly token allowances, and daily phone-call figures.' },
       { label: 'Muse Mail', href: '/muse-email/', description: 'Dedicated @muse.ai address for paid US and Canada subscribers.' },
       { label: "How to use Meta Muse", href: "/how-to-use-meta-muse/", description: "Setup, platform access, and Connectors." },
     ]} />

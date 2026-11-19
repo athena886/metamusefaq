@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -16,7 +16,7 @@ const faqItems = [
 ---
 
 <Base
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   title="Muse for Small Business: Connectors, Availability & FAQ"
   description="An independent guide to Muse for Small Business: supported business connectors, US and Canada eligibility, approval controls, and security features."
   canonicalPath="/muse-for-small-business/"
@@ -29,7 +29,7 @@ const faqItems = [
     <h1>Muse for Small Business</h1>
     <p class="lede">Muse for Small Business extends Meta’s personal agent with business skills and
       connectors.</p>
-    <StatusChips checked={productUpdateDate} />
+    <StatusChips checked={latestCheckDate} />
     </header>
     <p class="hero-context">It works inside Muse, using the services you connect to help with business tasks.</p>
     <p>Meta’s
@@ -59,7 +59,7 @@ const faqItems = [
       <h2 id="availability-heading">Availability and Age Requirements</h2>
       <p>The <a href="https://muse.ai/business">official business page</a> lists the United States
         and Canada, ages 18 and over. Confirm access and connector availability in your account.</p>
-      <p>Business eligibility checked <time datetime={productUpdateDate}>November 18, 2026</time>.</p>
+      <p>Business eligibility checked <time datetime={latestCheckDate}>November 19, 2026</time>. Muse for Small Business remains available in the US and Canada, ages 18 and over.</p>
       <p>The personal agent has a wider rollout: Meta
         <a href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/">announced Singapore availability on October 27</a>.
         Meta also <a href={updateSources.mexico}>announced the personal agent in Mexico on
@@ -67,7 +67,9 @@ const faqItems = [
         Those launches and their local Connectors apply to the personal agent.
         The Australia post also says Canva is a Connector for Muse users around the world, in addition
         to its place on the Small Business connector list.
-        Expedia is also covered under <a href="/how-to-use-meta-muse/#connectors-heading">personal travel Connectors</a>.</p>
+        Expedia is also covered under <a href="/how-to-use-meta-muse/#connectors-heading">personal travel Connectors</a>.
+        <a href={updateSources.loblaw}>Loblaw</a> is a personal retail Connector for Canadian shoppers
+        and does not change Muse for Small Business eligibility.</p>
     </section>
 
     <section aria-labelledby="pricing-heading">

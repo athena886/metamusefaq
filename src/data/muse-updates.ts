@@ -1,4 +1,5 @@
 export const productUpdateDate = '2026-11-18';
+export const latestCheckDate = '2026-11-19';
 
 export const updateSources = {
   email: 'https://x.com/Muse/status/2120201720651563286',
@@ -18,4 +19,7 @@ export const updateSources = {
   chromeStore: 'https://chromewebstore.google.com/detail/muse-from-meta/jnakhhjmpmoohbjgfccbccfoifnmbdjd',
   calling: 'https://x.com/Muse/status/2120931418654089392',
   callingHelp: 'https://www.meta.com/help/superintelligence/4532990443643263/',
+  loblaw: 'https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/',
+  tryOn: 'https://x.com/Muse/status/2123143277708988897',
+  subscriptions: 'https://www.meta.com/help/subscriptions/1021145227643680/',
 };

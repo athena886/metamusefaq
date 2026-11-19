@@ -1,31 +1,33 @@
 ---
 import Base from '../layouts/Base.astro';
-import { productUpdateDate } from '../data/muse-updates';
+import { latestCheckDate, productUpdateDate } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 const faqItems = [
   { question: 'Is Meta Muse free?', answer: 'Yes, with a weekly usage limit. Paid plans are Power ($20/month) and Maximum ($100/month).' },
-  { question: 'What is the difference between $20 and $100?', answer: 'Power includes 500M Muse tokens per week. Maximum includes 3B Muse tokens per week.' },
+  { question: 'What is the difference between $20 and $100?', answer: 'Power includes 500M Muse tokens per week. Maximum includes 3B Muse tokens per week. Official Help also lists 10 phone calls per day on Power and 20 on Maximum. Those figures do not, by themselves, change outbound calling eligibility, which was announced for paid US subscribers.' },
+  { question: 'Do Power and Maximum include daily phone-call allowances?', answer: 'Official Help lists 10 phone calls per day on Power and 20 on Maximum. Help says benefits and availability may vary by region and account, and it is unclear whether those daily quotas apply only in the United States. Official @Muse announced outbound calling for paid US subscribers. Confirm what your account shows.' },
   { question: 'Where do I subscribe?', answer: 'In the Muse mobile app or at muse.ai, signed in with a Meta account. Availability of Muse and its subscriptions varies by region and account.' },
   { question: 'Can I buy more tokens without upgrading?', answer: 'Yes. Meta documents one-time purchases of additional Muse tokens after you reach a free limit. Subscribers can also buy tokens on top of their weekly allowance.' },
   { question: 'Do Muse tokens expire?', answer: 'Extra purchased tokens do not expire, including after cancellation. Unused weekly subscription allowance does not roll over from a previous billing cycle.' },
   { question: 'Can I cancel my subscription?', answer: 'Yes. Manage your subscription in Settings using the platform and account you subscribed with. Benefits continue until the current billing cycle ends; refunds are not generally provided unless required by law.' },
 ];
 const relatedLinks = [
+  { label: 'Muse outbound calling', href: '/muse-outbound-calling/', description: 'Paid US subscriber eligibility and official daily call allowances.' },
   { label: 'Buy additional Muse tokens', href: '/buy-additional-muse-tokens/', description: 'One-time top-ups, expiry, and purchase steps.' },
   { label: 'Cancel or manage a Muse subscription', href: '/cancel-manage-muse-subscription/', description: 'Settings, app-store billing, and what happens after cancellation.' },
   { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Access, Connectors, and permissions.' },
   { label: 'Meta Muse review', href: '/meta-muse-review/', description: 'Capabilities, limitations, and privacy.' },
 ];
 ---
-<Base title="Meta Muse Pricing: Free, Power $20 & Maximum $100" description="Compare Meta Muse Free, Power ($20/month, 500M tokens/week), and Maximum ($100/month, 3B/week). Subscription access, extra tokens, and cancellation." canonicalPath="/meta-muse-pricing/" pageType="article" dateModified={productUpdateDate} breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Meta Muse Pricing' }]}>
+<Base title="Meta Muse Pricing: Free, Power $20 & Maximum $100" description="Compare Meta Muse Free, Power ($20/month, 500M tokens/week), and Maximum ($100/month, 3B/week). Subscription access, extra tokens, and cancellation." canonicalPath="/meta-muse-pricing/" pageType="article" dateModified={latestCheckDate} breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Meta Muse Pricing' }]}>
   <article class="content">
     <header class="hero-panel">
     <p class="eyebrow">Pricing guide</p>
     <h1>Meta Muse Pricing</h1>
     <p class="lede">Meta Muse has a free tier with a usage limit, plus two paid plans: Power and Maximum.</p>
-    <StatusChips />
+    <StatusChips checked={latestCheckDate} />
     </header>
     <p class="hero-context">You can subscribe in the Muse mobile app or at <a href="https://muse.ai/">muse.ai</a>. Availability of Muse and its subscriptions varies by region and account.</p>
     <section aria-labelledby="free-heading">
@@ -37,19 +39,19 @@ const relatedLinks = [
       <h2 id="plans-heading">Meta Muse Plans Compared</h2>
       <div class="plan-cards" aria-label="Plan overview">
         <div class="plan-card"><h3>Free</h3><p class="plan-card__price">$0</p><p>Limited free weekly usage</p></div>
-        <div class="plan-card plan-card--power"><h3>Power</h3><p class="plan-card__price">$20 / month</p><p>500M Muse tokens per week</p></div>
-        <div class="plan-card"><h3>Maximum</h3><p class="plan-card__price">$100 / month</p><p>3B Muse tokens per week</p></div>
+        <div class="plan-card plan-card--power"><h3>Power</h3><p class="plan-card__price">$20 / month</p><p>500M Muse tokens per week</p><p>Official Help also lists 10 phone calls per day</p></div>
+        <div class="plan-card"><h3>Maximum</h3><p class="plan-card__price">$100 / month</p><p>3B Muse tokens per week</p><p>Official Help also lists 20 phone calls per day</p></div>
       </div>
       <div class="table-scroll"><table>
-        <caption>Meta Muse prices and official weekly usage allowances</caption>
-        <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Weekly usage (official)</th><th scope="col">Best for</th></tr></thead>
+        <caption>Meta Muse prices, official weekly usage allowances, and official Help daily phone-call allowances</caption>
+        <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Weekly usage (official)</th><th scope="col">Daily phone calls (official Help)</th><th scope="col">Best for</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Free</th><td>$0</td><td>Limited free weekly usage</td><td>Trying Muse and occasional tasks</td></tr>
-          <tr><th scope="row">Power</th><td>$20 / month</td><td>500M Muse tokens per week</td><td>Regular weekly use</td></tr>
-          <tr><th scope="row">Maximum</th><td>$100 / month</td><td>3B Muse tokens per week</td><td>Heavy, ongoing task use</td></tr>
+          <tr><th scope="row">Free</th><td>$0</td><td>Limited free weekly usage</td><td>Not listed</td><td>Trying Muse and occasional tasks</td></tr>
+          <tr><th scope="row">Power</th><td>$20 / month</td><td>500M Muse tokens per week</td><td>10 phone calls per day</td><td>Regular weekly use</td></tr>
+          <tr><th scope="row">Maximum</th><td>$100 / month</td><td>3B Muse tokens per week</td><td>20 phone calls per day</td><td>Heavy, ongoing task use</td></tr>
         </tbody>
       </table></div>
-      <p>Weekly usage allowance increases as you upgrade. Exact benefits can vary by region and account; confirm what your account shows during onboarding. Source: <a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: About Muse subscriptions</a>.</p>
+      <p>Weekly usage allowance increases as you upgrade. The published prices and weekly token allowances are unchanged: Power remains $20/month with 500M Muse tokens per week, and Maximum remains $100/month with 3B Muse tokens per week. Official Help now also lists daily phone-call allowances of 10 calls a day on Power and 20 on Maximum. That Help update does not, on its own, expand <a href="/muse-outbound-calling/">outbound calling</a> eligibility. Official @Muse previously said calling is available for paid subscribers in the United States. Help also says subscription benefits and availability may vary by region and account, and it does not clearly say whether these daily quotas apply only in the United States. Confirm what your account shows during onboarding. Source: <a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: About Muse subscriptions</a>. Phone-call details checked <time datetime={latestCheckDate}>November 19, 2026</time>.</p>
     </section>
     <section aria-labelledby="email-heading">
       <h2 id="email-heading">Who can use Muse’s own email address?</h2>

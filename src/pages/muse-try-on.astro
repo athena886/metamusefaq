@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: "What is Muse Try On?",
+    answer: "Official @Muse introduced Try On as a way to see how clothes look before you buy. Muse will prompt you when you’re shopping to show you how the item might look.",
+  },
+  {
+    question: "Where is Muse Try On available?",
+    answer: "Official sources reviewed for this page do not say which countries or accounts can use Try On. This guide does not invent a region list. Confirm what your Muse app shows.",
+  },
+  {
+    question: "How accurate is Muse Try On?",
+    answer: "Official @Muse said it can show how clothes might look. Official sources reviewed here do not publish accuracy claims or guarantees, so this guide does not add them.",
+  },
+];
+---
+
+<Base
+  title="Muse Try On: Preview Clothes While Shopping"
+  description="What official @Muse has announced about the Muse Try On feature: a shopping prompt that can show how clothes might look before you buy, and what Meta has not yet specified."
+  canonicalPath="/muse-try-on/"
+  pageType="article"
+  dateModified={latestCheckDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Try On" }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Muse Try On</h1>
+      <p class="lede">Official @Muse introduced Try On on November 18, 2026. The post says you can see how clothes look before you buy, and that Muse will prompt you when you’re shopping to show how the item might look.</p>
+      <StatusChips checked={latestCheckDate} />
+    </header>
+
+    <section>
+      <h2>What Meta has announced</h2>
+      <p>The official @Muse announcement describes Try On as “the fit check before the fit check.” In the same post, Muse says it will prompt you while you shop to show how a clothing item might look. Official sources reviewed for this page do not describe additional controls, supported retailers, or a step-by-step setup path beyond that shopping prompt.</p>
+    </section>
+
+    <section>
+      <h2>What official sources have not specified</h2>
+      <p>As of <time datetime={latestCheckDate}>November 19, 2026</time>, there was no Meta Help or English Newsroom follow-up on Try On. Official sources have not published a country or account list, and they have not published accuracy guarantees. This guide does not invent those details. Confirm what appears in your own Muse experience.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section>
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Setup, platform access, and Connectors.' },
+      { label: 'What is Meta Muse?', href: '/what-is-meta-muse/', description: 'How shopping and other actions fit the personal agent.' },
+    ]} />
+  </article>
+</Base>

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -53,6 +53,11 @@ const relatedLinks = [
     description: 'Free, Power ($20/month), and Maximum ($100/month), with weekly allowances.',
   },
   {
+    label: 'Muse Try On',
+    href: '/muse-try-on/',
+    description: 'What official @Muse has said about previewing clothes while shopping.',
+  },
+  {
     label: 'what is Meta Muse',
     href: '/what-is-meta-muse/',
     description: 'How the personal agent uses cloud browsing and authorized local Mac access.',
@@ -66,7 +71,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   title="How to Use Meta Muse: Step-by-Step Setup Guide"
   description="Set up Meta Muse at muse.ai or in the standalone app. Compare Free, Power and Maximum, add Connectors, and review permissions and approve sensitive actions."
   canonicalPath="/how-to-use-meta-muse/"
@@ -82,7 +87,7 @@ const relatedLinks = [
     <h1>How to Use Meta Muse</h1>
     <p class="lede">
       Use Muse on the web, mobile, Mac, or through WhatsApp where available.</p>
-    <StatusChips checked={productUpdateDate} />
+    <StatusChips checked={latestCheckDate} />
     </header>
     <p class="hero-context">This guide covers
       cloud tasks, local Mac access, Connectors, and the permissions to review before you begin.</p>
@@ -217,20 +222,24 @@ const relatedLinks = [
     </section>
 
     <section aria-labelledby="new-entry-points-heading">
-      <h2 id="new-entry-points-heading">Muse Mail, Spaces, watches, browsing, and calling</h2>
+      <h2 id="new-entry-points-heading">Muse Mail, Spaces, watches, browsing, calling, and Try On</h2>
       <ul>
         <li><a href="/muse-email/">Muse Mail</a>: Paid subscribers in the US and Canada can ask Muse
           to set up a dedicated @muse.ai address, or open the mail tab from their avatar. Official Help
           says Muse asks for approval before sending.</li>
         <li><a href="/muse-spaces/">Spaces</a>: Tell Muse what you want to build. You can put the
-          resulting space in the sidebar or main tabs, hide it, or schedule when it appears.</li>
+          resulting space in the sidebar or main tabs, hide it, or schedule when it appears. A November 18
+          Newsroom post also says Canadians can now build spaces.</li>
         <li><a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS</a>: Meta announced both
           platforms. Official @Muse later said voice is available on Apple Watch and Wear OS. Check the official App Store listing for Apple Watch compatibility.</li>
+        <li><a href="/muse-voice-avatar/">Voice</a>: Meta began the rollout in the United States, later described real-time voice in Australia, and a November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac.</li>
         <li><a href="/muse-chrome-extension/">Muse Chrome Extension</a>: Official Help says you can
           ask Muse in Chat to download it. Muse then browses in your personal Chrome, in a separate tab group,
-          which is distinct from the in-chat browser and from Muse for Mac.</li>
+          which is distinct from the in-chat browser and from Muse for Mac. The Chrome Web Store listing now shows version 2.1.3, updated November 18, 2026, without new feature notes.</li>
         <li><a href="/muse-outbound-calling/">Outbound calling</a>: Official @Muse said this is available
-          for paid subscribers in the United States, a narrower scope than Muse Mail.</li>
+          for paid subscribers in the United States, a narrower scope than Muse Mail. Official Help now lists 10 phone calls per day on Power and 20 on Maximum; that does not, by itself, widen eligibility.</li>
+        <li><a href="/muse-try-on/">Try On</a>: Official @Muse said Muse will prompt you when you’re shopping
+          to show how clothes might look. Official sources reviewed here do not specify where it is available.</li>
       </ul>
     </section>
 
@@ -260,6 +269,12 @@ const relatedLinks = [
       <p>For personal travel planning, Meta <a href={updateSources.expedia}>announced Expedia as
         a Muse Connector</a> on November 10. The announcement does not specify which booking,
         payment, or refund actions it supports.</p>
+      <p>On November 18, Meta <a href={updateSources.loblaw}>announced Loblaw as the first Canadian
+        retailer to connect to Muse</a>. Starting that day, Canadian shoppers can use Muse to help
+        with meal planning, build a basket, and check out with participating Loblaw banners. The
+        announcement does not name those banners. Meta says Muse can remember brand preferences and
+        information such as food allergies. As with other purchases, Meta says Muse checks with you
+        before sensitive actions such as making a purchase.</p>
       <p>Meta’s <a href={updateSources.australia}>November 17 Australia launch post</a> says Canva
         is also available as a Connector for Muse users around the world, not only as a Small Business
         Connector. The same post lists early local Australian partners that will roll out progressively,
@@ -327,6 +342,8 @@ const relatedLinks = [
       <h2 id="sources-heading">Official Sources</h2>
       <p>Business features, availability, and getting-started guidance checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
       <ul>
+        <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
+        <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
         <li><a href={updateSources.australia}>Meta: personal Muse launch in Australia, November 17</a></li>
         <li><a href={updateSources.chromeHelp}>Meta Help: How your Muse agent browses the web</a></li>
         <li><a href={updateSources.calling}>Muse: outbound calling for paid US subscribers</a></li>

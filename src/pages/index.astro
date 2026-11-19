@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -13,7 +13,7 @@ const faqItems = [
   {
     question: 'Does Meta Muse have voice mode?',
     answer:
-      'Yes. Meta began rolling out voice and expressive avatars in the Muse app on November 5, 2026, and that Newsroom post said the US first. The November 17 Australia launch post also describes real-time voice on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. Tap the phone icon in the top-right corner in the app. See our Muse voice and avatar guide and the watch guide. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
+      'Yes. Meta began rolling out voice and expressive avatars in the Muse app on November 5, 2026, and that Newsroom post said the US first. The November 17 Australia launch post also describes real-time voice on mobile, web, and Mac. A November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. Tap the phone icon in the top-right corner in the app. See our Muse voice and avatar guide and the watch guide. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
   },
   {
     question: 'What are Muse Realtime Voice and Muse Realtime Avatar?',
@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse free?',
     answer:
-      'Yes. Meta Muse has a free tier with a usage limit, along with Power ($20/month, 500M tokens/week) and Maximum ($100/month, 3B tokens/week). Our Meta Muse pricing guide covers the available tier information.',
+      'Yes. Meta Muse has a free tier with a usage limit, along with Power ($20/month, 500M tokens/week) and Maximum ($100/month, 3B tokens/week). Official Help also lists daily phone-call allowances on the paid plans. Our Meta Muse pricing guide covers the available tier information.',
   },
   {
     question: 'How do I use Meta Muse?',
@@ -56,7 +56,12 @@ const relatedLinks = [
   {
     label: 'Muse voice and avatars',
     href: '/muse-voice-avatar/',
-    description: 'Realtime Voice/Avatar, US-first availability, Settings → Voice and Avatar, Muse Charm.',
+    description: 'Realtime Voice/Avatar, US, Australia, and Canada rollout notes, Settings → Voice and Avatar, Muse Charm.',
+  },
+  {
+    label: 'Muse Try On',
+    href: '/muse-try-on/',
+    description: 'Official @Muse shopping prompt to preview how clothes might look, and what is still unpublished.',
   },
   {
     label: 'what is Meta Muse',
@@ -82,7 +87,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={productUpdateDate}
+  dateModified={latestCheckDate}
   title="Meta Muse: What It Is, What It Costs, How to Use It"
   description="Meta Muse is Meta's personal AI agent that browses, books, and buys for you. Here's what it does, what the $20 and $100 plans include, and how to get started."
   canonicalPath="/"
@@ -95,7 +100,7 @@ const relatedLinks = [
     <h1>Meta Muse Explained</h1>
     <p class="lede">
         Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026.</p>
-    <StatusChips checked={productUpdateDate} />
+    <StatusChips checked={latestCheckDate} />
       <nav class="jump-links" aria-label="Jump to overview sections">
         <span>Jump to</span>
         <a href="#definition-heading">What it is</a>
@@ -108,15 +113,27 @@ const relatedLinks = [
 
     <section aria-labelledby="updates-heading">
       <h2 id="updates-heading">Latest Muse updates</h2>
-      <p>Checked <time datetime={productUpdateDate}>November 18, 2026</time>.
-        Meta <a href={updateSources.australia}>launched personal Muse in Australia</a> on November 17,
-        with local Connectors rolling out progressively. The same post says
-        <a href={updateSources.australia}>Canva is also a Connector for Muse users around the world</a>.
-        Official @Muse also said <a href="/muse-apple-watch-wear-os/">voice is available on Apple Watch and Wear OS</a>.
-        See the <a href="/muse-chrome-extension/">Muse Chrome Extension</a>,
-        <a href="/muse-outbound-calling/">outbound calling for paid US subscribers</a>,
-        and official Help details on <a href="/muse-email/">Muse Mail</a>.
-        Earlier November updates include <a href="/muse-spaces/">Spaces</a>,
+      <p>Checked <time datetime={latestCheckDate}>November 19, 2026</time>.
+        Meta <a href={updateSources.loblaw}>welcomed Loblaw as the first Canadian retailer to connect to Muse</a>,
+        starting November 18. Canadian shoppers can plan meals, build a basket, and check out
+        with participating Loblaw banners, all in Muse. The post does not name those banners.
+        Muse can remember brand preferences and information such as food allergies.
+        The same post says <a href="/muse-voice-avatar/">Voice is rolling out in Canada</a> on mobile, web, and Mac,
+        and that Canadians can now also <a href="/muse-spaces/">build Spaces</a>.</p>
+      <p>Official @Muse introduced <a href="/muse-try-on/">Try On</a>: Muse will prompt you when you’re shopping
+        to show how a clothing item might look. Official sources reviewed for this update do not specify
+        where Try On is available.
+        Official Help now lists daily phone-call allowances of 10 calls a day on Power and 20 on Maximum,
+        alongside the unchanged $20/500M and $100/3B weekly token plans.
+        That listing does not, by itself, widen <a href="/muse-outbound-calling/">outbound calling</a>
+        beyond the earlier announcement for paid US subscribers; Help says benefits may vary by region and account,
+        and it is unclear whether those daily quotas apply only in the United States.
+        The <a href="/muse-chrome-extension/">Chrome Web Store listing</a> now shows version 2.1.3, updated November 18, 2026;
+        the listing does not add feature notes.</p>
+      <p>Earlier November updates include the
+        <a href={updateSources.australia}>Australia launch</a>,
+        <a href="/muse-apple-watch-wear-os/">voice on Apple Watch and Wear OS</a>,
+        <a href="/muse-email/">Muse Mail</a>,
         <a href={updateSources.expedia}>Expedia</a>, and the
         <a href={updateSources.mexico}>Mexico launch</a>.</p>
     </section>
@@ -153,7 +170,9 @@ const relatedLinks = [
         </li>
         <li>
           <strong>Buy products:</strong> Complete a purchase on a shopping website when given the
-          product and purchasing details.
+          product and purchasing details. Official @Muse also introduced
+          <a href="/muse-try-on/">Try On</a>, which can prompt you while shopping to show how clothes
+          might look; official sources have not published a region list.
         </li>
         <li>
           <strong>Order food:</strong> Place an order through a restaurant page rather than only
@@ -167,7 +186,8 @@ const relatedLinks = [
         <li>
           <strong>Use Connectors:</strong> Connect Gmail, Calendar, and other services. Facebook,
           Instagram, and Threads connect automatically when accounts share an Accounts Center.
-          See the <a href="/how-to-use-meta-muse/#connectors-heading">Connector setup and access guide</a>.
+          Canadian shoppers can also use participating Loblaw banners for meal planning, basket building,
+          and checkout. See the <a href="/how-to-use-meta-muse/#connectors-heading">Connector setup and access guide</a>.
         </li>
         <li><strong>Work on your Mac:</strong> With system authorization, Muse can use local files
           and information in Messages, Notes, Calendar, and other supported apps.</li>
@@ -241,7 +261,9 @@ const relatedLinks = [
         </table>
       </div>
       <p>
-        See the full breakdown on our <a href="/meta-muse-pricing/">meta muse pricing</a> page.
+        See the full breakdown on our <a href="/meta-muse-pricing/">meta muse pricing</a> page,
+        including official Help’s daily phone-call allowances and the limits of what those figures mean
+        for <a href="/muse-outbound-calling/">outbound calling eligibility</a>.
         Before paying, confirm the current plan details and service terms for your account.
       </p>
     </section>
@@ -270,7 +292,7 @@ const relatedLinks = [
         </li>
       </ol>
       <p>
-        Voice mode first rolled out in the United States on mobile, web, and Mac. Meta’s Australia launch post also describes real-time voice there on those platforms, and official @Muse later said voice is available on
+        Voice mode first rolled out in the United States on mobile, web, and Mac. Meta’s Australia launch post also describes real-time voice there on those platforms, and a November 18 Newsroom post says Voice is rolling out in Canada on the same platforms. Official @Muse later said voice is available on
         <a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS</a>.
         Microphone access is required; background conversation while using other apps is controlled in Settings → Voice and Avatar. Voice on AI Glasses and Muse Charm is listed as coming soon. Details:
         <a href="/muse-voice-avatar/">Muse voice mode and expressive avatars</a>.
@@ -324,6 +346,9 @@ const relatedLinks = [
       <h2 id="sources-heading">Official Sources</h2>
       <p>Earlier business coverage checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
       <ul>
+        <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
+        <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
+        <li><a href={updateSources.subscriptions}>Meta Help: subscriptions, weekly tokens, and daily phone-call allowances</a></li>
         <li><a href={updateSources.australia}>Meta: personal Muse launch in Australia, November 17</a></li>
         <li><a href={updateSources.watchVoice}>Muse: voice on Apple Watch and Wear OS</a></li>
         <li><a href={updateSources.chromeHelp}>Meta Help: How your Muse agent browses the web</a></li>
@@ -333,7 +358,6 @@ const relatedLinks = [
         <li><a href={updateSources.mexico}>Meta: personal Muse launch in Mexico, November 5 update</a></li>
         <li><a href="https://muse.ai/business">Muse for Small Business: connectors, eligibility, and security</a></li>
         <li><a href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/">Meta: personal Muse launch in Singapore, October 27</a></li>
-        <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/">Meta Help: subscriptions and availability</a></li>
         <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta: launch, cloud VM, privacy, and training controls</a></li>
         <li><a href="https://ai.meta.com/muse/download/">Muse for Mac and mobile downloads</a></li>
         <li><a href="https://www.meta.com/help/superintelligence/1126304576638594/">Mac files and app access</a></li>
