@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-import { latestCheckDate, updateSources } from '../data/muse-updates';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
 
 const newsroomUrl = 'https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/';
 const helpUrl = 'https://www.meta.com/help/artificial-intelligence/1331373868832401/';
@@ -11,7 +11,7 @@ const helpUrl = 'https://www.meta.com/help/artificial-intelligence/1331373868832
 const faqItems = [
   {
     question: 'Does Meta Muse have voice mode?',
-    answer: 'Yes, where Meta has enabled it. Meta announced the rollout on November 5, 2026 for the Muse app on mobile, web, and Mac, starting in the United States. The November 17 Australia launch post also describes real-time voice there on mobile, web, and Mac. A November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. Start from the phone icon in the top-right corner in the app. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
+    answer: 'Yes, where Meta has enabled it. Meta announced the rollout on November 5, 2026 for the Muse app on mobile, web, and Mac, starting in the United States. The November 17 Australia launch post also describes real-time voice there on mobile, web, and Mac. A November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. The October 23 Japan launch post said Japan availability for voice and Realtime Avatar would be announced separately, and it labeled Realtime Avatar English-only. A November 20, 2026 check did not find a later official Japan announcement that voice had launched there. Start from the phone icon in the top-right corner in the app. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
   },
   {
     question: 'What are Muse Realtime Voice and Muse Realtime Avatar?',
@@ -37,7 +37,7 @@ const faqItems = [
   description="Independent FAQ on Muse voice mode and expressive avatars: US, Australia, and Canada rollout notes, watch voice, phone icon, Muse Realtime Voice/Avatar, Settings → Voice and Avatar, Muse Charm, and pricing."
   canonicalPath="/muse-voice-avatar/"
   pageType="article"
-  dateModified={latestCheckDate}
+  dateModified={sourceGapCheckDate}
   breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Muse Voice & Avatars' }]}
 >
   <article class="content">
@@ -45,8 +45,8 @@ const faqItems = [
       <p class="eyebrow">Independent guide</p>
       <h1>Meta Muse Voice Mode and Expressive Avatars</h1>
       <p class="lede">Meta began rolling out voice conversations and expressive avatars in the Muse app on November 5, 2026.</p>
-      <StatusChips checked={latestCheckDate} />
-      <p>Checked <time datetime={latestCheckDate}>November 19, 2026</time>.</p>
+      <StatusChips checked={sourceGapCheckDate} />
+      <p>US, Australia, Canada, and watch notes checked <time datetime="2026-11-19">November 19, 2026</time>. The Japan note checked <time datetime={sourceGapCheckDate}>November 20, 2026</time>.</p>
     </header>
     <p class="hero-context">This page summarizes what Meta announced, how to start a voice chat where it is available, and how the new product names relate to the rest of Muse. It is a third-party FAQ, not an official Meta page.</p>
 
@@ -85,6 +85,7 @@ const faqItems = [
       <h2 id="availability-heading">Availability</h2>
       <p>Meta’s Newsroom post says voice and expressive avatars are rolling out <strong>in the US to start</strong>. Help separately states that voice mode is only available in some countries. Meta’s November 17 Australia launch post also describes real-time voice there on mobile, web, and Mac. Meta’s November 18 post about Loblaw and Muse in Canada says Voice is rolling out in Canada on mobile, web, and Mac, and that you start by tapping the phone icon in the top-right corner. Official @Muse later said <a href="https://x.com/Muse/status/2122797416856658255">voice is available now on Apple Watch and Android Wear OS</a>. Treat access as region- and account-dependent; confirm in your Muse app rather than assuming global availability.</p>
       <p>Voice conversations with Muse on <strong>AI Glasses</strong> and <strong>Muse Charm</strong> are listed as <strong>coming soon</strong> in the November 5 announcement. They were not described as already shipped. The Australia post also lists AI glasses as coming soon.</p>
+      <p>Meta’s <a href={updateSources.japan}>October 23, 2026 Japan launch post</a> said Japan availability for the advanced voice mode and Muse Realtime Avatar would be announced separately, and it labeled Realtime Avatar English-only. A check on November 20, 2026 did not find a later official Japan announcement that voice or Realtime Avatar had launched there. Japan’s personal-agent launch on iOS, Android, and muse.ai is a separate fact from these voice rollout notes.</p>
     </section>
 
     <section aria-labelledby="pricing-heading">
@@ -108,6 +109,7 @@ const faqItems = [
         <li><a href="https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/">Muse Is Now Available in Australia</a> (Newsroom, November 17, 2026)</li>
         <li><a href={updateSources.loblaw}>Meta Welcomes Loblaw as First Canadian Retail Partner to Muse</a> (Newsroom, November 18, 2026; Voice in Canada)</li>
         <li><a href="https://x.com/Muse/status/2122797416856658255">Official @Muse: voice on Apple Watch and Wear OS</a></li>
+        <li><a href={updateSources.japan}>Meta: personal Muse launch in Japan, October 23, 2026 (voice and Realtime Avatar availability to be announced)</a></li>
       </ul>
     </section>
 

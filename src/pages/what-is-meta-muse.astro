@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { latestCheckDate, updateSources } from '../data/muse-updates';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -31,7 +31,7 @@ const faqItems = [
   {
     question: 'When did Meta Muse launch?',
     answer:
-      'Meta released Meta Muse on September 8, 2026. Availability of Muse and its subscriptions varies by region and account.',
+      'Meta released Meta Muse on September 8, 2026. On October 23, 2026, Meta said it was available in Japan on iOS, Android, and muse.ai, and described Japan as the first region outside North America. Later personal-agent launches include Singapore, Mexico, and Australia. Availability of Muse and its subscriptions varies by region and account.',
   },
 ];
 
@@ -45,6 +45,11 @@ const relatedLinks = [
     label: 'how to use Meta Muse',
     href: '/how-to-use-meta-muse/',
     description: 'Setup for Mac, Accounts Center connections, WhatsApp, and other Connectors.',
+  },
+  {
+    label: 'Personal Agent Protocol',
+    href: '/personal-agent-protocol/',
+    description: 'Poppy 1.0, an open standard for how personal agents work with businesses.',
   },
   {
     label: 'Muse Try On',
@@ -65,7 +70,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={latestCheckDate}
+  dateModified={sourceGapCheckDate}
   title="What Is Meta Muse? Meta's Personal AI Agent Explained"
   description="Meta Muse is a personal AI agent released on September 8, 2026. It uses a cloud computer and, with permission, local Mac apps. Compare Muse, Meta AI, Muse Image/Video, and Muse Code."
   canonicalPath="/what-is-meta-muse/"
@@ -81,7 +86,7 @@ const relatedLinks = [
     <h1>What Is Meta Muse?</h1>
     <p class="lede">
       Meta Muse is a personal AI agent built for ordinary online tasks.</p>
-    <StatusChips checked={latestCheckDate} />
+    <StatusChips checked={sourceGapCheckDate} />
     </header>
     <p class="hero-context">Its defining idea is
       action: the product is meant to complete work, not only describe how to do it.</p>
@@ -115,6 +120,17 @@ const relatedLinks = [
         Canadian shoppers can plan meals, build a basket, and check out with participating banners, which the post does not name.
         The same post says <a href="/muse-voice-avatar/">Voice is rolling out in Canada</a> on mobile, web, and Mac,
         and that Canadians can now also <a href="/muse-spaces/">build Spaces</a>.</p>
+      <p>On October 23, 2026, Meta <a href={updateSources.japan}>said personal Muse was available in Japan</a>
+        on iOS, Android, and muse.ai. The announcement described Japan as the first region outside North America,
+        where Muse had launched in September. It includes Gmail, Google Calendar, and Instagram among services
+        Japanese users can connect. It names Stripe, Shopify, Trip.com, Agoda, and Klook as global service
+        integrations through which shopping and travel planning and booking are possible. It says Meta is
+        pursuing partnerships with Mercari, Money Forward ME, and Ticket Pia alongside the Japan launch.
+        Those local names are partnership plans in that post, not connectors it lists as already available.
+        The post also said Japan availability for an advanced voice mode, Muse Realtime Avatar, and Muse’s own
+        email address would be announced separately, and it labeled Realtime Avatar English-only.
+        A check on <time datetime={sourceGapCheckDate}>November 20, 2026</time> did not find a later official
+        Japan announcement that voice, Realtime Avatar, or Muse Mail had launched there.</p>
       <p>On November 5, Meta <a href={updateSources.mexico}>announced Mexico as the first Latin American
         country with personal Muse access</a>. Muse is available there in Spanish on iOS, Android,
         the web, and WhatsApp. Meta lists Cinépolis, Coppel, Despegar, Kavak, Kueski, Liverpool, Rappi,
@@ -125,6 +141,8 @@ const relatedLinks = [
         realestate.com.au, SWEAT, ShopBack, and Ticketek. The same post says Canva is also a Connector
         for Muse users around the world. <a href="/muse-for-small-business/#availability-heading">Small Business eligibility</a>
         is separate.</p>
+      <p>On November 13, 2026, Muse published version 1.0 of the <a href="/personal-agent-protocol/">Personal Agent Protocol (Poppy)</a>,
+        an open standard for how personal agents work with businesses. Country eligibility for Muse for Small Business stays separate from that standard.</p>
     </section>
 
     <section aria-labelledby="difference-heading">
@@ -280,8 +298,10 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
-      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>.</p>
+      <p>Capabilities, access, security status, and product names checked <time datetime="2026-10-29">2026-10-29</time>. Japan availability and the Personal Agent Protocol checked <time datetime={sourceGapCheckDate}>November 20, 2026</time>.</p>
       <ul>
+        <li><a href={updateSources.japan}>Meta: personal Muse launch in Japan, October 23</a></li>
+        <li><a href={updateSources.poppy}>Muse: Personal Agent Protocol (Poppy) 1.0, November 13</a></li>
         <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
         <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
         <li><a href={updateSources.subscriptions}>Meta Help: subscriptions, weekly tokens, and daily phone-call allowances</a></li>

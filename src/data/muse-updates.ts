@@ -1,5 +1,6 @@
 export const productUpdateDate = '2026-11-18';
 export const latestCheckDate = '2026-11-19';
+export const sourceGapCheckDate = '2026-11-20';
 
 export const updateSources = {
   email: 'https://x.com/Muse/status/2120201720651563286',
@@ -22,4 +23,9 @@ export const updateSources = {
   loblaw: 'https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/',
   tryOn: 'https://x.com/Muse/status/2123143277708988897',
   subscriptions: 'https://www.meta.com/help/subscriptions/1021145227643680/',
+  japan: 'https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/',
+  poppy: 'https://muse.ai/blog/poppy-personal-agent-protocol',
+  poppySite: 'https://personalagentprotocol.org',
+  poppyDocs: 'https://personalagentprotocol.org/docs/introduction',
+  platform: 'https://platform.muse.ai',
 };

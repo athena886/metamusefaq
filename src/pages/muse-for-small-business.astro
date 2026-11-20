@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { latestCheckDate, updateSources } from '../data/muse-updates';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -9,16 +9,16 @@ const faqItems = [
   { question: 'What is Muse for Small Business?', answer: 'It is a collection of skills and connectors inside Muse, Meta’s personal AI agent, aimed at business owners. Meta announced it on September 29, 2026; the announcement was updated October 8.' },
   { question: 'Does Muse for Small Business need a separate subscription?', answer: 'Meta directs business users to Muse’s existing subscription plans and says free usage is available within limits. The business announcement does not introduce a separate business price. Check current terms in your account.' },
   { question: 'Which connectors does Muse for Small Business support?', answer: 'Meta names Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, and Zoom, plus Facebook Pages, Instagram professional account analytics, and Meta ad accounts. Check Muse Settings for the current list.' },
-  { question: 'Where is Muse for Small Business available?', answer: 'The official business page lists US and Canada residents aged 18 and over. The personal-agent rollout is broader: Meta announced personal Muse in Singapore, Mexico, and Australia. Muse for Small Business eligibility remains separate.' },
+  { question: 'Where is Muse for Small Business available?', answer: 'The official business page, rechecked November 20, 2026, lists people in the US and Canada aged 18 and over. It also says Meta is working to bring Muse to more markets, with no further dates or country names. Personal Muse has a wider rollout, including Japan on October 23, 2026, plus Singapore, Mexico, and Australia. The Personal Agent Protocol leaves the Small Business country list unchanged.' },
   { question: 'Can Muse publish ads or spend without approval?', answer: 'Meta says nothing publishes, sends, or spends without your approval. Review the proposed action and account permissions before approving.' },
   { question: 'Is the 1Password integration available?', answer: 'The business page labels 1Password integration as coming soon. It describes an existing secure credential store, one-time card numbers at checkout, and Link purchase protections for eligible purchases.' },
 ];
 ---
 
 <Base
-  dateModified={latestCheckDate}
+  dateModified={sourceGapCheckDate}
   title="Muse for Small Business: Connectors, Availability & FAQ"
-  description="An independent guide to Muse for Small Business: supported business connectors, US and Canada eligibility, approval controls, and security features."
+  description="An independent guide to Muse for Small Business: supported business connectors, US and Canada eligibility, how the Personal Agent Protocol differs from those connectors, approval controls, and security features."
   canonicalPath="/muse-for-small-business/"
   pageType="article"
   breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Muse for Small Business' }]}
@@ -29,7 +29,7 @@ const faqItems = [
     <h1>Muse for Small Business</h1>
     <p class="lede">Muse for Small Business extends Meta’s personal agent with business skills and
       connectors.</p>
-    <StatusChips checked={latestCheckDate} />
+    <StatusChips checked={sourceGapCheckDate} />
     </header>
     <p class="hero-context">It works inside Muse, using the services you connect to help with business tasks.</p>
     <p>Meta’s
@@ -59,8 +59,10 @@ const faqItems = [
       <h2 id="availability-heading">Availability and Age Requirements</h2>
       <p>The <a href="https://muse.ai/business">official business page</a> lists the United States
         and Canada, ages 18 and over. Confirm access and connector availability in your account.</p>
-      <p>Business eligibility checked <time datetime={latestCheckDate}>November 19, 2026</time>. Muse for Small Business remains available in the US and Canada, ages 18 and over.</p>
-      <p>The personal agent has a wider rollout: Meta
+      <p>Business eligibility checked <time datetime={sourceGapCheckDate}>November 20, 2026</time> on the <a href="https://muse.ai/business">official business page</a>. Muse for Small Business remains listed for the US and Canada, ages 18 and over. The same answer says Meta is working to bring Muse to more markets, and it shares no further dates or country names.</p>
+      <p>The personal agent has a wider rollout. On October 23, 2026, Meta
+        <a href={updateSources.japan}>said personal Muse was available in Japan</a> on iOS, Android, and muse.ai,
+        and described Japan as the first region outside North America. Meta
         <a href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/">announced Singapore availability on October 27</a>.
         Meta also <a href={updateSources.mexico}>announced the personal agent in Mexico on
         November 5</a>, and <a href={updateSources.australia}>in Australia on November 17</a>.
@@ -70,6 +72,27 @@ const faqItems = [
         Expedia is also covered under <a href="/how-to-use-meta-muse/#connectors-heading">personal travel Connectors</a>.
         <a href={updateSources.loblaw}>Loblaw</a> is a personal retail Connector for Canadian shoppers
         and does not change Muse for Small Business eligibility.</p>
+    </section>
+
+    <section aria-labelledby="protocol-heading">
+      <h2 id="protocol-heading">Personal Agent Protocol and business integrations</h2>
+      <p>On November 13, 2026, Muse <a href={updateSources.poppy}>published Personal Agent Protocol (Poppy) version 1.0</a>.
+        It is an open standard for how a personal agent works with a business. A business publishes poppy.json
+        and can offer its website, APIs, an MCP server, or its own agent, including a customer-support agent.
+        The full record is in our <a href="/personal-agent-protocol/">Poppy explainer</a>.</p>
+      <p>Taking part in Poppy does not add a country to Muse for Small Business. The business page’s country line
+        remains the United States and Canada, ages 18 and over. Japan’s personal-agent launch is a separate rollout.</p>
+      <p>The November 13 post names Sierra, Genesys, NiCE, Decagon, Rocket, Shopify, Stripe, and Walmart among partners
+        developing the standard. Shopify and Stripe are already on the Small Business connector list above.
+        The other names in that partner sentence are not, by themselves, connectors for every Small Business account.</p>
+      <p>The same post gives three early examples of Poppy with Muse. They keep the post’s qualifiers, and they are
+        not the connector list in Settings:</p>
+      <ul>
+        <li><strong>BYLT, coming soon.</strong> Muse would talk with BYLT’s agent, built with Meta Business Agent, for product questions, availability, and a cart.</li>
+        <li><strong>Mercury, through Sierra.</strong> The post says Muse can connect through Sierra so customers can check business and personal account balances and transactions, categorize spending, and request payments or transfers. The post says Mercury is not a bank.</li>
+        <li><strong>Hertz, a Decagon pilot.</strong> The post says Muse will be able to look up, change, and extend reservations through Hertz’s pilot with Decagon’s Personal Agent Gateway.</li>
+      </ul>
+      <p>The blog points businesses with an agent-ready surface such as APIs or MCP to <a href={updateSources.platform}>platform.muse.ai</a> for verified-connector review. The platform homepage says a business describes its connector, submits it for functional, security, and legal review plus end-to-end testing, and can appear in the directory after approval.</p>
     </section>
 
     <section aria-labelledby="pricing-heading">
@@ -92,6 +115,7 @@ const faqItems = [
 
     <FAQ items={faqItems} />
     <RelatedLinks links={[
+      { label: 'Personal Agent Protocol', href: '/personal-agent-protocol/', description: 'Poppy 1.0, poppy.json, and the BYLT, Mercury, and Hertz examples with their qualifiers.' },
       { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Connect services, organize side chats, and find Artifacts in Library.' },
       { label: 'Meta Muse pricing', href: '/meta-muse-pricing/', description: 'Existing plans, weekly token allowances, and additional usage.' },
     ]} />
