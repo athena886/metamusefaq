@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusChips from '../components/StatusChips.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
+
+const faqItems = [
+  {
+    question: 'What is the Personal Agent Protocol?',
+    answer:
+      'It is an open standard, also called Poppy, for how personal agents work with businesses. Muse published version 1.0 on November 13, 2026, and said Muse is the first personal agent to support it. A business publishes poppy.json and can offer its website, APIs, an MCP server, or its own agent.',
+  },
+  {
+    question: 'Does Poppy change where Muse for Small Business is available?',
+    answer:
+      'No. Muse for Small Business remains listed for people in the United States and Canada aged 18 and over. Protocol participation is a business-integration standard. It is not a new country launch for that product.',
+  },
+  {
+    question: 'Are BYLT, Mercury, and Hertz connectors for every Muse user?',
+    answer:
+      'No. The November 13 post presents them as early examples of Poppy with Muse. BYLT is described as coming soon through an agent built with Meta Business Agent. Mercury is described through Sierra for account and transaction information. Hertz is a Decagon pilot for looking up, changing, and extending reservations. Those qualifiers are not the Small Business connector list.',
+  },
+  {
+    question: 'Where is the standard published?',
+    answer:
+      'Muse’s November 13, 2026 blog post introduces version 1.0. personalagentprotocol.org documents the protocol, including discovery at /.well-known/poppy.json. The docs introduction also says version 1.0. platform.muse.ai is the Muse Connector Platform, where a business can submit a connector for review.',
+  },
+];
+---
+
+<Base
+  title="Personal Agent Protocol (Poppy): Version 1.0 Explained"
+  description="Independent explainer of Muse’s November 13, 2026 Personal Agent Protocol (Poppy) 1.0: poppy.json, website, API, MCP, and company-agent integration, and how early examples differ from connectors."
+  canonicalPath="/personal-agent-protocol/"
+  pageType="article"
+  dateModified={sourceGapCheckDate}
+  breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Personal Agent Protocol' }]}
+>
+  <article class="content">
+    <header class="hero-panel">
+      <p class="eyebrow">Independent guide</p>
+      <h1>Personal Agent Protocol (Poppy)</h1>
+      <p class="lede">On November 13, 2026, Muse published version 1.0 of the Personal Agent Protocol, called Poppy. It is an open standard for how personal agents work with businesses. This page records that post and the protocol site. It is not a new announcement dated November 20.</p>
+      <StatusChips checked={sourceGapCheckDate} />
+    </header>
+    <p class="hero-context">Checked <time datetime={sourceGapCheckDate}>November 20, 2026</time> against the Muse blog, personalagentprotocol.org, and the Muse Connector Platform homepage. No account was created and no form was submitted.</p>
+
+    <section aria-labelledby="standard-heading">
+      <h2 id="standard-heading">What version 1.0 is</h2>
+      <p>The <a href={updateSources.poppy}>Muse blog post</a> says Poppy is a standard for how personal agents work with businesses, whether through a website, APIs, or direct conversations with a business’s own agent. It says Muse is the first personal agent to support Poppy, and that any business can implement it, starting with the capabilities that fit and adding more later.</p>
+      <p>The post says Muse is developing Poppy with industry partners at Sierra, Genesys, NiCE, Decagon, Rocket, Shopify, Stripe, and Walmart, plus additional design partners. Being named as a partner in that list is not the same thing as a connector offered to every Muse account.</p>
+      <p><a href={updateSources.poppySite}>personalagentprotocol.org</a> describes the same open protocol. Its <a href={updateSources.poppyDocs}>introduction</a> is labeled docs version 1.0 and says a company declares how personal agents can interact with it. The protocol site says a company can take part with a website, APIs, an MCP server, or its own agent.</p>
+    </section>
+
+    <section aria-labelledby="poppy-json-heading">
+      <h2 id="poppy-json-heading">poppy.json and the integration paths</h2>
+      <p>The blog says a file called poppy.json tells a personal agent what a business offers and how to reach it: the website, APIs or an MCP server, or the business’s own agent. A website-only setup can start by publishing that file, without adding customer sign-in. APIs, sign-in, and conversations with a business agent need the setup described in the implementation kit.</p>
+      <p>The protocol site describes discovery as a document at /.well-known/poppy.json. It also describes sign-in on the company’s own page, and one session that can cover API calls, website activity, and conversations with the company’s agent. The blog says customers can grant and revoke access, and that the business defines the permissions.</p>
+      <p>The blog says Meta verified connectors are reviewed for functional, security, and legal requirements and for end-to-end testing. It points businesses that have an agent-ready surface, such as APIs or MCP, to <a href={updateSources.platform}>platform.muse.ai</a>. The platform homepage describes three steps: describe the product, submit it for that review, and appear in the Muse directory after approval. This guide only cites those pages.</p>
+    </section>
+
+    <section aria-labelledby="examples-heading">
+      <h2 id="examples-heading">Early examples in the November 13 post</h2>
+      <p>The post presents three businesses as among the first to put Poppy to work with Muse. These are examples from that post. They are not a list of connectors available to every Muse user, and they are not additions to the <a href="/muse-for-small-business/#connectors-heading">Muse for Small Business connector list</a>.</p>
+      <ul>
+        <li><strong>BYLT, coming soon.</strong> The post says that soon Muse can talk directly with BYLT’s agent, built with Meta Business Agent, to help customers find products, ask questions, check availability, and build a cart.</li>
+        <li><strong>Mercury, through Sierra.</strong> The post says Muse can connect with Mercury through Sierra so customers can check business and personal account balances and transactions, categorize spending, request payments or transfers, and more. The post’s note says Mercury is not a bank and that banking services are provided through Mercury’s FDIC-insured partner banks.</li>
+        <li><strong>Hertz, a Decagon pilot.</strong> The post says Muse will be able to look up, change, and extend Hertz reservations through the company’s pilot with Decagon’s Personal Agent Gateway.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="not-smb-heading">
+      <h2 id="not-smb-heading">Small Business eligibility stays separate</h2>
+      <p>Muse for Small Business remains the product listed for people in the United States and Canada aged 18 and over. Publishing Poppy, or a business taking part in the protocol, does not add a country to that product. Japan’s October 23 personal-agent launch is also separate. See <a href="/muse-for-small-business/#protocol-heading">how this sits next to Small Business connectors</a> and the <a href="/what-is-meta-muse/#personal-availability-heading">personal-agent regions</a>.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Official sources</h2>
+      <p>Checked <time datetime={sourceGapCheckDate}>November 20, 2026</time>. The underlying posts are dated November 13, 2026 for the Muse blog, and the protocol docs introduction is labeled version 1.0.</p>
+      <ul>
+        <li><a href={updateSources.poppy}>Muse blog: More Ways for Muse to Work With Businesses, November 13, 2026</a></li>
+        <li><a href={updateSources.poppySite}>Personal Agent Protocol</a></li>
+        <li><a href={updateSources.poppyDocs}>Personal Agent Protocol docs: Introduction (version 1.0)</a></li>
+        <li><a href={updateSources.platform}>Muse Connector Platform</a></li>
+      </ul>
+    </section>
+
+    <RelatedLinks links={[
+      { label: 'Muse for Small Business', href: '/muse-for-small-business/', description: 'US and Canada eligibility, the business connector list, and how Poppy differs from it.' },
+      { label: 'How to use Meta Muse', href: '/how-to-use-meta-muse/', description: 'Personal, business, and device connectors, including regional partner notes.' },
+      { label: 'What is Meta Muse?', href: '/what-is-meta-muse/', description: 'Personal-agent regions, including the October 23 Japan launch.' },
+    ]} />
+  </article>
+</Base>

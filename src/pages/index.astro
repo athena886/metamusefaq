@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { latestCheckDate, updateSources } from '../data/muse-updates';
+import { latestCheckDate, sourceGapCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -13,7 +13,7 @@ const faqItems = [
   {
     question: 'Does Meta Muse have voice mode?',
     answer:
-      'Yes. Meta began rolling out voice and expressive avatars in the Muse app on November 5, 2026, and that Newsroom post said the US first. The November 17 Australia launch post also describes real-time voice on mobile, web, and Mac. A November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. Tap the phone icon in the top-right corner in the app. See our Muse voice and avatar guide and the watch guide. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
+      'Yes, where Meta has enabled it. Meta began rolling out voice and expressive avatars in the Muse app on November 5, 2026, and that Newsroom post said the US first. The November 17 Australia launch post also describes real-time voice on mobile, web, and Mac. A November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. Official @Muse later said voice is available on Apple Watch and Wear OS. The October 23 Japan launch post said Japan availability for voice and Realtime Avatar would be announced separately, and it labeled Realtime Avatar English-only. A November 20, 2026 check did not find a later official Japan announcement that voice had launched there. Tap the phone icon in the top-right corner in the app. See our Muse voice and avatar guide and the watch guide. Source: Meta Newsroom, official @Muse, and Meta Help: How to get started with Muse.',
   },
   {
     question: 'What are Muse Realtime Voice and Muse Realtime Avatar?',
@@ -48,7 +48,7 @@ const faqItems = [
   {
     question: 'Is Meta Muse available in my country?',
     answer:
-      'The Muse for Small Business page lists the US and Canada, ages 18 and over. The personal agent has a wider rollout, including Singapore, Mexico, and Australia. Mexico was the first Latin American launch, on November 5, 2026. Australia was announced on November 17, 2026, on iOS, Android, muse.ai, and the Mac app. Access and subscriptions can vary by region and account; check muse.ai.',
+      'The Muse for Small Business page lists the US and Canada, ages 18 and over. The personal agent has a wider rollout. On October 23, 2026, Meta said personal Muse was available in Japan on iOS, Android, and muse.ai, and described Japan as the first region outside North America. Later personal-agent launches include Singapore, Mexico, and Australia. Mexico was the first Latin American launch, on November 5, 2026. Australia was announced on November 17, 2026, on iOS, Android, muse.ai, and the Mac app. The Japan post said availability there for voice, Realtime Avatar, and Muse’s own email address would be announced separately. Access and subscriptions can vary by region and account; check muse.ai.',
   },
 ];
 
@@ -57,6 +57,11 @@ const relatedLinks = [
     label: 'Muse voice and avatars',
     href: '/muse-voice-avatar/',
     description: 'Realtime Voice/Avatar, US, Australia, and Canada rollout notes, Settings → Voice and Avatar, Muse Charm.',
+  },
+  {
+    label: 'Personal Agent Protocol',
+    href: '/personal-agent-protocol/',
+    description: 'Poppy 1.0, published November 13, 2026: poppy.json plus website, API, MCP, or company-agent integration.',
   },
   {
     label: 'Muse Try On',
@@ -87,7 +92,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={latestCheckDate}
+  dateModified={sourceGapCheckDate}
   title="Meta Muse: What It Is, What It Costs, How to Use It"
   description="Meta Muse is Meta's personal AI agent that browses, books, and buys for you. Here's what it does, what the $20 and $100 plans include, and how to get started."
   canonicalPath="/"
@@ -100,7 +105,7 @@ const relatedLinks = [
     <h1>Meta Muse Explained</h1>
     <p class="lede">
         Meta Muse, also commonly written MetaMuse, is a personal AI agent from Meta, released on September 8, 2026.</p>
-    <StatusChips checked={latestCheckDate} />
+    <StatusChips checked={sourceGapCheckDate} />
       <nav class="jump-links" aria-label="Jump to overview sections">
         <span>Jump to</span>
         <a href="#definition-heading">What it is</a>
@@ -182,6 +187,7 @@ const relatedLinks = [
           <strong>Work with email:</strong> Use a connected mailbox such as Gmail, or
           <a href="/muse-email/">set up Muse’s own address</a> to send and receive mail.
           The dedicated address is available to paid subscribers in the US and Canada.
+          Meta’s October 23 Japan post said Japan availability for that address would be announced separately.
         </li>
         <li>
           <strong>Use Connectors:</strong> Connect Gmail, Calendar, and other services. Facebook,
@@ -222,6 +228,9 @@ const relatedLinks = [
         Read our <a href="/muse-for-small-business/">Muse for Small Business guide and FAQ</a>
         for access, connectors, and security details.
         Source: <a href="https://about.fb.com/news/2026/09/introducing-muse-small-business/">Meta’s September 29 announcement</a>.</p>
+      <p>On November 13, 2026, Muse published <a href="/personal-agent-protocol/">Personal Agent Protocol (Poppy) version 1.0</a>,
+        an open standard for how a personal agent can work with a business through poppy.json, a website, APIs, MCP, or the business’s own agent.
+        Examples in that post are not extra connectors for every Small Business user, and the protocol does not change US and Canada eligibility for people 18 and older.</p>
     </section>
 
     <section class="callout-card" aria-labelledby="cost-heading">
@@ -299,7 +308,15 @@ const relatedLinks = [
       </p>
       <p>
         For a fuller walkthrough, read our <a href="/how-to-use-meta-muse/">how to use Meta Muse</a> guide.
-        Personal Muse is available in Singapore, launched in Mexico in Spanish on iOS, Android,
+        On October 23, 2026, Meta <a href={updateSources.japan}>said personal Muse was available in Japan</a>
+        on iOS, Android, and muse.ai, and described Japan as the first region outside North America.
+        That announcement includes Gmail, Google Calendar, and Instagram among services Japanese users can connect.
+        It names Stripe, Shopify, Trip.com, Agoda, and Klook as global service integrations for shopping and travel planning and booking.
+        It says Meta is pursuing local partnerships with Mercari, Money Forward ME, and Ticket Pia.
+        Those three are partnership plans in that post, not services it lists as already available.
+        The same post said Japan availability for voice, Realtime Avatar, and Muse’s own email address would be announced separately, and it labeled Realtime Avatar English-only.
+        A check on November 20, 2026 did not find a later official Japan announcement that those features had launched.
+        Personal Muse is also available in Singapore, launched in Mexico in Spanish on iOS, Android,
         the web, and WhatsApp, and <a href={updateSources.australia}>launched in Australia</a> on
         November 17 on iOS, Android, muse.ai, and the Mac app, with AI glasses listed as coming soon.
         Muse for Small Business has separate US and Canada eligibility for
@@ -344,8 +361,10 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
-      <p>Earlier business coverage checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
+      <p>Earlier business coverage checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29. Japan availability and the Personal Agent Protocol checked <time datetime={sourceGapCheckDate}>November 20, 2026</time>. The October 23 and November 13 sources below are earlier posts recorded on that date.</p>
       <ul>
+        <li><a href={updateSources.japan}>Meta: personal Muse launch in Japan, October 23</a></li>
+        <li><a href={updateSources.poppy}>Muse: Personal Agent Protocol (Poppy) 1.0, November 13</a></li>
         <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
         <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
         <li><a href={updateSources.subscriptions}>Meta Help: subscriptions, weekly tokens, and daily phone-call allowances</a></li>

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { latestCheckDate, updateSources } from '../data/muse-updates';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
@@ -9,7 +9,7 @@ const faqItems = [
   { question: 'Which business apps can Muse connect to?', answer: 'Meta lists Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, and Zoom. Check Settings → Connectors for the options available to your account.' },
   { question: 'What are side chats in Muse?', answer: 'Side chats organize separate topics without cluttering the main chat. Muse stays aware across the main chat and side chats; they are not separate agents.' },
   { question: 'Where are Muse Artifacts saved?', answer: 'Completed Artifacts are saved to a workspace in the Library tab and shared in the thread. They can include PDFs, spreadsheets, documents, images, and podcasts.' },
-  { question: 'Where is Muse for Small Business available?', answer: 'The official business page lists people in the US and Canada aged 18 and over. This is distinct from the wider personal-agent rollout, including Singapore, Mexico, and Australia. Check your account for access.' },
+  { question: 'Where is Muse for Small Business available?', answer: 'The official business page lists people in the US and Canada aged 18 and over. This is distinct from the wider personal-agent rollout, including Japan, Singapore, Mexico, and Australia. Japan’s October 23, 2026 launch was on iOS, Android, and muse.ai. The Personal Agent Protocol is an integration standard and leaves that Small Business country list unchanged. Check your account for access.' },
   {"question": "Can Muse access Messages and Notes on my Mac?", "answer": "Yes, through Muse for Mac after system authorization. Review macOS permissions and each app\u2019s Off, Read only, or Read and interact setting."},
   {"question": "Are Facebook, Instagram, and Threads connected automatically?", "answer": "Yes, when those accounts are in the same Accounts Center. Review account connections and permissions before assigning tasks."},
   {"question": "Can I chat with Muse in WhatsApp?", "answer": "Yes. Meta lists WhatsApp as a Muse chat entry point where available."},
@@ -63,6 +63,11 @@ const relatedLinks = [
     description: 'How the personal agent uses cloud browsing and authorized local Mac access.',
   },
   {
+    label: 'Personal Agent Protocol',
+    href: '/personal-agent-protocol/',
+    description: 'Poppy 1.0 and how its business examples differ from connectors.',
+  },
+  {
     label: 'Meta Muse review',
     href: '/meta-muse-review/',
     description: 'An early assessment of execution, limitations, and trust concerns.',
@@ -71,7 +76,7 @@ const relatedLinks = [
 ---
 
 <Base
-  dateModified={latestCheckDate}
+  dateModified={sourceGapCheckDate}
   title="How to Use Meta Muse: Step-by-Step Setup Guide"
   description="Set up Meta Muse at muse.ai or in the standalone app. Compare Free, Power and Maximum, add Connectors, and review permissions and approve sensitive actions."
   canonicalPath="/how-to-use-meta-muse/"
@@ -87,7 +92,7 @@ const relatedLinks = [
     <h1>How to Use Meta Muse</h1>
     <p class="lede">
       Use Muse on the web, mobile, Mac, or through WhatsApp where available.</p>
-    <StatusChips checked={latestCheckDate} />
+    <StatusChips checked={sourceGapCheckDate} />
     </header>
     <p class="hero-context">This guide covers
       cloud tasks, local Mac access, Connectors, and the permissions to review before you begin.</p>
@@ -106,7 +111,14 @@ const relatedLinks = [
       </ul>
       <p>
         Muse for Small Business is available in the US and Canada for people 18 and over. Personal
-        Muse has also launched in Singapore, <a href={updateSources.mexico}>Mexico</a>, and
+        Muse <a href={updateSources.japan}>launched in Japan on October 23, 2026</a> on iOS, Android, and muse.ai.
+        Meta’s announcement described Japan as the first region outside North America.
+        It includes Gmail, Google Calendar, and Instagram among services Japanese users can connect,
+        and names Stripe, Shopify, Trip.com, Agoda, and Klook as global integrations for shopping and travel.
+        The announcement says Meta is pursuing local partnerships with Mercari, Money Forward ME, and Ticket Pia.
+        The same post said Japan availability for voice, Realtime Avatar (labeled English-only), and Muse’s own email address would be announced separately.
+        A November 20, 2026 check did not find a later official Japan announcement of those features.
+        Personal Muse has also launched in Singapore, <a href={updateSources.mexico}>Mexico</a>, and
         <a href={updateSources.australia}>Australia</a>. In Mexico
         it is available in Spanish on iOS, Android, the web, and WhatsApp. In Australia, Meta says it
         is available on iOS, Android, muse.ai, and the Mac app, with AI glasses listed as coming soon.
@@ -232,7 +244,7 @@ const relatedLinks = [
           Newsroom post also says Canadians can now build spaces.</li>
         <li><a href="/muse-apple-watch-wear-os/">Apple Watch and Wear OS</a>: Meta announced both
           platforms. Official @Muse later said voice is available on Apple Watch and Wear OS. Check the official App Store listing for Apple Watch compatibility.</li>
-        <li><a href="/muse-voice-avatar/">Voice</a>: Meta began the rollout in the United States, later described real-time voice in Australia, and a November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac.</li>
+        <li><a href="/muse-voice-avatar/">Voice</a>: Meta began the rollout in the United States, later described real-time voice in Australia, and a November 18 Newsroom post says Voice is rolling out in Canada on mobile, web, and Mac. The October 23 Japan post left Japan voice availability for a later announcement.</li>
         <li><a href="/muse-chrome-extension/">Muse Chrome Extension</a>: Official Help says you can
           ask Muse in Chat to download it. Muse then browses in your personal Chrome, in a separate tab group,
           which is distinct from the in-chat browser and from Muse for Mac. The Chrome Web Store listing now shows version 2.1.3, updated November 18, 2026, without new feature notes.</li>
@@ -264,6 +276,10 @@ const relatedLinks = [
       <p>Check Settings → Connectors for your account’s current list. Developers and partners can
         learn about building integrations at the <a href="https://platform.muse.ai/">Muse Connector Platform</a>.
         Source: <a href="https://about.fb.com/news/2026/09/introducing-muse-small-business/">Meta’s small-business announcement</a>.</p>
+      <p>On November 13, 2026, Muse published the <a href="/personal-agent-protocol/">Personal Agent Protocol (Poppy)</a> version 1.0.
+        A business can publish poppy.json and offer a website, APIs, an MCP server, or its own agent.
+        Early examples in that post, including BYLT coming soon, Mercury through Sierra, and a Hertz pilot with Decagon,
+        are not the Small Business connector list above. Protocol participation does not change the US and Canada eligibility for Muse for Small Business.</p>
       <p>Facebook, Instagram, and Threads connect automatically when accounts share an Accounts Center.
         For other services, use Settings → Connectors or ask Muse to connect one.</p>
       <p>For personal travel planning, Meta <a href={updateSources.expedia}>announced Expedia as
@@ -340,8 +356,10 @@ const relatedLinks = [
 
     <section aria-labelledby="sources-heading">
       <h2 id="sources-heading">Official Sources</h2>
-      <p>Business features, availability, and getting-started guidance checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29.</p>
+      <p>Business features, availability, and getting-started guidance checked <time datetime="2026-10-30">2026-10-30</time>; earlier capability sources checked October 29. Japan availability and the Personal Agent Protocol checked <time datetime={sourceGapCheckDate}>November 20, 2026</time>.</p>
       <ul>
+        <li><a href={updateSources.japan}>Meta: personal Muse launch in Japan, October 23</a></li>
+        <li><a href={updateSources.poppy}>Muse: Personal Agent Protocol (Poppy) 1.0, November 13</a></li>
         <li><a href={updateSources.loblaw}>Meta: Loblaw as first Canadian retail partner, November 18</a></li>
         <li><a href={updateSources.tryOn}>Official @Muse: introducing Try On</a></li>
         <li><a href={updateSources.australia}>Meta: personal Muse launch in Australia, November 17</a></li>

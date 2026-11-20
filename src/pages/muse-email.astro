@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import StatusChips from '../components/StatusChips.astro';
 import FAQ from '../components/FAQ.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-import { productUpdateDate, updateSources } from '../data/muse-updates';
+import { sourceGapCheckDate, updateSources } from '../data/muse-updates';
 
 const faqItems = [
   {
@@ -18,6 +18,10 @@ const faqItems = [
     question: "How is Muse Mail different from a Gmail or Outlook Connector?",
     answer: "Muse Mail is a dedicated @muse.ai address for your Muse, separate from your personal inbox. Connecting Gmail or Outlook is a different step that gives Muse permission to work with a mailbox you already use.",
   },
+  {
+    question: "Is Muse Mail available in Japan?",
+    answer: "Official sources describe Muse Mail for paid subscribers in the United States and Canada. Meta’s October 23, 2026 Japan launch post said Japan availability for Muse’s own email address would be announced separately. A November 20, 2026 check did not find a later official Japan announcement that Muse Mail had launched there. The Japan post includes Gmail among services Japanese users can connect, which is separate from the dedicated @muse.ai address.",
+  },
 ];
 ---
 
@@ -26,7 +30,7 @@ const faqItems = [
   description="How eligible paid subscribers in the US and Canada can set up Muse Mail, approve outgoing messages, and keep it separate from Gmail or Outlook Connectors."
   canonicalPath="/muse-email/"
   pageType="article"
-  dateModified={productUpdateDate}
+  dateModified={sourceGapCheckDate}
   breadcrumbs={[{ label: 'Home', href: '/' }, { label: "Muse Mail" }]}
 >
   <article class="content">
@@ -34,7 +38,7 @@ const faqItems = [
       <p class="eyebrow">Independent guide</p>
       <h1>Muse Mail</h1>
       <p class="lede">Muse Mail is a dedicated @muse.ai address for your Muse. Official sources describe it for paid subscribers in the United States and Canada. Meta announced availability on November 10, 2026, and later published official Help for setup and safe use.</p>
-      <StatusChips checked={productUpdateDate} />
+      <StatusChips checked={sourceGapCheckDate} />
     </header>
 
     <section>
@@ -47,6 +51,11 @@ const faqItems = [
       <h2>Sending, limits, and what not to use it for</h2>
       <p>Official Help says Muse asks for approval before sending, and that you can change the sender name. It also describes sending limits and says Muse Mail is not for bulk campaigns. It does not publish a numeric attachment cap in the Help articles reviewed for this page.</p>
       <p>Official Help says not to use Muse Mail for bank or payment details, medical information, passwords, or recovery codes. You can unlink Muse Mail in Settings. If you delete the address, reset Muse, or delete your account, later mail to that address may be undeliverable.</p>
+    </section>
+
+    <section>
+      <h2>Japan</h2>
+      <p>Official sources for the dedicated @muse.ai address describe paid subscribers in the United States and Canada. Meta’s <a href={updateSources.japan}>October 23, 2026 Japan launch post</a> said Japan availability for Muse’s own email address would be announced separately. A check on <time datetime={sourceGapCheckDate}>November 20, 2026</time> did not find a later official Japan announcement that Muse Mail had launched there. The same post includes Gmail among services Japanese users can connect. That connector is separate from the dedicated address.</p>
     </section>
 
     <section>
@@ -64,6 +73,7 @@ const faqItems = [
         <li><a href={updateSources.email}>Muse announcement on X</a></li>
         <li><a href={updateSources.emailSetup}>Muse setup instructions on X</a></li>
         <li><a href={updateSources.emailConnectors}>Meta launch thread: Gmail and Outlook Connectors</a></li>
+        <li><a href={updateSources.japan}>Meta: personal Muse launch in Japan, October 23, 2026 (Muse email availability to be announced)</a></li>
       </ul>
     </section>
 
